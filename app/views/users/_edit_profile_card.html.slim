@@ -1,0 +1,88 @@
+= form_for user, url: {action: "update", controller: "users"} do |f|
+  div#info_section.info_box
+
+      div#username_box
+        div#username
+          h2 = user.name
+        div.icons          
+          span
+            = image_tag 'facebook-icon.gif', width: "30px", height: "30px"
+
+            div.edit_social#edit-facebook-pencil-icon data-toggle='modal' data-target='#edit-facebook-url-modal'
+              span.glyphicon.glyphicon-pencil
+
+          span
+            = image_tag 'twitter-icon.png', width: "30px", height: "30px"
+
+            div.edit_social#edit-twitter-pencil-icon data-toggle='modal' data-target='#edit-twitter-url-modal'
+              span.glyphicon.glyphicon-pencil
+
+          span
+            = image_tag 'youtube-icon.png', width: "30px", height: "30px"
+
+            div.edit_social#edit-youtube-pencil-icon data-toggle='modal' data-target='#edit-youtube-url-modal'
+              span.glyphicon.glyphicon-pencil          
+
+          span
+            = image_tag 'pokerradius+pokersocialnetwork+instagramicon.png', width: "30px", height: "30px"
+
+            div.edit_social#edit-instagram-pencil-icon data-toggle='modal' data-target='#edit-instagram-url-modal'
+              span.glyphicon.glyphicon-pencil
+
+      #location_prid_box      
+        = text_field_tag :state_and_city,!current_user.user_location.state_and_city.nil? ? current_user.user_location.state_and_city : " " , placeholder: 'Location', id: 'location_text_field'
+
+       
+
+        span#prid PR #: #{user.prid}
+
+
+      p
+        = f.check_box :online_player
+        span.player_type_label Online Poker Player
+
+
+        = f.check_box :casino_player, class: 'right_checkbox'
+        span.player_type_label Casino Poker Player
+
+
+
+      p
+        | When did you start playing?
+        = f.date_select :year_started_playing_poker, :use_short_month => true, :start_year => 1920,:end_year=>2014, :order => [:year], :prompt => {month: 'Month', day: 'Day', year: 'Year' }
+
+      p
+        | Blog:
+        = f.fields_for :user_blog, UserBlog.new do |b|
+          = b.text_field :url,value: !current_user.user_blog.blank? ? current_user.user_blog.url : "www.myblog.com", id: 'blog_text_field', placeholder: 'www.myblog.com'
+
+      -  if !current_user.user_subscription.blank? || current_user.plan_type == "free_access"
+        p.urlbox
+          | Profile: www.pokerradius.com/
+          span = f.text_field :custom_url, placeholder: 'custom-url', id: 'prid_text_field'
+
+
+      p
+        = link_to pluralize(User.friends_of_user(user).count, 'Connection') , friends_path(user.prid), class: 'green_links'
+
+
+  div#flag_box
+    - if !user.user_location.country.nil? 
+      = image_tag user.user_location.country.photo_name , class: "pull-right", id: "profile-flag", width: "100px", height: "80px"
+    - else
+      = image_tag "No_Flag.png", class: "pull-right", id: "profile-flag", width: "100px", height: "80px"
+
+
+    div#edit-image-text data-toggle="modal" data-target="#edit-home-country-modal"
+      span
+        | Edit
+        span.glyphicon.glyphicon-pencil
+    div#profile-pic-aligned
+      = form_for @user, url: {action: "update"} , remote: true do |form|
+        = form.fields_for :user_profile_picture do |user_profile_picture_form|
+          = user_profile_picture_form.filepicker_field :url, class: "btn btn-default",name: "user[user_profile_picture_attributes[url]]", extensions: ".jpeg,.jpg,.png,.tiff,.bmp" , onchange: "display_new_image_edit_profile(event['fpfiles'][0]['url']);"
+    = hidden_field_tag 'edit_profile',true
+    div.profile_friend_message_button_container
+      center
+        = f.submit 'Save', class: "btn btn-success", id: 'edit_profile_card'
+

@@ -1,0 +1,5 @@
+= render 'posts/user_post_feed', posts: @posts
+- if  @posts.count < 300
+  = pageless(100, posts_path) 
+- else
+  = pageless(@posts.total_pages, posts_path)

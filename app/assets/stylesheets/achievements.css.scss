@@ -1,0 +1,59 @@
+
+/***************************************/
+/* Achievements Tab */
+/***************************************/
+
+#achievements {
+  .achievement_field {
+
+    border: 1px solid #CCCCCC;
+    border-radius: 0;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+    width: 620px;
+}
+#achievement_field{
+  width: 712px;
+  border: 1px solid #CCCCCC;
+    border-radius: 0;
+    height: 30px;
+}
+
+  #achievements_container {
+
+    li {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    .edit_achievement {
+      height: 21px;
+      width: 50px;
+      padding: 0;
+      margin-left: 16px;
+    }
+  }
+}
+#casino_new_achievement{
+  margin-top:20px;
+}
+#achievements  .no_experience {
+  font-weight: bold;
+  padding-left: 64px;
+}
+span.achivement_save{
+ margin-right:10px;
+}
+li.achievement_desc{
+  list-style-type:inherit;
+  margin-left:30px;
+  padding:0px;
+}
+.achivement_action{
+  padding:10px 0px;
+}
+span.achievement_edit_show{ margin-left:10px; } 
+.achivement_perform_action{ margin-top:5px; }

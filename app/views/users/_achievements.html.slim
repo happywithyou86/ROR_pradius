@@ -1,0 +1,12 @@
+- if params["online_casino"] == "online"
+  ul.achievement_list
+    - online_achievements.each do |achievement|
+      div.each_achievement
+        = render 'achievements/achievement', achievement: achievement
+- else
+  ul.achievement_list
+    - casino_achievements.each do |achievement|
+      div.each_achievement
+        = render 'achievements/achievement', achievement: achievement
+
+

@@ -1,0 +1,5 @@
+- if casino_recommendations.present?
+  div#casino_recommendations
+    - casino_recommendations.each do |r|
+      div.each_recommendation
+        = render "recommendations/recommendation", recommendation: r

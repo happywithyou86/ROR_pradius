@@ -1,0 +1,82 @@
+/* line 3, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .each_recommendation {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  position: relative;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 10, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .each_recommendation p {
+  font-size: 20px;
+  display: inline;
+  margin: 0;
+}
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .each_recommendation .poker_room_link {
+  color: #5BA304;
+  font-size: 18px;
+}
+/* line 23, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .edit_recommentation {
+  height: 21px;
+  width: 50px;
+  padding: 0;
+}
+/* line 33, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .btn {
+  margin-top: 5px;
+}
+/* line 37, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .btn-danger {
+  margin-left: 5px;
+}
+/* line 44, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style #rate_room {
+  margin-top: 10px;
+}
+/* line 48, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style #rec_url_field {
+  margin-left: 10px;
+  width: 220px;
+}
+/* line 54, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style .rec_room_field {
+  width: 200px;
+  height: 25px;
+}
+/* line 59, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style .rec_comment_field {
+  width: 80%;
+  height: 25px;
+  margin-left: 5px;
+}
+/* line 65, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style .justification_div {
+  margin-top: 10px;
+}
+/* line 69, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style select, #recommendations .recommendation_form_style span {
+  margin-left: 15px;
+}
+/* line 73, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style select {
+  border: 1px solid #919291;
+  cursor: pointer;
+  font-size: 10px;
+  overflow: hidden;
+  background-color: #FCFCFC;
+  box-shadow: none;
+  background-image: none;
+  border-radius: 0;
+}
+/* line 84, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+#recommendations .recommendation_form_style p {
+  font-size: 14px !important;
+}
+
+/* line 91, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/recommendations.css.scss */
+.no_recommendation {
+  font-weight: bold;
+  padding-left: 64px;
+}

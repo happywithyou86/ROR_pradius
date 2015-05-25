@@ -1,0 +1,89 @@
+script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" 
+link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" /
+div.modal.fade.message_sent_modal tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+
+        p.text-center Getting Started with Your dashboard!
+        p.text-center Tracking Your own poker activity is critical for  personal  improvement and effective analysis on your game. 
+        p  A few things to help you begin -
+        p Click on EDIT DASHBOARD will enable you to keep information accurater at all times
+        p The tournament and online logs will populate both the Life time Profit/Loss and charts tabs automatically for you
+        p your dashboard is 100 percent private and can not be seen by others
+
+        p If you have question anytime ,please contact your support team and will be more than happy to help
+        div.text-center
+          = link_to "Ok", '#', class: 'btn btn-success ' ,:data => {dismiss: 'modal'}
+/ CASINO POKER ROOM EDIT
+div.row
+  div#main_section.box.dashboard_container
+    = render "dashboards/header_image"
+
+
+    div#dashboard_nav
+      ul.dash_nav_list
+        li = link_to "ONLINE POKER ROOM", dash_online_poker_path
+
+        li = link_to "CASINO POKER ROOM", dash_casino_poker_path, class: 'dash_active'
+
+        li = link_to "LIFE TIME PROFIT / LOSS", dash_life_time_path
+
+        li = link_to "CHARTS", dash_charts_path
+
+    div#dashboard_highlight
+      / # = render "dashboards/highlights_table"
+      = render "dashboards/highlights_table_edit", highlight: @highlight
+
+
+
+    div.log_tables
+      p#log_type data-type='casino' CASINO TOURNAMENT LOG
+
+      = render "dashboards/tournament_log_table", edit: true
+
+    div.log_tables
+      p CASINO CASH GAME LOG
+      = render "dashboards/cash_log_table", edit: true
+
+
+
+
+
+  div#sidebar.box.sidebar
+    = render "sidebars/profile_side_bar", user: current_user
+
+
+
+
+
+/ CARD SELECT MODAL
+
+
+= render "dashboards/card_select_modal"
+= render "dashboards/card_select_modal_tournament"
+= render "dashboards/card_select_modal_tournament_edit"
+= render "dashboards/card_select_modal_cashlog"
+= render "dashboards/card_select_modal_cashlog_edit"
+
+
+
+javascript:
+  function format(card) {
+    if (!card.id) return card.text;
+    return card.text + "<img class='suit' src='" + $(card.element).data('suit') + "'/>"
+  }
+  var pokerRooms = #{raw @poker_rooms}
+  $('.select_room_autocomplete').autocomplete({
+    source: pokerRooms
+  });
+  $(".card_select").select2({
+    formatResult: format,
+    formatSelection: format,
+    minimumResultsForSearch: 500,
+    escapeMarkup: function(m) {return m;}
+  });
+
+ 

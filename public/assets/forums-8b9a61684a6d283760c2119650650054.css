@@ -1,0 +1,188 @@
+/* line 2, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group {
+  padding-right: 0;
+}
+/* line 5, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group .col-md-2 {
+  width: 11.5%;
+}
+/* line 8, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group ul {
+  list-style-type: none;
+}
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group li {
+  padding: 0;
+}
+/* line 14, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group .form-control {
+  border-radius: 0;
+}
+/* line 17, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#search-forum-form .form-group .btn-default {
+  background: #5BA304;
+  border-radius: 0;
+  border: none;
+  color: white;
+  height: 34px;
+  width: 65px;
+}
+
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel {
+  border-radius: 0px;
+}
+/* line 38, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel a {
+  text-decoration: none;
+}
+/* line 42, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel span {
+  display: inline-block;
+}
+/* line 45, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel span i {
+  background-color: #747474;
+  width: 25px !important;
+  text-align: center;
+  height: 25px;
+  padding-top: 5px;
+  padding-left: 1px;
+  cursor: pointer;
+}
+
+/* line 79, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel-default > .panel-heading {
+  background-color: black;
+  color: white;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+/* line 86, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel-body {
+  background-color: #d3d3d3;
+  padding-bottom: 0px;
+}
+/* line 89, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.panel-body .row {
+  border-bottom: solid 1px #3C3C3C;
+  padding-bottom: 20px;
+}
+
+/* line 98, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+#forum-section-threads-title {
+  color: white;
+  background: black;
+  padding: 5px;
+  min-height: 30px;
+  margin-top: 20px;
+}
+
+/* line 106, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.forum-section {
+  padding-top: 10px;
+}
+/* line 108, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.forum-section h4 {
+  margin-top: 0px;
+}
+/* line 111, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.forum-section a {
+  color: #5BA304;
+}
+
+/* line 118, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.forum-thread {
+  background-color: #d3d3d3;
+  padding: 15px;
+  min-height: 110px;
+  max-height: 110px;
+  border-bottom: solid 1px #3C3C3C;
+}
+
+/* line 127, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.name a {
+  color: #5BA304 !important;
+}
+
+/* line 132, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.green_goddamnit {
+  color: #5BA304 !important;
+}
+
+/* line 136, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.green_goddamnit_no_underline {
+  color: #5BA304 !important;
+}
+
+/* line 140, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.green_goddamnit_no_underline:hover {
+  color: #5BA304 !important;
+  text-decoration: none;
+}
+
+/* line 146, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.thread-title {
+  min-height: 40px;
+}
+
+/* line 153, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post {
+  margin-bottom: 15px;
+  height: 100%;
+  position: relative;
+  background-color: #f1f1f1;
+}
+/* line 160, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post .link_to_profile a {
+  color: #5BA304;
+}
+/* line 164, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post .poster-info {
+  height: 100%;
+}
+/* line 167, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post .reply {
+  background-color: #d3d3d3;
+  min-height: 50px;
+}
+/* line 171, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post .reply .btn-reply {
+  background: #74A230;
+  border-radius: 0;
+  border: none;
+  color: white;
+  height: 34px;
+  width: 60px;
+  padding: 7px;
+}
+
+/* line 183, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.forum-post-title {
+  color: white;
+  background: black;
+  padding: 5px;
+  min-height: 30px;
+}
+
+/* line 190, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.poster-info {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* line 195, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.post-message {
+  padding: 15px;
+}
+
+/* line 199, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.form-group-registrationLabel {
+  padding-top: 7px;
+}
+
+/* line 203, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/forums.css.scss */
+.registration-font-increase {
+  font-size: larger;
+}

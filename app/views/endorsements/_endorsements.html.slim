@@ -1,0 +1,12 @@
+- endorsements.each do |endorsement|
+  div.each_endorsement_container.row
+    div.picture_box
+      = create_profile_pic(endorsement.endorser, 70)
+
+    div.right_section
+      - if !endorsement.endorser.blank?
+        h4 = endorsement.endorser.name
+        p "#{endorsement.message.strip}"
+        - if ([endorsement.endorser_id ,endorsement.endorsee_id].include?(current_user.id))
+          span.achivement_delete
+	        = link_to "Delete", '#', class: 'btn btn-danger delete_endorsement', data: {ach_id: endorsement.id}

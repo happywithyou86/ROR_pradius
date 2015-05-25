@@ -1,0 +1,44 @@
+div.modal.fade#friend-request tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+        center
+          h2 = "Request #{@data[:user].name} to be your friend"
+        br
+        div.row
+          div.col-md-12
+            button.close type="button" aria-hidden="true" &times;
+          = form_for @data[:pending_friend], url: { action: "create", controller: "pending_friends" }, html: {  }, remote:true do |pending_friend_form|
+            = pending_friend_form.hidden_field :requester_id, value: current_user.id
+            = pending_friend_form.hidden_field :requestee_id, value: @data[:user].id
+            div.col-md-5
+              div How do you know #{@data[:user].name}
+              div.form-group#pending_friends_form
+                = pending_friend_form.radio_button :how_you_know_him,"Online Poker Room", style: "margin-right:4px;"
+                = label :how_you_know_him, "Online Poker Room", value: "Online Poker Room"
+
+              div.form-group#pending_friends_form
+                = pending_friend_form.radio_button :how_you_know_him, "Online Casino Room", style: "margin-right:4px;"
+                = label :how_you_know_him, "Online Casino Room", value: "Online Casino Room"
+
+              div.form-group#pending_friends_form
+                = pending_friend_form.radio_button :how_you_know_him, "Friend", style: "margin-right:4px;"
+                = label :how_you_know_him, "Friend", value: "Friend"
+
+              div.form-group#pending_friends_form
+                = pending_friend_form.radio_button :how_you_know_him, "Other", style: "margin-right:4px;"
+                = label :how_you_know_him, "Other", value: "Other"
+
+              div.form-group#pending_friends_form
+                = pending_friend_form.radio_button :how_you_know_him, "I don't know #{@data[:user].name}", style: "margin-right:4px;"
+                = label :how_you_know_him, "I don't know #{@data[:user].name}", class: "inline_label", value: "I don't know #{@data[:user].name}"
+
+
+
+            div.col-md-6
+              div Include a personal message: <span id='pending_friend_greyFont'>(optional)</span>
+              br
+              = pending_friend_form.text_area :message, size: "37x5", class: "form-control", placeholder: "I'd like to add you to my poker network."
+              br
+              center
+                button.btn.btn-success SEND REQUEST

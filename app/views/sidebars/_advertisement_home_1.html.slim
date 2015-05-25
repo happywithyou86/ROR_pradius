@@ -1,0 +1,6 @@
+- @advertisement_1 = advertisement_section_1(request.fullpath)
+- if !@advertisement_1.blank?
+  - if   @advertisement_1.image.url.include?("missing.png")
+    =link_to image_tag('blank-profile.png', width:  '100px', height:  '100px', class:  "img-responsive advertisement_image" ), "#{ @advertisement_1.url.include?("http") ? @advertisement_1.url : 'http://'+ @advertisement_1.url }",target:"_blank"
+  - else
+    =link_to image_tag(@advertisement_1.image.url, width:  '100px', height:  '100px', class:  "img-responsive advertisement_image" ), "#{ @advertisement_1.url.include?("http") ? @advertisement_1.url : 'http://'+ @advertisement_1.url }",target:"_blank"

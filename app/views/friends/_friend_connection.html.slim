@@ -1,0 +1,16 @@
+- if current_user
+  - if user.pending_friends.map(&:requester_id).include?(current_user.id) || current_user.pending_friends.map(&:requester_id).include?(user.id)
+    div.profile_friend_message_button_container
+      center
+        = link_to "Request Sent", "#", class: "btn btn-default", id: "add-as-friend", disabled: 'disabled'
+  - elsif users_are_friends
+    div.profile_friend_message_button_container
+      center
+        = link_to "Send Message", "#", :class => 'btn btn-success send_message_to_user', id: 'new_message_user', data: { toggle: "modal", target: "#new_message_modal", user_name: user.name, user_id: user.id }
+  - elsif !current_user_profile
+    div.profile_friend_message_button_container
+      center
+        = link_to "Connect", "#", data: { toggle: "modal", target: "#friend-request" }, class: "btn btn-success", id: "add-as-friend"
+
+  / TODO: When request modal is accepted refresh user profile so button goes to pending
+  = render "pending_friends/pending_friends_modal"

@@ -1,0 +1,19 @@
+div.friend_box_container
+  .profile_picture
+    = create_profile_pic(friend, 100)
+
+  .name_block
+    - if !friend.blank? && !friend.name.blank?
+      p.name = link_to friend.name, my_profile_path(friend)
+      p.prid = "PR ID" + " " + friend.prid
+    - if !friend.user_location.nil? && !friend.user_location.location.blank? && !friend.user_location.hide_city && !friend.user_location.country.country_code.nil?
+      - if !friend.user_location.state_and_city.blank?
+        p #{friend.user_location.state_and_city}, #{check_usa(friend.user_location.country.country_code)}
+      
+    - elsif !friend.nil? && !friend.user_location.nil? && !friend.user_location.country.nil?
+      - if !friend.user_location.state_and_city.blank?
+        p #{friend.user_location.state_and_city}, #{friend.user_location.country.name}
+      
+
+
+

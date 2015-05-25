@@ -1,0 +1,10 @@
+- if !user.pending_friends.map(&:requester_id).blank? || !current_user.pending_friends.map(&:requester_id).blank?
+  - if user.pending_friends.map(&:requester_id).include?(current_user.id) || current_user.pending_friends.map(&:requester_id).include?(user.id)
+    div.text-center.header_smallbar
+      div.alert.alert-success.center Connection Request Sent - Pending Approval.
+div#profile-card
+  div.pull-left.profile-res-pic
+    = create_profile_pic(user, '175')
+  div.row
+    = render 'users/show_profile_card', user: user
+

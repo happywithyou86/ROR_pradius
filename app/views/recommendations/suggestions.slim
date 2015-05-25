@@ -1,0 +1,30 @@
+
+div.row  
+
+  div#main_section.box
+    - if @users.blank?
+      h1.text-center No Users Found
+
+    div id="suggestion-carousel" class="carousel slide marleft5px" data-ride="carousel" data-interval="false"
+      h3 =params[:title] if !params[:title].blank?
+
+      div.friends_list_container class=""
+        - @users.each_with_index do |users, n|
+          div.friends_list_container.item class="#{n == 0 ? "active" : ""}"
+            - users.each_with_index do |user, num|
+              = render 'friends/friend_box', friend: user
+
+
+      a.pull-left href="#suggestion-carousel" data-slide="prev"
+        button.btn.btn-black.pull-left id="contact_previous_button" 
+          span class="glyphicon glyphicon-chevron-left"
+          span Previous
+
+      a.pull-right href="#suggestion-carousel" data-slide="next"
+        button.btn.btn-black.pull-left id="contact_next_button" 
+          span Next
+          span class="glyphicon glyphicon-chevron-right"
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

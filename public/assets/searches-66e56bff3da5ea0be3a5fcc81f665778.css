@@ -1,0 +1,29 @@
+/* line 5, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/searches.css.scss */
+#search-forum-form {
+  margin-bottom: 40px;
+}
+
+/* line 9, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/searches.css.scss */
+.mini-profile-card {
+  background-color: #d3d3d3;
+  padding-left: 0px;
+  margin-bottom: 20px;
+  height: 75px;
+  width: 380px;
+  overflow: hidden;
+}
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/searches.css.scss */
+.mini-profile-card img {
+  margin-right: 15px;
+  min-width: 75px;
+  width: 75px !important;
+  min-height: 75px !important;
+}
+/* line 22, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/searches.css.scss */
+.mini-profile-card .user-details {
+  padding: 8px 17px;
+}
+/* line 24, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/searches.css.scss */
+.mini-profile-card .user-details .prid {
+  font-weight: normal !important;
+}

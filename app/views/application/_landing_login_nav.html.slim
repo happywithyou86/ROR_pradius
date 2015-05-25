@@ -1,0 +1,8 @@
+
+div#login_form_container
+  div#forgot_password
+	=link_to "Forgot your password?","contact?forgot=true"
+  form method="POST" action="/user_sessions"
+    input#email_login_field.form-control.login_nav name="email" type="text" placeholder="Email" 
+    input#password_login_field.form-control.login_nav name="password" type="password" placeholder="Password" 
+    button.btn.btn-success.sign-up-btn type="submit" Sign In

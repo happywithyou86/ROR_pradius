@@ -1,0 +1,8 @@
+- if recommendation.blank?
+  div No recommendations yet.
+
+- recommendation.each do |recommendation|
+  = recommendation.user.name
+  div.star-rating data-rating="#{recommendation.rating}"
+  br
+  = recommendation.comment

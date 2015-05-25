@@ -1,0 +1,72 @@
+
+/***************************************/
+/* New Message Modal */
+/***************************************/
+
+$form_field_width: 230px;
+
+
+// Autocomplete drop down
+ul.ui-autocomplete.ui-menu {
+  z-index: 1500;
+}
+
+a#send_message_button {
+  color: #FFF !important;
+}
+
+
+
+.modal-body {
+
+
+  .message_sent_success {
+    background-color: #47A447;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.message_form_box {
+  background-color: #CCC;
+  text-align: center;
+
+
+
+  .form_element {
+    width: $form_field_width;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #search_friends_field {
+    height: 40px;
+  }
+
+  #search_friends_body {
+    height: 110px;
+  }
+
+
+  // Error sending message
+  .error {
+    margin: 0 auto;
+    width: $form_field_width;
+    background-color: #EE6060;
+    padding: 5px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+}
+.header_bar {
+  width: 1190px;
+  margin:0px auto;
+}

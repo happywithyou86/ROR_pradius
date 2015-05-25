@@ -1,0 +1,116 @@
+/***************************************/
+/* Contact Us Page */
+/***************************************/
+.contact_us_container
+{
+  width:820px !important;;
+}
+#contact_previous_button {
+  padding:2px 6px;
+}
+
+#contact_next_button {
+    padding:2px 6px;
+  }
+
+
+.contact_form_container {
+  background-color: #ffffff;
+  padding: 20px 20px 20px 0px;
+
+  width: 550px;
+
+  #contact_us_form {
+
+    .form_element {
+      margin-bottom: 15px;
+    }
+   label[for=email] , label[for=message] {
+      padding-right:60px;
+    }
+     label[for=name]{
+     padding-right:58px;
+     }
+     label[for=subject]{
+      padding-right:45px;
+    }
+
+     label[for=issue_type]{
+      position:relative;
+      top:9px;
+    }
+
+    .contact_form_field {
+      width: 398px;
+      height: 40px;
+
+    }
+
+    input contact_form_text_area{
+      color: #000000;
+    }
+    #issue_type {
+      color:#a4a4a4;
+
+      text-align: left;
+    }
+    .gray{
+      color: #A1A1A1;
+      }
+    
+    .contact_form_text_area {
+      width:398px;
+      height:150px;
+      margin-left:97px;
+      margin-top:-28px;
+
+    }
+    .simple_captcha
+    {
+      margin-left: 91px;
+    }
+    #captcha{
+    font-weight:bold;
+    }
+    .select_box {
+      background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat scroll 366px 10px #FFFFFF;
+        border: 1px solid #CCCCCC;
+    border-radius: 0;
+    height: 39px;
+    margin-left: 96px;
+    margin-top: -24px;
+    overflow: hidden !important;
+    padding-right: 100px;
+    width: 398px;
+
+      select {
+        background: transparent;
+        width: 410px;
+
+        height: 34px;
+        color: #A9A9A9;
+        cursor:pointer;
+        margin: 0;
+        padding-left: 2px;
+        border: 0;
+        margin-top:9px;
+
+
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+
+      }
+      text{
+      padding-top:2px;
+      }
+    }
+
+    #contact_submit {
+      width: 120px;
+      height:45px;
+
+    }
+  }
+}
+

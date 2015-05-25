@@ -1,0 +1,30 @@
+meta content="poker social network upgrade plan, online poker community, poker radius" name="keywords"
+meta content="Upgrade your Poker Radius plan for more in our online poker networking community. Be more social, get more answers & improve your play." name="description"
+
+div.row
+	div#main_section.box
+	  p = image_tag( 'banner1.jpg', width: '100%')
+	  p = image_tag( 'Upgrade_image.jpg', width: '100%')
+	  div.pull-right
+	  	div.pull-right.upgrade-button-container
+	  		center
+	  			= link_to "Upgrade Now", user_plans_new_path + "#monthly", class: 'btn btn-success upgrade-button'
+	  	div.pull-right.upgrade-button-container
+	  		center
+	  			= link_to "Upgrade Now", user_plans_new_path + '#annually', class: 'btn btn-success upgrade-button'
+	div#sidebar.box.sidebar
+		- if current_user
+			= render "sidebars/profile_side_bar", user: current_user
+
+javascript:
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+  { (i[r].q=i[r].q||[]).push(arguments)}
+  
+  ,i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-42438812-1', 'www.PokerRadius.com');
+  ga('set', 'page', '/user_plans/upgrade');
+  ga('send', 'pageview');
+  

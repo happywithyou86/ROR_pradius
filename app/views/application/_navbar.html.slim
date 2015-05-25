@@ -1,0 +1,65 @@
+div.modal.hidden#premium tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+        button.close.premium_button type="button "data-dismiss="modal" aria-hidden="true" &times;
+        div.premiumplanbox
+          = image_tag("premium_banner.jpg")
+          div.premiumplancontent Oops! Only premium members can access this section. Click on Go Premium! to learn more about the premium plan features and access this section today.
+
+          div.width220
+            span = link_to "No Thanks", "#", class: 'btn btn-default pull-left no_subscription'
+            span.pull-right = link_to "Go Premium!", user_plans_upgrade_path, class: 'btn btn-success premeium_button'
+
+header
+  div#top-container
+  	div#top-container-content
+
+	    div#logo_container
+	      = link_to '/' do
+	        = image_tag 'poker-radius-online-social-poker-community.png', :class  => "poker radius logo"
+
+	    - if current_user
+	      = render "application/current_user_nav"
+	    - else
+	      = render "application/login_nav"
+
+	- if current_user
+		div#bottom_nav
+			div#bottom_nav-content
+			  ul.general_nav_list
+			    li = link_to 'HOME', root_path
+			    li = link_to 'PROFILE', my_profile_path(current_user)
+			    li.contacts_count = link_to "CONTACTS (#{Friend.friend_ids_of_user(current_user).count})", contacts_index_path
+			    li#forum = link_to "GROUPS", forum_path
+			    li.check_subscription#online_poker = link_to "DASHBOARD", dash_online_poker_path
+
+			  div#upgrade_container.pull-right
+			    - if current_user and current_user.user_subscription || current_user.plan_type== "free_access"
+			      p Premium Plan
+			    - elsif current_user
+			      a href="#{user_plans_upgrade_path}" UPGRADE
+
+
+
+javascript:
+	$(".check_subscription").click(function(){
+		var id = $(this).attr("id")
+  	$.ajax({
+  		type: "get",
+  		url: "/is_subscibed",
+	    success: function(data){
+      	if (data["subs"]){
+      		$('#premium').removeClass('hidden');
+  	  		$('#premium').modal('show');
+      	}
+      	else{
+      		window.location.href = $("#"+id).find("a").attr("href")
+      	}
+	    }
+  	})
+  	return false;
+	})
+	$(".no_subscription").click(function(){
+      $(".close").trigger("click")
+    })

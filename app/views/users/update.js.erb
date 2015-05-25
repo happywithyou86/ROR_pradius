@@ -1,0 +1,8 @@
+if ("<%= @user_updated %>" == "true") {
+     window.location.href = "/" +  "<%= current_user.prid %>"
+} else {
+    $("#form_errors_update").html("<br><br>" + '<% if current_user.errors.any? %><div id="form_errors_update"><div class="alert alert-error">' + "The form contains " + "<%= pluralize(current_user.errors.count, "error") %>" + "." + '</div><ul><% current_user.errors.full_messages.each do |msg| %><li>' +  "*" + '<%= msg %> </li><% end %></ul></div><% end %>');
+     if ("<%= params[:user][:user_location_attributes][:postal_code] != current_user.user_location.postal_code %>"){
+        $("#postal_error").html("Invalid Postal Code")
+    }
+}

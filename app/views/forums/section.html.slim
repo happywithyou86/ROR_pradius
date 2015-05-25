@@ -1,0 +1,65 @@
+div.row
+  div#main_section.box
+
+    form#search-forum-form action="/forums/search_threads" method="GET"
+      = hidden_field_tag "forum_section_id", params[:id]
+      ul
+        div class="form-group"
+          li class="col-md-11 col-sm-11"
+            input class="form-control" name="search_term" placeholder="Search" type="text"
+          li class="col-md-1 col-sm-1"
+            button class="btn btn-default" type="submit" Find
+
+    div.clearfix
+    br
+    = render "breadcumb"
+
+    div
+      a href="/forums/thread/#{@data[:forum_section].id}/new"
+        button.btn.btn-success Suggest New Thread
+
+      div.pull-right
+        span = will_paginate @data[:threads], :previous_label => '<', :next_label => '>'
+
+    br
+
+    div.bold = "Forum: " + @data[:forum_section].name
+
+    div = @data[:forum_section].description
+
+    div#forum-section-threads-title
+      div.col-md-6 TITLE/THREAD STARTER
+      div.col-md-3 REPLIES/VIEWS
+      div.col-md-3 LAST POST
+
+    div
+      - @data[:threads].each do |thread|
+        div.forum-threadcontainer
+          div.col-md-6
+            div.name
+              span.poker_chip = image_tag 'poker_chip.png', size: "36x36"
+              | &nbsp;&nbsp;&nbsp;
+              a.green_goddamnit_no_underline style="color:#5BA304;" href="/forums/thread/#{thread.id}" = thread.name
+            - if !thread.user.blank?
+              div = "Started by " + thread.user.name + ", " + time_ago(thread.created_at)
+          div.col-md-3
+            div
+              span.bold Replies:&nbsp;
+              span = " " + thread.num_of_replies.to_s
+            div
+              span.bold Views:&nbsp;
+              span = " " + thread.views.to_s
+          div.col-md-3
+            div.name
+              a.green_goddamnit_no_underline style="color:#5BA304;" href="/forums/thread/#{@data[:last_post].forum_thread.id}" = @data[:last_post].forum_thread.name
+            -   if !@data[:last_post].user.blank?
+              div.name
+                span = "by "
+                a.green_goddamnit style="color:#5BA304;" href="/#{@data[:last_post].user.prid}" = @data[:last_post].user.name
+            div = time_ago(@data[:last_post].created_at)
+      div.pull-right
+        span = will_paginate @data[:threads], :previous_label => '<', :next_label => '>'
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

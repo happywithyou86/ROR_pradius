@@ -1,0 +1,23 @@
+/* line 1, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/like_comment.css.scss */
+.like_status {
+  color: #5BA304;
+  text-decoration: none;
+}
+
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/like_comment.css.scss */
+.like_status:hover {
+  color: #5BA304;
+  text-decoration: none;
+}
+
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/like_comment.css.scss */
+.comment_status {
+  color: #5BA304;
+  text-decoration: none;
+}
+
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/like_comment.css.scss */
+.comment_status:hover {
+  color: #5BA304;
+  text-decoration: none;
+}

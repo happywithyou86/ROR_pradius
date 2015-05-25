@@ -1,0 +1,59 @@
+/***************************************/
+/* Invite Friends */
+/***************************************/
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results {
+  text-align: center;
+}
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invite_friends_form_container {
+  position: relative;
+  margin: 0 auto;
+  width: 290px;
+  padding: 10px;
+  background-color: #CCC;
+}
+/* line 18, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invite_friends_form_container h3 {
+  font-size: 1.3em;
+  margin: 0;
+}
+/* line 27, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invite_friends_form_container #invite_friends_form input[type="text"] {
+  width: 96%;
+  height: 3em;
+}
+/* line 32, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invite_friends_form_container #invite_friends_form input[type='submit'] {
+  width: 60%;
+  height: 3em;
+}
+/* line 40, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invite_friends_form_container #invite_friends_form .form_fields {
+  margin-bottom: 10px;
+}
+/* line 49, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invitation_sent {
+  width: 290px;
+  background-color: #BDDA9A;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 2.5em;
+}
+/* line 56, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+.no_results .invitation_sent p {
+  margin: 0;
+  padding: 8px 0;
+  font-weight: 500;
+  color: #393939;
+}
+
+/* line 66, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+#pending_friends_form {
+  margin-bottom: 0px;
+}
+
+/* line 70, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/invite_friends.css.scss */
+#pending_friend_greyFont {
+  color: #666666;
+}

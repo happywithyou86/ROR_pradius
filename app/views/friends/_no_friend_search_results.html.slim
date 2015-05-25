@@ -1,0 +1,23 @@
+div.no_results style="display:none;"
+  h2 No results were found based on your search.
+  p Looking for someone not yet on Poker Radius? Invite them to connect!
+
+  / = render "friends/invite_friends"
+  div.invite_friends_form_container
+
+    = form_tag('/users/friends/invite', id: 'invite_friends_form', remote: true) do
+
+      = text_field_tag :first_name, nil, :placeholder => 'First Name', class: 'form_fields'
+      br
+      = text_field_tag :email, nil, :placeholder => 'Email', class: 'form_fields'
+      br
+      = submit_tag 'SEND INVITE', class: 'btn btn-success'
+
+
+  div.sent_container
+    div.invitation_sent style='display: none;'
+      p INVITATION SENT!
+
+
+
+

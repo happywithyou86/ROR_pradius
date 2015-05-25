@@ -1,0 +1,25 @@
+tr
+  td = tourn.tournaments_and_games_date
+  td.profit_green = tourn.location
+  td = tourn.title
+  td = tourn.buy_in.to_s
+  td = tourn.players
+  td = tourn.duration
+  td = tourn.rank
+  td.text-center
+    span
+      - tourn.cards.each do |card|
+        = card.number
+        = image_tag card.suit, :width => '10px'
+
+  - if tourn.win_loss.to_i > 0
+    td.profit_green #{add_dollar_sign(tourn.win_loss)}
+
+  - elsif tourn.win_loss.include?('(')
+    td.loss_red #{add_dollar_sign(tourn.win_loss)}
+
+  - else
+    td #{add_dollar_sign(tourn.win_loss)}
+
+  -if edit
+    td.padding_lft_2px= link_to 'Edit', '#', class: 'edit_tourn btn btn-success', data: {tourn_id: tourn.id},id: 'edit_tourn_'  + tourn.id.to_s

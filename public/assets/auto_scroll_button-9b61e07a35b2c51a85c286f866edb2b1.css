@@ -1,0 +1,11 @@
+/***************************************/
+/* Auto Scroll Button Styling */
+/***************************************/
+/* line 5, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/auto_scroll_button.css.scss */
+#auto-scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 60px;
+}

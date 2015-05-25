@@ -1,0 +1,331 @@
+/* line 4, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+header {
+  margin-bottom: 20px;
+}
+
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container {
+  background-color: #000;
+  min-width: 1190px;
+}
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #top-container-content {
+  width: 1190px;
+  margin: 0px auto;
+}
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #logo_container {
+  display: inline-block;
+}
+/* line 19, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #logo_container .logo {
+  height: 120px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 10px;
+}
+/* line 29, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #search_form_container {
+  display: inline-block;
+  width: 777px;
+  margin-left: 20px;
+  padding: 0;
+}
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #search_form_container .nav_form {
+  padding: 0;
+}
+/* line 37, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #search_form_container .nav_form .form-control {
+  border-radius: 0;
+  width: 87%;
+  display: inline;
+}
+/* line 44, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #search_form_container .nav_form .search_button {
+  width: 10%;
+  min-height: 34px;
+}
+/* line 53, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #nav_icons {
+  position: relative;
+  display: inline-block;
+  margin-left: 7%;
+  top: 12px;
+}
+/* line 59, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #nav_icons .dropdown {
+  float: left;
+}
+/* line 62, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #nav_icons .dropdown .fa {
+  font-size: 25px;
+  color: #969590;
+  padding: 5px;
+}
+/* line 67, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #nav_icons .dropdown .fa:hover {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 76, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #login_form_container {
+  width: 42%;
+  position: relative;
+  top: 3em;
+}
+/* line 81, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#top-container #login_form_container .login_nav {
+  width: 35%;
+  display: inline;
+  border-radius: 0;
+  margin-right: 10px;
+}
+
+/* line 92, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav {
+  background-color: #3C3C3C;
+  min-width: 1190px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 98, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav #bottom_nav-content {
+  width: 1190px;
+  margin: 0px auto;
+}
+/* line 103, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav .general_nav_list {
+  margin: 0;
+}
+/* line 106, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav .general_nav_list li {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* line 111, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav .general_nav_list li a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+/* line 119, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav #upgrade_container {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+}
+/* line 124, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#bottom_nav #upgrade_container a, #bottom_nav #upgrade_container p {
+  color: #FFF;
+  text-decoration: none;
+}
+
+/***************************************/
+/* Drop Down Stylings */
+/***************************************/
+/* line 170, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu {
+  background: #4E4E4E;
+  padding: 7px 7px 15px 7px;
+  width: 400px !important;
+}
+/* line 177, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu #dropdown-title {
+  margin-top: 5px;
+  color: white;
+  margin-bottom: 10px;
+}
+/* line 185, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .unread:hover {
+  background-color: #74A230 !important;
+}
+/* line 193, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .no_requests_container {
+  padding: 20px;
+  background-color: #FCFCFC;
+  text-align: center;
+  margin-bottom: 4px;
+}
+/* line 199, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .no_requests_container p {
+  margin: 0;
+}
+/* line 206, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .time_ago {
+  position: absolute;
+  right: 0;
+  top: -8px;
+  font-style: italic;
+}
+/* line 210, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .profile_picture {
+  width: 80px;
+  float: left;
+}
+/* line 215, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .requester_name {
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  width: 100px;
+}
+/* line 221, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .requester_name a {
+  color: #000 !important;
+  text-decoration: none;
+}
+/* line 227, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .action_buttons {
+  margin-left: 10px;
+  margin-top: 20px;
+  float: left;
+  width: 140px;
+  width: 155px !important;
+  margin-top: 15px;
+}
+/* line 232, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .action_buttons a {
+  border: 0;
+}
+/* line 236, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .request_container .action_buttons .connect_button {
+  margin-right: 5px;
+}
+/* line 245, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .new_message_icon {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  color: #A6E22D !important;
+}
+/* line 251, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .new_message_icon:hover {
+  color: white !important;
+}
+/* line 258, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .message_container {
+  position: relative;
+  color: #000;
+}
+/* line 262, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .message_container .time_ago {
+  position: absolute;
+  right: 0;
+  top: -8px;
+  font-style: italic;
+}
+/* line 266, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .message_container .profile_picture {
+  width: 80px;
+  float: left;
+}
+/* line 270, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .message_container .message_name {
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  width: 120px;
+  font-weight: normal;
+}
+/* line 278, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .message_container .message_snippit {
+  margin-left: 10px;
+  margin-top: 20px;
+  float: left;
+  width: 140px;
+}
+/* line 286, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .see_all {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+/* line 292, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .see_all p {
+  margin-bottom: 0;
+}
+/* line 296, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .see_all a.see_all_link {
+  width: 100%;
+  display: inline-block;
+  background-color: #FCFCFC;
+  height: 30px;
+  padding-top: 5px;
+  color: #000 !important;
+}
+/* line 305, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.dropdown-menu .see_all a.see_all_link:hover {
+  color: #FFF !important;
+  text-decoration: none;
+  background-color: #3C3C3C;
+}
+
+/* line 315, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#messages_drop li {
+  background: white;
+  color: black !important;
+  padding: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  background-color: #FCFCFC;
+}
+/* line 323, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#messages_drop li:hover {
+  background-color: #c3c3c3 !important;
+}
+
+/* line 331, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#friend_drop li {
+  background-color: #FCFCFC;
+  color: black !important;
+  padding: 10px;
+  margin-bottom: 4px;
+}
+/* line 338, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#friend_drop li .btn-default {
+  background-color: #D3D3D3;
+}
+
+/***************************************/
+/* Notification Icon Styling */
+/***************************************/
+/* line 356, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+#nav_messages,
+#nav_friends {
+  position: relative;
+}
+
+/* line 360, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.notification_badge {
+  position: absolute;
+  top: -12px;
+  right: 2px;
+  background-color: #d4130d;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0px 3px;
+}
+
+/***************************************/
+/* Settings Drop Down Stylings */
+/***************************************/
+/* line 378, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.settings_drop {
+  width: 100px !important;
+}
+/* line 387, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.settings_drop #settings_dropdown a {
+  background-color: #FCFCFC;
+  color: #3C3C3C;
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  text-align: center;
+}
+/* line 395, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/navbar.css.scss */
+.settings_drop #settings_dropdown a:hover {
+  background-color: #C3C3C3;
+  text-decoration: none;
+}

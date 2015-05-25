@@ -1,0 +1,40 @@
+= form_for Recommendation.find(recommendation.id), html: {class: 'edit_recommendation_form recommendation_form_style'} do |f|
+  = f.hidden_field :rating, class: 'edit_recommendation_rating'
+  = f.hidden_field :recId, value: recommendation.id
+
+
+  div
+
+    = f.text_field :room_name, placeholder: 'Poker Room', class: 'rec_room_field'
+
+    span
+      | How would you rate this poker room?
+      span class="edit_rec_rating_#{recommendation.id} edit_stars"
+
+  div.justification_div
+    p
+      | Rating Justification:
+      = f.text_area :comment, placeholder: "Let everyone know your opinion of this poker room..", class: 'rec_comment_field'
+
+
+  = f.submit "Save", class: "btn btn-success"
+  = link_to "Delete", '#', class: 'btn btn-danger delete_recommendation', data: {rec_id: recommendation.id}
+
+
+javascript:
+  var score = #{raw recommendation.rating};
+  var id = #{raw recommendation.id};
+  $('.edit_rec_rating_' + id).raty({
+    path: '/assets',
+    hints: ['Awful', 'Poor', 'Fair', 'Good', 'Excellent'],
+    score: score
+  });
+  recommendLimit = 250;
+  $(document).ready( function(){
+    $("input").each( function(index) {
+      $(".rec_comment_field").each( function(index) {
+        $(this).attr('maxlength',recommendLimit);
+      });
+    });
+  });
+

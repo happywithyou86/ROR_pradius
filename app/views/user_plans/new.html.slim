@@ -1,0 +1,130 @@
+div.row
+  div#main_section.box
+    div.row
+      div.col-xs-8
+        div.payment-title-main Upgrade Account
+      div.col-xs-4 style="text-align:right;"
+        = image_tag( 'powered-by-stripe.png', height: '50', width: '179')
+    div.row
+      div.col-xs-12
+        = form_for @user_subscription, url: user_plans_create_path do |f|
+
+          = f.hidden_field :stripe_card_token
+          = text_field_tag :card_plan, nil, name: "plan", id: "card_plan_hidden_variable", class: "form-control", value: "Monthly", style: "display:none"
+
+          div.row
+            div.col-xs-12.payment-section
+              div.payment-title-sub Payment Summary
+              span Please review the following details for this transaction.
+          div.row
+            div.col-xs-12.payment-section
+              div.row id="payment_monthly_container"
+                div.col-xs-4
+                  input id="payment_monthly_plan" type="radio"
+                  | Premium Monthly Plan
+                div.col-xs-8 $4.99 (Billed Monthly)
+              div.row id="payment_annually_container"
+                div.col-xs-4
+                  input id="payment_annual_plan" type="radio"
+                  | Premium Annual Plan
+                div.col-xs-8 $39.99 (Billed Annually)
+
+          div.row
+            div.col-xs-12.payment-section
+              div.payment-title-sub Billing Information 
+              span Enter your payment details below. (All fields below required)
+          div.row
+            div.col-xs-6
+              div.col-xs-4.subscription-label First Name
+              div.col-xs-8.form-group
+                = text_field_tag :card_first_name, nil, name: nil, class: "form-control" , required: ""
+            div.col-xs-6
+              div.col-xs-4.subscription-label Last Name
+              div.col-xs-8.form-group
+                = text_field_tag :card_last_name, nil, name: nil, class: "form-control" , required: ""
+          div.row
+            div.col-xs-6
+              div.col-xs-4.subscription-label Address
+              div.col-xs-8.form-group
+                = text_field_tag :card_address1, nil, name: nil, class: "form-control" , required: ""
+            div.col-xs-6
+              div.col-xs-4.subscription-label Address 2
+              div.col-xs-8.form-group
+                = text_field_tag :card_address2, nil, name: nil, class: "form-control" 
+          div.row
+            div.col-xs-6
+              div.col-xs-4.subscription-label City
+              div.col-xs-8.form-group
+                = text_field_tag :card_city, nil, name: nil, class: "form-control" , required: ""
+            div.col-xs-6
+              div.col-xs-4.subscription-label State
+              div.col-xs-8.form-group
+                = text_field_tag :card_state, nil, name: nil, class: "form-control" , required: ""
+          div.row
+            div.col-xs-6
+              div.col-xs-4.subscription-label Zip/Postal Code
+              div.col-xs-8.form-group
+                = text_field_tag :card_zip, nil, name: nil, class: "form-control" , required: ""
+            div.col-xs-6
+              div.col-xs-4.subscription-label Country
+              div.col-xs-8.form-group
+                = text_field_tag :card_country, nil, name: nil, class: "form-control" , required: ""
+          div.row
+            div.col-xs-12.payment-section
+              div.payment-title-sub Credit Card Information
+          div.row
+              div.col-xs-12
+                div.col-xs-3.subscription-label Card Number
+                div.col-xs-6.form-group
+                  = text_field_tag :card_number, nil, name: nil, class: "form-control" , required: ""
+          div.row
+              div.col-xs-12
+                div.col-xs-3.subscription-label Security Code (CVC)
+                div.col-xs-3.form-group
+                  = text_field_tag :card_code, nil, name: nil, class: "form-control" , required: ""
+              div.col-xs-12
+                div.col-xs-3.subscription-label Expiration
+                div.col-xs-3.form-group
+                  = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control"}
+                div.col-xs-3.form-group
+                  = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", class: "form-control"}
+          div.row
+            div.col-xs-12.payment-section
+              div.payment-title-sub Promotional Code 
+              span.optionaltext 
+                = "(optional)"
+              span We sometimes post promotional codes on Facebook and Twitter!
+              | &nbsp;&nbsp;
+              = link_to image_tag( 'facebook-icon.gif', height: '32', width: '32'), 'http://goo.gl/FLrleb', :target => "_blank", class: "soft-social-icon"
+              | &nbsp;&nbsp;
+              = link_to image_tag( 'twitter-icon.png', height: '32', width: '32'), 'http://goo.gl/sFLKDj', :target => "_blank", class: "soft-social-icon"
+          div.row
+            div.col-xs-12.payment-section
+              div.col-xs-3.subscription-label Found one? Enter it here
+              div.col-xs-4.form-group
+                = text_field_tag :card_promotion, nil, name: nil, class: "form-control", name: "promotional_code"
+
+          div.row
+            div.col-xs-12.payment-section
+              div.payment-title-sub A confirmation of your order will be emailed to you.
+              span Payments powered and secured by stripe.com. No card information is stored on our server.
+
+          div id="stripe_error"
+            noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+          div.row.payment-section
+            div.col-xs-12
+              button id="payment_back_button" class =  "btn btn-black payment-back" Back
+              | &nbsp;&nbsp;
+              = f.submit "Submit", class: "btn btn-success payment-submit"
+          div.row
+            div.col-xs-12
+              h4 id="main-stripe-error-javascript" class="payment-error_messages"
+              - if @user_subscription.errors.any?
+                h4 id="main-stripe-error" class="payment-error_messages"
+                  - @user_subscription.errors.full_messages.each do |msg|
+                    div
+                      = msg
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

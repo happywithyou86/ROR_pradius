@@ -1,0 +1,17 @@
+- unless conversations.empty?
+
+  - conversations.each do |c|
+    - conversing_user = c.participants.select { |p| p != current_user }.first
+
+    - if c.is_unread?(current_user)
+
+      div.message_container.unread
+        = render "/user_messages/message_container", c: c, conversing_user: conversing_user, type: type
+
+    - else
+      div.message_container
+        = render "/user_messages/message_container", c: c, conversing_user: conversing_user, type: type
+  = will_paginate conversations
+-else
+  p.no_messages No Messages
+

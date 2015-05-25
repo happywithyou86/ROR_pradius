@@ -1,0 +1,90 @@
+#recommendations {
+
+  .each_recommendation {
+    margin-bottom:5px;
+    margin-top:5px;
+    position:relative;
+    padding-bottom:35px;
+    border-bottom:1px solid #ccc;
+
+    p {
+      font-size: 20px;
+      display: inline;
+      margin: 0;
+    }
+
+    .poker_room_link {
+      color: #5BA304;
+      font-size: 18px;
+    }
+  }
+
+  // edit recommendation button
+  .edit_recommentation {
+    height: 21px;
+    width: 50px;
+    padding: 0;
+  }
+
+  .btn {
+    margin-top: 5px;
+  }
+
+  .btn-danger {
+    margin-left: 5px;
+  }
+
+  // Form Styling
+  .recommendation_form_style {
+
+    #rate_room {
+      margin-top: 10px;
+    }
+
+    #rec_url_field {
+      margin-left: 10px;
+      width: 220px;
+    }
+
+
+    .rec_room_field {
+      width: 200px;
+      height: 25px;
+    }
+
+    .rec_comment_field {
+      width: 80%;
+      height: 25px;
+      margin-left: 5px;
+    }
+
+    .justification_div {
+      margin-top: 10px;
+    }
+
+    select,span {
+      margin-left: 15px;
+    }
+
+    select {
+      border: 1px solid #919291;
+      cursor: pointer;
+      font-size: 10px;
+      overflow: hidden;
+      background-color: #FCFCFC;
+      box-shadow: none;
+      background-image: none;
+      border-radius: 0;
+    }
+
+    p {
+      font-size: 14px !important;
+    }
+
+  }
+}
+
+.no_recommendation{
+  font-weight: bold;
+  padding-left: 64px;
+}

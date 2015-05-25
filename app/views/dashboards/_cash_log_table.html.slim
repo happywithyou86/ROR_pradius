@@ -1,0 +1,45 @@
+table#cash_table.log_styling
+  col width="60px"
+  col width="135px"
+  col width="140px"
+  col width="100px"
+  col width="130px"
+  col width="100px"  
+
+  tr
+    th Date
+    th Location
+    th Stake
+    th Duration
+    th.text-center Best Hand
+    th Win/Loss
+    th.actionhead Action
+
+  - @cash_logs.each do |log|
+    = render "dashboards/cash_log_row", log: log, edit: edit
+
+  tr#cash_form_row
+    td =  text_field_tag :tournaments_and_games_date, nil,class:"cash_form",id: "cash_tournaments_and_games_date"
+    td = text_field_tag :location, nil, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete', id: 'cash_location'
+    td = text_field_tag :stake, nil, placeholder: 'ex. 1-2 NL', class: 'table_input_field', id: 'cash_stake'
+    td = text_field_tag :duration, nil, placeholder: 'ex. 3:47', class: 'table_input_field', id: 'cash_duration'
+    td.text-center = link_to "Best Hand", "#", data: { toggle: "modal", target: "#card_select_modal_cashlog" }
+    td = text_field_tag :win_loss, nil, placeholder: 'ex. $50 or -$50', class: 'table_input_field', id: 'cash_win_loss'
+   
+
+
+- if edit
+  div.new_log_button
+    = link_to 'New', '#', id: 'cash_new_save_btn', class: 'btn btn-success new_save_btn'
+
+javascript:
+  
+  $(".cash_form").datepicker({
+    buttonImage: '/assets/calendar_icon_smaller.png',
+    buttonImageOnly: true,
+    changeMonth: true,
+    changeYear: true,
+    showOn: 'both',
+  });
+  $("#cash_tournaments_and_games_date").hide();
+

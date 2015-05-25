@@ -1,0 +1,52 @@
+div.row
+  div#main_section.box style="min-height: 1100px;"
+
+
+    div.search_form
+      = render 'friends/search_form', user_id: @user.id
+
+    a#back_button.btn.btn-black href="#{my_profile_path(@user)}"
+      span.glyphicon.glyphicon-chevron-left
+      |  Back to Profile    
+    - if @friends.blank?
+      h1.text-center 
+    -if !params[:format].blank?    
+      h3 Connections for #{params[:format]}
+    div.clearfix
+    div id="suggestion-carousel" class="carousel slide" data-ride="carousel" data-interval="false"
+      div class="carousel-inner"
+        - @friends.each_with_index do |friends, n|
+          div.friends_list_container.item class="#{n == 0 ? "active" : ""}"
+            = render "friends/no_friend_search_results"
+
+            div.results
+              - friends.each_with_index do |friend, num|
+                = render 'friends/friend_box', friend: friend
+
+
+      a.pull-left href="#suggestion-carousel" data-slide="prev"
+        button.btn.btn-black.pull-left id="contact_previous_button" 
+          span class="glyphicon glyphicon-chevron-left"
+          span Previous
+
+      a.pull-right href="#suggestion-carousel" data-slide="next"
+        button.btn.btn-black.pull-left id="contact_previous_button" 
+          span Next
+          span class="glyphicon glyphicon-chevron-right"
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user
+
+
+
+
+
+
+
+javascript:
+  var friends = "#{@friends.flatten.map(&:name)}".replace(/&quot;|\[|\]/g, '').split(', ');
+  $('.search_friends_autocomplete').autocomplete({
+    source: friends
+  });
+

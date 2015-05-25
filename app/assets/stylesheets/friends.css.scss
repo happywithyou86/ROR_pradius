@@ -1,0 +1,28 @@
+/***************************************/
+/* Users Friends Page */
+/***************************************/
+
+.friends_container {
+  margin-top: 1.5em;
+
+  .each_friend {
+    padding: 0;
+    position: relative;
+
+    .profile_picture,
+    .name_block { float: left;}
+
+    .name_block {
+      margin-left: 2%;
+      padding-top: 1.5em;
+
+      a {
+        color: #5BA304;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+  }
+}
+

@@ -1,0 +1,17 @@
+div.col-md-6.each_friend
+  div.profile_picture
+    = create_profile_pic(friend, 100)
+
+  div.name_block
+    = link_to friend.name, profile_path(friend.prid)
+    - if !friend.user_location.location.blank? && !friend.user_location.hide_city
+      p #{friend.user_location.location}, #{friend.user_location.country.name}
+    - else
+      p = friend.user_location.country.name
+
+  br style="clear: left;"
+
+
+- if num.odd?
+  div.clearfix
+  br

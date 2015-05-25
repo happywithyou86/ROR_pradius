@@ -1,0 +1,27 @@
+div.modal.fade#new_message_modal tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+
+        .message_sent_success   style="display:none;"
+          p Message sent successfully!
+
+        .message_form_box
+          h1  New Message
+
+          .error style="display:none;"
+            p Error Sending Message
+
+          = form_tag '#', id: 'send_message_form' do
+            span.marginleft5px To: 
+            = hidden_field_tag :to_id, nil, id: 'send_message_id'
+            = text_field_tag :to, nil, :placeholder => "To: User Name", :id => "search_friends_field", class: 'form_element biginput grayinput', required: true 
+            br
+            = text_area_tag :body, nil, :placeholder => 'Message', :id => "search_friends_body", class: 'form_element biginput margintopless10px', required: true 
+            br
+            br
+            = link_to 'Send Message', '#', class: 'btn btn-success form_element', id: "send_message_button"
+            / # = submit_tag "Send Message", class: 'btn btn-success form_element'
+

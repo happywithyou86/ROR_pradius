@@ -1,0 +1,63 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// HOME PAGE
+// =========
+.email {
+  color: #4169e1;
+  text-decoration: underline;
+}
+
+.background-color-indicator {
+	display: none;
+}
+
+.home-image-wrapper {
+	background: white;
+	margin: 0 auto;
+	max-width:1190px;
+	.home-image {
+		margin: 0 auto;
+		width: 78%;
+		img {
+			width: 100%;
+			margin-top: 2em;
+		}
+	}
+	.text-center {
+		.sign-up-btn {
+			background: #74A230;
+			color: white;
+			border-radius: 1px;
+			border: none;
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.about-us-first-column {
+	width:94%;
+}
+
+.about-us-second-column {
+	width:90%;
+}
+
+.about-us-margin-fix {
+	padding:0px !important;	
+}
+
+.register_button{
+  padding:14px 33px;
+  font-weight:600;
+  margin-right:24px;
+  width:300px !important;
+}
+.main{
+  h2{
+    margin-left:234px;
+    margin-top:20px;
+    font-size:44px;
+  }
+}

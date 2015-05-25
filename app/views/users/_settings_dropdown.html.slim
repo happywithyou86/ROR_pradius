@@ -1,0 +1,17 @@
+.dropdown
+  = link_to "#", :id => "nav_settings", class: 'dropdown-toggle', data: {toggle: 'dropdown'} do
+    i.icon-2x.icon-gear.fa.fa-gear
+
+
+
+  ul.dropdown-menu.settings_drop.pull-right role="menu"
+    section#settings_dropdown
+      li
+        = link_to 'Account Settings', users_edit_path
+
+      li
+        = link_to 'Contact Support', contact_us_path
+
+      li
+        = link_to "Log Off", signout_path, method: :delete
+

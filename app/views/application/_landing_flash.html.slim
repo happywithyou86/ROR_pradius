@@ -1,0 +1,5 @@
+- if flash.any?
+  br
+  div.text-center.header_bar
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: "alert alert-success center")

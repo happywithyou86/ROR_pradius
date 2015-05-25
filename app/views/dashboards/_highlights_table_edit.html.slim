@@ -1,0 +1,157 @@
+= form_for :highlight ,  html: { id: 'dashboard_poker'}  do |f|
+  table#highlight_table
+    / Header
+
+    tr
+      th LIFE TIME HIGHLIGHTS
+
+      th TOURNAMENT PLAY
+
+      th.last_header CASH GAMES
+
+    / Row 1
+    tr
+      td
+        p.cell_title Total Career Profit/Loss
+        = f.text_field :total_profit_loss, placeholder: 'ex. $50', class: 'text_fields lifeinputtext'
+
+      td.paddrtlt10px
+        p.cell_title Total Played
+        = f.text_field :total_tournaments, placeholder: 'ex. 5', class: 'text_fields cashinputtext'
+
+      td
+        p.cell_title Most Consecutive Hours Played
+        = f.text_field :cash_consec_hours, placeholder: "ex. 10", class: 'text_fields cashinputtext'
+
+    / Row 2
+    tr
+
+      td
+        p.cell_title Most Profitable Poker Room
+        = f.text_field :most_prof_room, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete cashinputtext'
+      
+
+
+
+
+      td.paddrtlt10px
+        p.cell_title Most Consecutive Hours Played
+        = f.text_field :tourn_most_consec_hours, placeholder: "ex. 10", class: 'text_fields cashinputtext'
+
+      td
+        p.cell_title Best Winning Hand
+        p#best_hand_edit
+          span#best_hand_span
+            = render "dashboards/best_hand_span", cards: highlight.cards
+
+          = form_tag '#', id: 'best_hand_form' do
+            select#card_select1.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+
+            select#card_select2.card_select name="card_select"class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select3.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select4.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select5.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+
+          = link_to 'Save', '#', id: 'highlight_best_hand_save', data: {type: highlight.class.to_s},style: "display:none"
+
+
+    / Row 3
+    tr
+      td
+        p.cell_title Least Profitable Poker Room
+        = f.text_field :least_prof_room, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete lifeinputtext'
+
+
+      td.paddrtlt10px
+        p.cell_title Total Tournaments Cashed
+        = f.text_field :tourn_total_cashed, placeholder: 'ex. 3', class: 'text_fields cashinputtext'
+
+      td
+        p.cell_title Largest Win
+        = f.date_select :cash_largest_win_date, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+        = f.text_field :cash_largest_win_amount, id: 'cash_largest_win_amount_field', placeholder: '1000', class: 'date_amount_field inputtext47px'
+        br/
+        = f.text_field :cash_largest_win_room, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete cashinputtext'  
+      
+    / Row 4
+
+    tr
+      td
+        p.cell_title Most Profitable 24 hours
+
+        = f.date_select :most_prof_24_date, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+        = f.text_field :most_prof_24_amount, class: 'date_amount_field inputtext58px', placeholder: '1000'
+        = f.text_field :most_profitable_24_hours_room, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete lifeinputtext'  
+
+      td.paddrtlt10px
+        p.cell_title Total Tournaments Not Cashed
+        = f.text_field :tourn_total_not_cashed, placeholder: 'ex. 2', class: 'text_fields cashinputtext'
+
+      td
+        p.cell_title Worst Loss
+        = f.date_select :cash_worst_loss_date, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+        = f.text_field :cash_worst_loss_amount, placeholder: '(1000)', class: 'date_amount_field inputtext47px'
+        br
+        = f.text_field :cash_worst_loss_room, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete cashinputtext'
+
+
+
+    / Row 5
+    tr
+      td
+        p.cell_title Largest Loss in 24 Hours
+        = f.date_select :largest_loss_24_date, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+        = f.text_field :largest_loss_24_amount, class: 'date_amount_field inputtext58px', placeholder: '(1000)'
+        = f.text_field :largest_loss_in_24_hours, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete lifeinputtext'
+
+      td.paddrtlt10px
+        p.cell_title Best Overall Placement
+        = f.text_field :best_placement_room, placeholder: 'Select Poker Room', class: 'text_fields select_room_autocomplete cashinputtext'
+        br
+        = f.text_field :best_placement_name, placeholder: 'Tournament Name', class: 'text_fields cashinputtext'
+        br
+        = f.text_field :best_placement_rank, placeholder: '3rd place', class: 'text_fields cashinputtext'
+
+
+
+      td
+        p.cell_title Total Profit Days
+        = f.text_field :cash_total_profit_days, placeholder: 'ex. 11', class: 'text_fields cashinputtext'
+
+    / Row 6
+
+    tr
+      td
+        p.cell_title Years Playing
+        div.from_years
+          = f.label :years_playing_start, "From:"
+          = f.date_select :years_playing_start, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+          br
+        div.to_years
+          = f.label :years_playing_end, "To:"
+          = f.date_select :years_playing_end, :use_short_month => true, :start_year => 1970, :end_year => 2030, :order => [:month, :day, :year], :prompt => {month: 'MM', day: 'DD', year: 'YY' }
+
+      td.paddrtlt10px
+        p.cell_title Most Expensive Buy In Played
+        = f.text_field :most_exp_location, placeholder: 'Select Poker Room', class: 'text_fields select_room_autocomplete cashinputtext'
+        br
+        = f.text_field :most_exp_name, placeholder: 'Tournament Name', class: 'text_fields cashinputtext'
+        br
+        = f.text_field :most_exp_amount, placeholder: '3rd Place', class: 'text_fields cashinputtext'
+      td
+        p.cell_title Total Days of Loss
+        = f.text_field :cash_total_loss_days, placeholder: 'ex. 4', class: 'text_fields cashinputtext'
+
+  div.edit_btton_div
+    = f.submit 'Save Dashboard', class: 'edit_save_button save_online_poker_dashboard_detail btn btn-success', :id => 'edit_dashboard'
+

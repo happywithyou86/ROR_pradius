@@ -1,0 +1,108 @@
+div#form_errors
+div.row.registration-font-increase
+  = form_for @data[:user], url: { action: "create", controller: "users" }, html: { class: "col-md-12", id: "create-user-form" }, remote:true do |user|
+    <div style="display:none;">
+      div.col-md-6
+        div.form-group-registrationLabel
+          label.control-label Name
+      div.col-md-6
+        div.form-group
+          = user.text_field :name, class: "form-control", id:"register_name"
+    </div>
+    div.col-md-6
+      div.form-group-registrationLabel
+        label.control-label First Name
+    div.col-md-6
+      div.form-group
+        <input id="register_firstname" class="form-control" type="text">
+    div.col-md-6
+      div.form-group-registrationLabel
+        label.control-label Last Name
+    div.col-md-6
+      div.form-group
+        <input id="register_lastname" class="form-control" type="text">
+    div.col-md-6
+      div.form-group-registrationLabel
+        label.control-label Email
+    div.col-md-6
+      div.form-group
+        = user.text_field :email, class: "form-control"
+    div.col-md-6
+      div.form-group-registrationLabel
+          label.control-label Password
+          | &nbsp;
+          span 
+            = link_to image_tag('questionMarkIcon.jpg', width: '18px', style:'border-radius:3px;'), '#', :id=>"password_info_bubble", :style=>"color:#5BA304;"
+    div.col-md-6
+      div.form-group style="position: relative;"
+        = user.password_field :password, class: "form-control"
+        p.bubble style="font-size:12pt;color:white; padding:2px;height:106px;text-align:center;position:absolute;z-index:1;" = "Password Complexity Requirements: 8-15 characters, 1 number and 1 uppercase letter"
+    div.col-md-6
+      div.form-group-registrationLabel
+        label.control-label Confirm Password
+    div.col-md-6
+      div.form-group
+        = user.password_field :password_confirmation, class: "form-control"
+    div.col-md-6
+      div.form-group.maring-field
+        label.control-label Postal Code
+    div.col-md-6
+      div.form-group
+        = user.fields_for :user_location do |location|
+          = location.text_field :postal_code, class: "form-control"
+        div#postal_error_create
+    div.col-md-6.maring-drop
+      label.control-label Favorite Online Poker Room
+    div.col-md-6
+      div.form-group.online_poker
+        = user.fields_for :favorite_online_site do |online_site|
+          = online_site.select :online_site_id, @data[:online_sites], {prompt: 'Please Select One' }, {class: "form-control"}
+
+    div.col-md-6.maring-drop
+      label.control-label Favorite Casino Poker Room
+    div.col-md-6
+      div.form-group.casino_poker
+        = user.fields_for :favorite_casino do |favorite_casino|
+          = favorite_casino.select :casino_id, @data[:casinos], {prompt: 'Please Select One' }, {class: "form-control"}   
+
+
+    div.text-center
+      small
+        span
+          = "By clicking 'Submit Registration' you agree to the Poker Radius "
+        span 
+          = link_to "Privacy Policy", '/privacy_policy'
+        span 
+          = " and "
+        span
+          = link_to "Terms of Use", '/user_agreement'
+        span
+          = " and understand that you may receive communications from Poker Radius and can change my notification preferences at anytime in settings."
+
+    br
+
+    div.text-center
+      button.btn.btn-lg.btn-success type="submit" Submit Registration
+
+
+javascript:
+  var password = new LiveValidation('user_password');
+  password.add( Validate.Presence );
+  password.add( Validate.Inclusion, { within: [ '1' , '2', '3' ,'4','5','6','7','8','9','0'], partialMatch: true , failureMessage: "Please include one Number"})
+  password.add( Validate.Format, 
+              { pattern: /[A-Z]/, failureMessage: "Please Enter One Upper Case Letter" } );
+  password.add( Validate.Length, { minimum: 8, maximum: 15 } );
+  var password_confirmation = new LiveValidation('user_password_confirmation');
+  password_confirmation.add( Validate.Presence );
+  password_confirmation.add( Validate.Confirmation, { match: 'user_password' } );
+  $('#create-user-form').submit(function(){
+    if ($('.LV_invalid').length != 0)
+    {
+      return false;
+    }
+
+  });
+ 
+  
+
+  

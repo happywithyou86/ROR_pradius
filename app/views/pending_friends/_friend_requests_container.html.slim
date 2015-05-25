@@ -1,0 +1,13 @@
+- if @pending_friends.blank?
+  div.no_requests_container
+    p No New Requests
+
+- else
+
+  - @pending_friends.reverse.each do |pending_friend|
+    li.connection_request_li
+      = render "/pending_friends/friend_request_li", :pending_friend => pending_friend
+
+div.see_all
+  a.see_all_link href="/pending_friends/requests"
+   p See All

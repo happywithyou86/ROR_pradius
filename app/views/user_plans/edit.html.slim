@@ -1,0 +1,78 @@
+div.row
+  div#main_section.box
+    div.row
+      div.col-xs-8
+        div.payment-title-main Premium Plan Billing
+        p Use this form to update any billing information and click submit when complete. Once your billing information is updated, any previous infromation will be removed.
+      div.col-xs-4 style="text-align:right;"
+        = image_tag( 'powered-by-stripe.png', height: '50', width: '179')
+    div.row
+	    div.col-xs-12.payment-section
+	      div.payment-title-sub Update Billing Information 
+	      span Enter your payment details below. (All fields required) 
+    div.row
+      div.col-xs-6
+      	div.col-xs-4.subscription-label First Name
+      	div.col-xs-8.form-group
+      		= text_field_tag :card_first_name, nil, name: nil, class: "form-control" , required: ""
+      div.col-xs-6 
+      	div.col-xs-4.subscription-label Last Name
+      	div.col-xs-8.form-group
+      		= text_field_tag :card_last_name, nil, name: nil, class: "form-control" , required: ""
+    div.row
+      div.col-xs-6
+        div.col-xs-4.subscription-label Address
+        div.col-xs-8.form-group
+          = text_field_tag :card_address1, nil, name: nil, class: "form-control" , required: ""
+      div.col-xs-6
+        div.col-xs-4.subscription-label Address 2
+        div.col-xs-8.form-group
+          = text_field_tag :card_address2, nil, name: nil, class: "form-control" , required: ""
+    div.row
+      div.col-xs-6
+        div.col-xs-4.subscription-label City
+        div.col-xs-8.form-group
+          = text_field_tag :card_city, nil, name: nil, class: "form-control"
+      div.col-xs-6
+        div.col-xs-4.subscription-label State
+        div.col-xs-8.form-group
+          = text_field_tag :card_state, nil, name: nil, class: "form-control"
+    div.row
+      div.col-xs-6
+        div.col-xs-4.subscription-label Zip/Postal Code
+        div.col-xs-8.form-group
+          = text_field_tag :card_zip, nil, name: nil, class: "form-control"
+      div.col-xs-6
+        div.col-xs-4.subscription-label Country
+        div.col-xs-8.form-group
+          = text_field_tag :card_country, nil, name: nil, class: "form-control"
+    div.row
+      div.col-xs-12.payment-section
+        div.payment-title-sub Credit Card Information
+    div.row
+        div.col-xs-12
+          div.col-xs-3.subscription-label Card Number
+          div.col-xs-6.form-group
+            = text_field_tag :card_number, nil, name: nil, class: "form-control"
+    div.row
+        div.col-xs-12
+          div.col-xs-3.subscription-label Security Code (CVC)
+          div.col-xs-3.form-group
+            = text_field_tag :card_code, nil, name: nil, class: "form-control"
+        div.col-xs-12
+          div.col-xs-3.subscription-label Expiration
+          div.col-xs-3.form-group
+            = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control"}
+          div.col-xs-3.form-group
+            = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", class: "form-control"}
+    button#billing_information_update.btn.btn-success
+
+      | Submit
+  div#sidebar.box.sidebar
+    - if current_user and  current_user == @data[:user]
+      = render "sidebars/profile_side_bar", user: current_user
+    - elsif current_user and  current_user != @data[:user]
+      = render "sidebars/visitor_side_bar", user: current_user
+
+
+

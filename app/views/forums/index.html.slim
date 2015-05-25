@@ -1,0 +1,64 @@
+div.row
+  div#main_section.box
+
+    form#search-forum-form action="" method="GET"
+      ul
+        div class="form-group"
+          li class="col-md-11 col-sm-11"
+            input class="form-control" id="search_parameters" name="search_parameters" placeholder="Search" type="text"
+          li class="col-md-1 col-sm-1"
+            button class="btn btn-default" type="submit" Find
+
+    div.clearfix
+    br 
+    = render "breadcumb"
+    
+    div class="panel-group" id="accordion"
+
+      - @data[:forums].each_with_index do |forum, n|
+        div.panel.panel-default
+          div.panel-heading.clearfix
+            div
+              h4.panel-title
+                span = forum.name.upcase
+                span.pull-right
+                  i.glyphicon.pull-right class="#{n == 0 ? "glyphicon-plus" : "glyphicon-plus"}" data-toggle="collapse" data-parent="#accordion" href="#collapse#{forum.id.to_s}"
+          div.panel-collapse.collapse id="collapse#{forum.id.to_s}" class="#{n == 0 ? "" : ""}"
+            div.panel-body
+
+              - forum.forum_sections.each do |forum_section|
+                div.forum-section.row.paddbott5px.paddtop0px.marbot5px
+                  div.col-md-7
+                    h4
+                      span.poker_chip = image_tag 'poker_chip.png', size: "36x36"
+                      | &nbsp;&nbsp;&nbsp;
+                      a href="/forums/section/#{forum_section.id}" = forum_section.name
+                    div = forum_section.description
+                  div.col-md-2
+                    div 
+                      span.bold Threads:&nbsp;
+                      span = " " + forum_section.num_of_threads
+
+                    div 
+                      span.bold Posts:&nbsp; 
+                      span = " " + forum_section.num_of_posts
+                  div.col-md-3.autowrapcss
+                    = last_post(forum_section.last_post)
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user
+
+javascript:
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+  { (i[r].q=i[r].q||[]).push(arguments)}
+  
+  ,i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-42438812-1', 'www.PokerRadius.com');
+  ga('set', 'page', '/forum/index');
+  ga('send', 'pageview');
+  
+

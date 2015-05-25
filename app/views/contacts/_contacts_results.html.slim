@@ -1,0 +1,7 @@
+- friends.uniq.each_with_index do |friend, num|
+  - if profile_view
+    = render 'contacts/friend_box', friend: friend ,profile_view: true
+  - else
+    = render 'contacts/friend_box', friend: friend ,profile_view: false
+
+

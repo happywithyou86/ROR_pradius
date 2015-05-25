@@ -1,0 +1,24 @@
+tr
+  td = log.tournaments_and_games_date
+  td.profit_green = log.location
+  td = log.stake
+  td = log.duration
+  td.text-center
+    span
+      - log.cards.each do |card|
+        = card.number
+        = image_tag card.suit, :width => '10px'
+
+  - if log.win_loss.to_i > 0
+    td.profit_green #{add_dollar_sign(log.win_loss)}
+
+  - elsif log.win_loss.include?('(')
+    td.loss_red #{add_dollar_sign(log.win_loss)}
+
+  - else
+    td #{add_dollar_sign(log.win_loss)}
+
+  -if edit 
+    td= link_to 'Edit', '#', class: 'edit_cash btn btn-success', data: {cash_id: log.id}
+
+

@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Url:
+  = @advertisement.url
+p
+  strong Country:
+  = @advertisement.country_id
+p
+  strong Position:
+  = @advertisement.position
+
+= link_to 'Edit', edit_advertisement_path(@advertisement)
+'|
+= link_to 'Back', advertisements_path

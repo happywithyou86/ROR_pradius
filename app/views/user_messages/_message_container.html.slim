@@ -1,0 +1,25 @@
+div.check_box
+  = check_box_tag :marked, nil, nil, class: "regular-checkbox", data: {convo_id: c.id}
+div.picture_box.show_message data-convoId="#{c.id}"
+  = create_profile_pic(conversing_user, 80)
+
+div.right_section.show_message.bordernone#message_show_container data-message-id=="#{c.id}"
+  p.name = conversing_user.name if !conversing_user.nil?
+  p style="display:none;" = truncate(c.last_message.body, :length => 45)
+
+  p#message_for_forward  = c.last_message.body
+
+ul.bottom_actions_list
+
+  - if type == 'inbox'
+
+    li = link_to "Reply", '#', class: 'send_message_to_user', data: { toggle: "modal", target: "#new_message_modal", user_name: conversing_user.name, user_id: conversing_user.id } if !conversing_user.nil?
+
+    li = link_to 'Trash', '#', class: 'message_trash_untrash_delete', data: {convo_id: c.id, action: 'trash'}
+
+  - elsif type == 'sentbox'
+    li = link_to 'Delete', '#', class: 'message_trash_untrash_delete', data: {convo_id: c.id, action: 'delete'}
+
+  - elsif type == 'trash'
+    li = link_to 'Restore', '#', class: 'message_trash_untrash_delete', data: {convo_id: c.id, action: 'untrash'}
+    li = link_to 'Delete', '#', class: 'message_trash_untrash_delete', data: {convo_id: c.id, action: 'delete'}

@@ -1,0 +1,25 @@
+div.row
+  div#main_section.box
+    = render 'posts/new_post_form'
+
+    h3 Connection Activity
+    div#results.posts_container
+      = render "static_pages/post"
+
+  div#sidebar.box.sidebar
+  	= render "sidebars/members_display", {member_count: @memberCount, connection_count: @connectionsCount}
+    <div id="poker_news_container"><div id="poker_news_container_title">World Poker News</div><div id="poker_news_feed"></div><div id="poker_news_container_title">Powered by PokerNews</div></div>
+    div#floating_sidebar
+      div.section
+        div.advertisement
+          div 
+            = render "sidebars/advertisement_home_1"
+
+
+      div.section
+        div.advertisement
+          div
+            = render "sidebars/advertisement_home_2"
+
+
+

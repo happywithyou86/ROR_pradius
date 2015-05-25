@@ -1,0 +1,25 @@
+td = text_field_tag :tournaments_and_games_date, !cash_log.nil? ? cash_log.tournaments_and_games_date : nil,class:"cash",id: 'tournaments_and_games_date' + cash_log_id.to_s
+td = text_field_tag :location, !cash_log.nil? ? cash_log.location : nil, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete', id: 'cash_location'  + cash_log_id.to_s
+td = text_field_tag :stake, !cash_log.nil? ? cash_log.stake : nil, placeholder: 'ex. 1-2 NL', class: 'table_input_field', id: 'cash_stake' + cash_log_id.to_s
+td = text_field_tag :duration, !cash_log.nil? ? cash_log.duration : nil, placeholder: 'ex. 3:47', class: 'table_input_field', id: 'cash_duration' + cash_log_id.to_s
+td.text-center = link_to "Best Hand", "#", data: { toggle: "modal", target: "#card_select_modal_cashlog_edit" }
+td = text_field_tag :win_loss, !cash_log.nil? ? cash_log.win_loss : nil, placeholder: 'ex. $50 or -$50', class: 'table_input_field', id: 'cash_win_loss'+ cash_log_id.to_s
+
+= render "cash_update", log: cash_log
+
+javascript:
+  
+  $(".cash").datepicker({
+    buttonImage: '/assets/calendar_icon_smaller.png',
+    buttonImageOnly: true,
+    changeMonth: true,
+    changeYear: true,
+    showOn: 'both',
+  });
+  $(".cash").hide();
+
+  var pokerRooms = #{raw @poker_rooms}
+  $('.select_room_autocomplete').autocomplete({
+    source: pokerRooms
+  });
+

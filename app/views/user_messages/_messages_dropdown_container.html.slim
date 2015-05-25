@@ -1,0 +1,14 @@
+- if @preloaded_conversations.blank?
+  div.no_requests_container style="margin-bottom: 5px;"
+    p No New Messages
+
+- else
+  - @preloaded_conversations.each do |conversation|
+    - conversing_user = conversation.participants.select { |p| p != current_user }.first
+
+    - if conversation.is_unread?(current_user)
+      li.unread
+        = render "user_messages/messages_dropdown_li", :conversation => conversation, :conversing_user => conversing_user
+    - else
+      li
+        = render "user_messages/messages_dropdown_li", :conversation => conversation, :conversing_user => conversing_user

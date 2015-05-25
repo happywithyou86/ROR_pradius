@@ -1,0 +1,67 @@
+= render "recommendations/users", recommended_users: @data[:users_in_area], used_for: 'local_users', title: 'Players You May Know'
+
+div.section
+  = render "sidebars/advertisement"
+br
+- if (request.fullpath != "/static_pages/contact" &&  request.fullpath.match("/user_plans/subscribed?").nil? ) || request.fullpath.include?("user_plans/subscribed")
+  - if !@data[:users_from_casino].blank?
+    - if current_user.casino_player
+      = render "recommendations/users", recommended_users: @data[:users_from_casino], used_for: 'casino_users', title: user.favorite_casino.present? ? "Players at Your Favorite Casino (#{user.favorite_casino.casino.name})" : "Players at Your Favorite Casino"
+  - if !@data[:online_site_users].blank?
+
+    - if current_user.online_player
+      = render "recommendations/users", recommended_users: @data[:online_site_users], used_for: 'online_site_users', title: user.favorite_online_site.present? ? "Players at Your Favorite Online Poker Room (#{user.favorite_online_site.online_site.name})" : "Players at Your Favorite Online Poker Room"
+- if @data[:interested_groups].present?
+  div.section
+    div.section-title-Discussion-Groups Discussion Groups That May <br>Interest You
+    - @data[:interested_groups].each do |thread|
+      div.thread
+        div.pull-left = thread.name
+        div.pull-right
+          a href="/forums/thread/#{thread.id}"
+            button.plus-sign style="background-color:#5BA304;" +
+            = " "
+            span style="color:#5BA304;" Join
+
+
+      br
+      hr.hr_dicussion_groups
+
+
+javascript:
+  $(".check_subscription").click(function(){
+    var id = $(this).attr("id")
+    $.ajax({
+      type: "get",
+      url: "/is_subscibed",
+      success: function(data){
+        if (data["subs"]){
+          $('#premium').removeClass('hidden');
+          $('#premium').modal('show');
+        }
+        else{
+          window.location.href = $("#"+id).find("a").attr("href")
+        }
+      }
+    })
+    return false;
+  })
+  $(".check_subscription_side_bar").click(function(){
+    var path = $(this).closest("a").attr("href")
+
+    $.ajax({
+      type: "get",
+      url: "/is_subscibed",
+      success: function(data){
+        if (data["subs"]){
+          $('#premium').removeClass('hidden');
+          $('#premium').modal('show');
+        }
+        else{
+          window.location.href = path
+        }
+      }
+    })
+    return false;
+  })
+

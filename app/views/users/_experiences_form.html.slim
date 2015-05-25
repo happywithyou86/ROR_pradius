@@ -1,0 +1,32 @@
+
+= form_for :experience, html: { id: 'new_experience_form', class: 'experience_form_styles'} do |f|
+  = f.text_field :position, placeholder: "Position", class: 'experience_text_field'
+
+  span.select_style
+    = f.label :start_date, 'From: '
+    = f.date_select :start_date, :use_short_month => true, :start_year => 1930,:end_year=>2049, :order => [:month, :day, :year]
+
+    = f.label :end_date, 'To: '
+    = f.date_select :end_date, :use_short_month => true, :start_year => 1930, ,:end_year=>2049,:order => [:month, :day, :year]
+
+  span.present
+    = f.check_box :present
+    = f.label :present, "Present?"
+
+  br
+  = f.text_field :location, placeholder: "Poker Room", class: 'experience_text_field exp_room_autocomplete'
+
+  span#exp_room_url style='display:none;'
+    = label_tag :url, 'Url:   '
+    = text_field_tag :url, nil, placeholder: "ex. http://www.pokerroom.com", class: 'experience_text_field', id: 'exp_url_field'
+
+  = f.select :poker_room_type, options_for_select([["Online", 'OnlineSite'], ['Casino', 'Casino']]), {}, {class: 'online_casino_select'}
+
+
+  br
+  = f.text_field :nickname, placeholder: 'Nickname', class: 'experience_text_field'
+  br
+
+  = f.text_area :description, placeholder: "What did you do here?",class: 'experience_description_field'
+  br
+  = f.submit "Submit", class: 'btn btn-success'

@@ -1,0 +1,24 @@
+- if recommendation.poker_room.present?
+  span.green
+    =  recommendation.poker_room.name
+span class="rec_rating_#{recommendation.id}"
+
+
+br
+= recommendation.comment
+br
+- if current_user and current_user.id == recommendation.user.id
+  = link_to 'Edit', '#', class: 'btn btn-success edit_recommentation', data: {rec_id: recommendation.id}
+
+
+javascript:
+  var score = #{raw recommendation.rating};
+  var id = #{raw recommendation.id}
+  $('.rec_rating_' + id).raty({
+    path: '/assets',
+    hints: ['Awful', 'Poor', 'Fair', 'Good', 'Excellent'],
+    score: score,
+    readOnly: true
+  });
+
+

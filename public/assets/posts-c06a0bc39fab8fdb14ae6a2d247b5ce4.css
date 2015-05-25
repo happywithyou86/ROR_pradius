@@ -1,0 +1,103 @@
+/***************************************/
+/* User Posts */
+/***************************************/
+/* line 7, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.like-activity:hover {
+  text-decoration: none;
+}
+
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.comment-activity:hover {
+  text-decoration: none;
+}
+
+/* line 15, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container {
+  width: 100%;
+}
+/* line 18, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #image_box {
+  width: 80px;
+  margin: 0 0 0 2px;
+  display: inline-block;
+}
+/* line 22, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #image_box .img-responsive {
+  height: 80px !important;
+  width: 80px !important;
+}
+/* line 31, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #new_status_box {
+  float: right;
+  width: 87.75%;
+}
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #new_status_box .text_area {
+  border-color: #eeeeee;
+  width: 85%;
+  width: 100%;
+}
+/* line 41, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #new_status_box .share_button_container {
+  text-align: right;
+  margin-top: 0.5em;
+}
+/* line 46, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#new_status_container #new_status_box #post_share_button {
+  width: 100px;
+  height: 25px;
+  padding: 0;
+}
+
+/* line 57, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container {
+  margin: 0;
+  margin-bottom: 1.5em;
+}
+/* line 61, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .image_box {
+  float: left;
+  max-width: 13%;
+}
+/* line 66, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .right_section {
+  float: left;
+  margin-left: 2%;
+  width: 85%;
+}
+/* line 71, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .right_section p {
+  color: black;
+}
+/* line 75, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .right_section .username {
+  font-weight: bold;
+}
+/* line 79, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .right_section .status {
+  overflow-wrap: break-word;
+}
+/* line 84, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.posts_container .post_container .left_margin {
+  margin-left: 1%;
+}
+
+/* line 89, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+.like_users_data {
+  background-color: #4C4C4C;
+  border-radius: 3px;
+  height: auto;
+  width: auto;
+  color: white;
+  position: absolute;
+}
+
+/* line 97, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+#user_list {
+  padding: 8px;
+}
+
+/* line 98, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/posts.css.scss */
+span.time_in_ago {
+  color: black;
+}

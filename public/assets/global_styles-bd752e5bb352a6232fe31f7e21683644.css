@@ -1,0 +1,20 @@
+/***************************************/
+/* Buttons */
+/***************************************/
+/* line 10, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/global_styles.css.scss */
+.btn-success,
+.btn-danger,
+.btn-default,
+.btn-gray {
+  border-radius: 0 !important;
+}
+
+/* line 14, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/global_styles.css.scss */
+.btn-success {
+  background-color: #5ba304;
+  color: white;
+}
+/* line 18, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/global_styles.css.scss */
+.btn-success:hover {
+  background-color: #599218;
+}

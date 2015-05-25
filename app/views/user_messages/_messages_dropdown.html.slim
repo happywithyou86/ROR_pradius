@@ -1,0 +1,24 @@
+.dropdown
+  = link_to "#", :id => "nav_messages", :class => 'dropdown-toggle notify_icon', data: {:toggle => 'dropdown',:not_type => 'message'} do
+    i.icon-2x.icon-envelope.fa.fa-envelope
+    - if !@unread_friend_notifications.blank?
+      span.notification_badge#message_badge
+        = @unread_message_notifications.count
+    - else
+      span.notification_badge#message_badge style="display:none;"
+
+
+  ul.dropdown-menu#messages_drop.pull-right role="menu"
+
+    div#dropdown-title MESSAGES
+
+    div.messages data-need-update="false"
+      = render "/user_messages/messages_dropdown_container", :preloaded_conversations => @preloaded_conversations
+
+    div.see_all
+      a.see_all_link href="/users/inbox"
+       p See All
+
+
+= render "user_messages/new_message_modal"
+

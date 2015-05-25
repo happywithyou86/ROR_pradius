@@ -1,0 +1,30 @@
+div.row
+  div#main_section.box
+    ul
+      - @data[:forum_post].errors.full_messages.each do |msg|
+        li * = msg
+    span
+      span.bold = "Thread: "
+      a.green_goddamnit_no_underline href="/forums/thread/#{params[:id]}" = @data[:thread].name
+    - if ForumThread.find(params[:id]).forum_posts.any? && !params[:message_id].blank?
+      h5 
+        a href="/users/#{ForumThread.find(params[:id]).forum_posts.find(params[:message_id]).user.prid}" = ForumThread.find(params[:id]).forum_posts.find(params[:message_id]).user.name if !params[:message_id].nil?
+        span = " wrote: " if !params[:message_id].nil?
+      p.post-message = "'" +ForumThread.find(params[:id]).forum_posts.find(params[:message_id]).message+ "'" if !params[:message_id].nil? 
+    - else
+      h3 New Post
+    = form_for @data[:forum_post], url: "/forums/create_post" do |f|
+      = f.hidden_field :forum_thread_id, value: params[:id]
+      label Message
+      br
+      = f.text_area :message,:id => "forum_text_area", class: "text_area", rows: "10" 
+      br
+      br
+      = f.submit "Submit", class: "btn btn-success disable_click"
+
+
+
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

@@ -1,0 +1,30 @@
+div.row
+  div#main_section.box
+    ul
+      - @data[:forum_thread].errors.full_messages.each do |msg|
+        li * = msg
+    span
+      = "Section: "
+      a href="/forums/section/#{params[:id]}" = @data[:section].name
+    h3 Suggest a New Thread
+    h5 Have a new general topic or thread in mind for our community?  Let us know and we will be sure to add it right away!
+
+    = render 'contact_forms/new', :locals => { :contact_form => ContactForm.new }
+
+    / = form_for @data[:forum_thread], url: "/forums/create_thread" do |f|
+    /   = f.hidden_field :forum_section_id, value: params[:id]
+    /   label Name
+    /   = f.text_field :name, class: "form-control"
+    /   br
+    /   = f.fields_for :forum_posts do |forum_post|
+    /     label Message
+    /     = forum_post.text_area :message, class: "form-control", rows: "10"
+    /   br
+    /   = f.submit "Submit", class: "btn btn-success"
+
+
+
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

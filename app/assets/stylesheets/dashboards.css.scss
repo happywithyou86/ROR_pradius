@@ -1,0 +1,345 @@
+/***************************************/
+/* General Dashboard Styling */
+/***************************************/
+
+$title_header: #4D4D4D;
+$light_gray_cell: #F3F3F3;
+$medium_gray_container: #CCCCCD;
+$dark_gray: #333333;
+$green_button_color: #5BA304;
+
+.dashboard_container {
+  padding: 20px !important;
+
+  #dashboard_banner {
+    img {
+      width: 100%;
+    }
+  }
+
+
+  // Dashboard Nav Styling
+  #dashboard_nav {
+    text-align: center;
+    margin-top: 20px;
+
+    .dash_nav_list {
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        width: 25%;
+        height: 35px;
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        border-right: 1px solid #FFF;
+
+        a {
+          height: 35px;
+          background-color: #999999;
+          color: #FFF;
+          display: block;
+          padding-top: 8px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $dark_gray;
+          }
+        }
+      }
+
+      .dash_active {
+        background-color: $dark_gray;
+      }
+    }
+  }
+}
+
+
+
+// Dashboard Green and Red
+
+.profit_green {
+  color: $green_button_color;
+}
+
+.loss_red {
+  color: #C03733;
+}
+
+
+
+/***************************************/
+/* HighLight Styling */
+/***************************************/
+
+#dashboard_highlight {
+  background-color: $medium_gray_container;
+  position: relative;
+
+
+  // Table Styling
+  #highlight_table {
+    width: 100%;
+
+    th {
+      background-color: $title_header;
+      color: #FFF;
+      text-align: center;
+      font-weight: 400;
+      border-left: 5px solid $title_header;
+    }
+
+    .last_header {
+      border-right: 10px solid $title_header;
+    }
+
+    .cell_title {
+      font-weight: bold;
+    }
+
+    td {
+      background-color: $light_gray_cell;
+      border-left: 5px solid $medium_gray_container;
+      border-bottom: 2px solid $medium_gray_container;
+      padding: 5px;
+
+      p { margin: 0; }
+    }
+  }
+
+
+
+
+  .edit_btton_div {
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+
+// Button Styling
+
+.edit_save_button {
+  width: 170px !important;
+  margin-bottom: 5px;
+}
+// .btn-success {
+//   background-color: $green_button_color;
+//   border-radius: 0;
+
+//   &:hover {
+//     background-color: #599218;
+//   }
+// }
+
+/***************************************/
+/* Tournament && Cash Log Style */
+/***************************************/
+
+.log_tables {
+  margin-top: 10px;
+
+  p {
+    text-align: center;
+    background-color: $title_header;
+    color: #FFF;
+    margin: 0;
+  }
+
+  .log_styling {
+    margin-top: 5px;
+    width: 100%;
+    table-layout:fixed;
+    font-size: 11px;
+
+    th {
+      background-color: $dark_gray;
+      color: #FFF;
+      font-weight: 300;
+      padding-left: 2px;
+    }
+
+    tr {
+      td { padding-left: 2px; }
+      &:nth-child(odd) { background-color: #E7E7E7; }
+      &:nth-child(even) { background-color: #FFF; }
+    }
+
+    td {
+      overflow: hidden;
+    }
+
+  }
+}
+
+
+// Edit styles
+
+.table_input_field {
+  width: 100%;
+}
+
+.new_log_button {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  margin-top: 5px;
+
+  .new_save_btn {
+    width: 70px;
+    height: 20px;
+    padding-top: 2px;
+    font-size: 12px;
+  }
+
+}
+
+#tourn_save_btn {
+  display: none;
+}
+
+#tourn_form_row,
+#cash_form_row {
+  display: none;
+}
+
+/***************************************/
+/* Highlight Edit Styling*/
+/***************************************/
+
+// Amount fields
+.date_amount_field {
+  width: 45px;
+}
+
+
+.text_fields{
+  width: 100%;
+  margin-top:2px;
+}
+
+#best_hand_edit {
+
+  a {
+    margin-left: 9px;
+  }
+}
+
+
+/***************************************/
+/* Life Time Styling */
+/***************************************/
+
+#life_table {
+  th {
+    background-color: #999999;
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .month_profit {
+    background-color: #BFDA9B;
+    color: $green_button_color;
+    font-weight: 500;
+  }
+
+  .month_loss {
+    background-color: #E1A7A6;
+    color: #C03733;
+    font-weight: 500;
+  }
+
+  .break_even {
+    background-color: #c6c6c6;
+    font-weight: 500;
+    color: #333333;
+  }
+}
+
+
+
+/***************************************/
+/* Best Hand Select Image Styling */
+/***************************************/
+
+
+.card1 {
+  width: 60px;
+}
+
+
+
+
+
+/***************************************/
+/* Chart Styling */
+/***************************************/
+
+#dashboard_charts {
+  background-color: $medium_gray_container;
+
+  #charts_table {
+    margin: 0 auto;
+    width: 100%;
+    th {
+      background-color: $dark_gray;
+      color: #FFF;
+      text-align: center;
+      border-left: 3px solid $medium_gray_container;
+      border-top: 3px solid $medium_gray_container;
+      border-right: 3px solid $medium_gray_container;
+      font-weight: 400;
+    }
+
+    .table_break {
+      background-color: #808080 !important;
+      color: #FFF;
+      text-align: center;
+      border-right: 4px solid #808080;
+    }
+
+    .chart_td {
+      padding-left: 3px;
+    }
+  }
+}
+
+// Pie Cart Styling
+
+.pie_charts_container {
+  position: relative;
+
+}
+
+.chart_div {
+    width: 180px;
+    height: 200px;
+    margin: 0;
+    display: inline-block;
+}
+#dashboard_highlight .to_years {
+    padding: 17px;
+}
+#tourn_location{
+  width: 108px;
+}
+.tournament_hidden ,.cash_hidden{
+  display:none
+}
+#login_form_container{
+  top:1.2em !important;
+}
+#login_form_container #forgot_password{
+  margin-bottom: 5px;
+  margin-left: 260px;
+  a{
+    color: #FFFFFF !important;
+  }
+}
+

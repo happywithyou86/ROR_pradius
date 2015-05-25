@@ -1,0 +1,26 @@
+= form_for :recommendation, html: {id: 'recommendation_form', class: 'recommendation_form_style'} do |recommend_form|
+  = recommend_form.hidden_field :rating, id: 'new_recommendation_rating', value: '0'
+
+  div
+    = recommend_form.text_field :room_name, placeholder: 'Poker Room', class: 'rec_room_field rec_room_autocomplete'
+
+    span#rec_room_url style='display:none;'
+      = label_tag :url, 'Url:'
+      = text_field_tag :url, nil, placeholder: "ex. http://www.pokerroom.com", class: 'recommendation_text_field', id: 'rec_url_field'
+
+
+    = recommend_form.select :poker_room_type, [['Online', 'OnlineSite'], ['Casino', 'Casino']]
+
+    div#rate_room
+      | How would you rate this poker room?
+      span#new_recommendation_stars
+
+
+
+  div.justification_div
+    p
+      | Rating Justification:
+      = recommend_form.text_area :comment, placeholder: "Let everyone know your opinion of this poker room..", class: 'rec_comment_field'
+
+
+  = recommend_form.submit "Save", class: "btn btn-success"

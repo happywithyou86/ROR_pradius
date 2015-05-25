@@ -1,0 +1,17 @@
+h1 = @online_site.name
+
+= render "recommendations/error_messages"
+
+= form_for @recommendation, url: { action: "recommend", controller: "online_sites" } do |recommend_form|
+  = recommend_form.hidden_field :rating
+  = recommend_form.hidden_field :poker_room_type, value: "OnlineSite"
+  = recommend_form.hidden_field :poker_room_id, value: @online_site.id
+
+  div#recommendation_stars
+
+  = recommend_form.fields_for :recommendation_comment do |comment_form|
+    = comment_form.text_area :comment, placeholder: "Let everyone know your opinion of this poker room..", class: "form-control"
+
+  = recommend_form.submit "Submit", class: "btn btn-default"
+
+= render "recommendations/index", recommendation: @online_site_recommendations

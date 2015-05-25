@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title
+      = render_title
+    meta content="poker radius, poker social networking, online poker community" name="keywords" 
+    meta content="Join a distinguished social poker network, Poker Radius, providing poker players at all levels the ability to connect and stay connected." name="description"
+    meta content="8FEA5F52C5A4BBCFCD544B3A7A700BCB" name="msvalidate.01" 
+    meta content="JmWDpwRb9rjcLKGhi7MYmJpfACekw6Bplbpn67VFx5I" name="google-site-verification" 
+    meta content="text/html; charset=UTF-8" http-equiv="Content-Type" 
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "https://js.stripe.com/v2/"
+    = csrf_meta_tags
+    = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
+    = javascript_include_tag "application"
+    = filepicker_js_include_tag
+    
+
+  body
+    div.wrapper
+      = render partial: "application/navbar"
+
+      = render partial: "application/flash"
+
+      div.container-fixed
+        = yield
+
+      div.push
+    = render partial: "application/footer"
+

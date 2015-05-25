@@ -1,0 +1,110 @@
+div.row
+  div#main_section.box
+    div.payment-title-main Account Settings
+    div.row
+      div.col-xs-12
+        div#form_errors_update
+        = form_for @user, url: {action: "update"} , remote: true do |form|
+          div.row
+            div.col-xs-6
+              div.form-group
+                label.control-label Update Your First & Last Name
+                = form.text_field :name, class: "form-control"
+              div.form-group
+                label.control-label Update Your Password
+                = form.password_field :password, class: "form-control", placeholder: "new password"
+              div.form-group
+                = form.password_field :password_confirmation, class: "form-control", placeholder: "confirm new password"
+              div.form-group
+                | Password Complexity Requirements: 8-15 characters, 1 number, 1 uppercase letter and 1 special character !@#$%^&*()
+              div.form-group
+                label.control-label Email
+                = form.text_field :email, class: "form-control"
+              = form.fields_for :user_location do |user_location_form|
+                div.form-group
+                  label Postal Code
+                  = user_location_form.text_field :postal_code, class: "form-control"
+                  div#postal_error
+               
+            div.col-xs-6
+              center
+                div.form-group
+                  = form.fields_for :user_profile_picture do |user_profile_picture_form|
+                    div#profile-picture
+                      -if @user.user_profile_picture.url.present?
+                        = filepicker_image_tag @user.user_profile_picture.url, w: 160, h: 160, fit: 'clip'
+                      - else
+                        = create_profile_pic(@user, "160")
+
+                    = user_profile_picture_form.label :filepicker_url, "Upload Profile Image:"
+                    br
+                    = user_profile_picture_form.filepicker_field :url, button_text: "Select Image", class: "btn btn-default", name: "user[user_profile_picture_attributes[url]]", extensions: ".jpeg,.jpg,.png,.tiff,.bmp" , onchange: "display_new_image(event['fpfiles'][0]['url']);"
+          hr
+          div.row
+            div.col-xs-6.form-group
+              label.subscription-label Update Your Favorite Casino Poker Room
+            div.col-xs-6.form-group
+              = form.fields_for :favorite_casino do |favorite_casino|
+                -if !@data_dropdown[:casinos].blank?
+                    = favorite_casino.select :casino_id, @data_dropdown[:casinos], {}, {class: "form-control"}
+
+          div.row
+            div.col-xs-6.subscription-label
+              label.control-label Update Your Favorite Online Poker Room
+            div.col-xs-6
+              = form.fields_for :favorite_online_site do |online_site|
+                -if !@data_dropdown[:online_sites].blank?
+                  = online_site.select :online_site_id, @data_dropdown[:online_sites], {}, {class: "form-control"}
+
+          hr
+          div.row
+            div.col-xs-12
+              - if current_user and current_user.user_subscription 
+                div
+                  label.control-label Premium Plan: 
+                div.edit_user_link
+                  a href="#{user_plans_edit_path}" 
+                    label.control-label Change Billing Information
+                div.edit_user_link
+                  a href="#{user_plans_history_path}"
+                    label.control-label Payment History
+                div.edit_user_link
+                  a href="#{contact_us_path(:premium=>true)}"
+                    label.control-label Cancel/Modify Membership
+              - elsif  current_user.plan_type== "free_access"
+                 div
+                  label.control-label Plan:  Premium Plan 
+
+              - else current_user
+                label.control-label 
+                  | Basic Plan: 
+                  a href="#{user_plans_upgrade_path}" Upgrade
+          hr
+            label.control-label Opt In For Email Notifications
+            = form.check_box :opt_in, class: "form-control opt_in"
+            br
+            = "(opt’ing out will remove all connect request, endorsement, new message, comment, and like, email notifications)"
+          hr
+          = form.submit :Submit, class:"btn btn-success"
+  div#sidebar.box.sidebar
+    = render "sidebars/profile_side_bar", user: current_user
+
+br
+
+javascript:
+  var password = new LiveValidation('user_password');
+  password.add( Validate.Inclusion, { within: [ '1' , '2', '3' ,'4','5','6','7','8','9','0'], partialMatch: true , failureMessage: "Please include one Number"})
+  password.add( Validate.Inclusion, { within: [ '!' , '@', '#' ,'$','%','^','&','*','(',')'], partialMatch: true  , failureMessage: "Please include one Special Character"})
+  password.add( Validate.Format, 
+              { pattern: /[A-Z]/, failureMessage: "Please Enter One Upper Case Letter" } );
+  password.add( Validate.Length, { minimum: 8, maximum: 15 } );
+  var password_confirmation = new LiveValidation('user_password_confirmation');
+  password_confirmation.add( Validate.Confirmation, { match: 'user_password' } );
+  $('.edit_user').submit(function(){
+    if ($('.LV_invalid').length != 0)
+    {
+      return false;
+    }
+
+  });
+ 

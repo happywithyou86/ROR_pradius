@@ -1,0 +1,37 @@
+
+/***************************************/
+/* Post Comments */
+/***************************************/
+
+.comments_container {
+
+
+  // New comment Form
+  .new_comment_container {
+
+    .comment_textarea{
+      border-color: #eeeeee;
+      width: 100%;
+    }
+  }
+
+  // List of Comments
+
+  .comment_list {
+
+    .comment_container {
+      margin: 0;
+      margin-bottom: 1em;
+      border-color: #eeeeee;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.comment-button-margin-bug-fix {
+  margin-top:8px;
+}
+

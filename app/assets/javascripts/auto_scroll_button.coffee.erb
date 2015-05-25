@@ -1,0 +1,17 @@
+#Programmed by Kevin O'Flaherty
+autoScrollButton_animationSpeed = 800
+
+$(document).ready ->
+	createScrollButton()
+	$("#auto-scroll-button").hide()
+	
+	$(window).scroll ->
+		if $(this).scrollTop() > 100
+			$("#auto-scroll-button").fadeIn()
+		else
+			$("#auto-scroll-button").fadeOut()
+
+createScrollButton = ->
+	$('body').append("<img id=\"auto-scroll-button\" src=\"<%= asset_path 'auto-scroll-button.png' %>\">")
+	$("#auto-scroll-button").mouseup ->
+		$('body,html').animate({ scrollTop: 0 }, autoScrollButton_animationSpeed)

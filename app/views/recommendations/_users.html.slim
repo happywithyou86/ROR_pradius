@@ -1,0 +1,39 @@
+- if recommended_users.present?
+  div.section
+    div.section-title = title
+    div id="#{used_for}-carousel" class="carousel slide" data-ride="carousel" data-interval="false"
+
+      div class="carousel-inner recommend_carousel"
+        - recommended_users.each_with_index do |users, n|
+          div.item class="#{n == 0 ? "active" : ""}"
+            ul.carousel_list
+              - users.each do |user|
+                li
+                  = create_profile_pic(user, "80", false)
+                  p.name_block.side_bar_user_fix
+                    - if  !user.name.blank?
+                      = link_to truncate( user.name.split(" ")[0], length: 12), my_profile_path(user),class: "name_user"
+                      - if !user.blank? && !user.name.split(" ")[1].blank?  && user.name.split(" ")[1].size > 1
+                        = link_to truncate(user.name.split(" ")[1], length: 9, omission: '..'), my_profile_path(user),class: "name_user"
+                    - if !user.user_location.nil?
+                      - unless user.user_location.postal_code.nil?
+                        - if !user.user_location.country.nil? &&  !user.user_location.country.country_code.nil?
+                          =  check_usa(user.user_location.country.country_code)
+                        - elsif !user.user_location.country.nil? && !user.user_location.country.name.nil?
+                           =  user.user_location.country.name
+                        - else
+                           =  user.user_location.postal_code
+                      - else
+                        #unknown-location-id style="font-size:10px; color:#B3B3B3; font-style:italic; font-weight:300; margin:0;" = truncate("unknown location", length: 15)
+
+      a class="left carousel-control" href="##{used_for}-carousel" data-slide="prev"
+        span class="glyphicon glyphicon-chevron-left"
+      a class="right carousel-control" href="##{used_for}-carousel" data-slide="next"
+        span class="glyphicon glyphicon-chevron-right"
+
+    = link_to("<button class='btn-black pull-right see_all'><span id='see_all_shrunk'>SEE ALL </span><span id='see_all_shrunk_arrow' class='glyphicon glyphicon-chevron-right'></span></button>".html_safe, {controller: "recommendations", action: "suggestions",used_for: used_for,title:title, current_user: current_user, profile_user: @data[:user]})
+
+
+    
+
+  br

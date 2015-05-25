@@ -1,0 +1,54 @@
+/* line 7, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.email {
+  color: #4169e1;
+  text-decoration: underline;
+}
+
+/* line 12, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.background-color-indicator {
+  display: none;
+}
+
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.home-image-wrapper {
+  background: white;
+  margin: 0 auto;
+  max-width: 1190px;
+}
+/* line 20, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.home-image-wrapper .home-image {
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 23, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.home-image-wrapper .home-image img {
+  width: 100%;
+  margin-top: 2em;
+}
+/* line 29, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.home-image-wrapper .text-center .sign-up-btn {
+  background: #74A230;
+  color: white;
+  border-radius: 1px;
+  border: none;
+  margin-bottom: 1em;
+}
+
+/* line 39, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.about-us-first-column {
+  width: 45%;
+  float: left;
+}
+
+/* line 44, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.about-us-second-column {
+  width: 45%;
+  float: right;
+}
+
+/* line 48, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/static_pages.css.scss */
+.register_button {
+  padding: 14px 33px;
+  font-weight: 600;
+  margin-right: 24px;
+}

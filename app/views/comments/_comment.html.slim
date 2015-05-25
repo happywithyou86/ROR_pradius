@@ -1,0 +1,11 @@
+li
+  div.row.comment_container
+    div.image_box
+      = create_profile_pic(comment.user, '50')
+    div.right_section
+      p
+        - if !comment.user.nil? && !comment.user.name.nil? 
+          = link_to comment.user.name, profile_path(comment.user.prid)
+        span.left_margin = proper_word(comment.text)
+
+      p  #{time_ago_in_words(comment.created_at)} ago

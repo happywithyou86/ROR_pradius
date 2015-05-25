@@ -1,0 +1,93 @@
+/***************************************/
+/* Friend Requests */
+/***************************************/
+
+.requests_list_container {
+  margin-top: 10px;
+
+  .request_container {
+    border-top: 1px solid #C6C6C6;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {background-color: #D8EAC5;}
+
+    // message div styling
+    .check_box,
+    .picture_box,
+    .right_section {
+      display: inline-block;
+    }
+
+    .check_box {
+      position: relative;
+      bottom: 40px;
+    }
+
+    .picture_box {
+      margin-left: 15px;
+    }
+
+    .right_section {
+      margin-left: 15px;
+      position: relative;
+      bottom: 20px;
+      display: inline-block;
+      width: 70%;
+
+
+      span {
+        margin: 0;
+      }
+
+      .name {
+        font-weight: normal;
+        margin-bottom: 5px;
+        position: relative;
+        top: -6px;
+      }
+
+      .request_buttons {
+        margin-left: 10px;
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+
+        .friend_action {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  // checkbox styling
+  .regular-checkbox {
+    -webkit-appearance: none;
+    background-color: #FFFFFF;
+    border: 2px solid #cacece;
+    // box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 7px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .regular-checkbox:active, .regular-checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .regular-checkbox:checked {
+    background-color: #FFF;
+    border: 2px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #99a1a7;
+
+    &:after {
+      content: '\2714';
+      font-size: 14px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      color: #5DA21D;
+    }
+  }
+}

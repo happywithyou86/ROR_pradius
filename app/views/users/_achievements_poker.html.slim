@@ -1,0 +1,7 @@
+- if !online_achievements.blank?
+  ul.achievement_list
+    - online_achievements.each do |achievement|
+      div.each_achievement
+        = render 'achievements/achievement', achievement: achievement
+- elsif  current_user and current_user.id != @data[:user].id
+  p.no_experience No Achievements Posted

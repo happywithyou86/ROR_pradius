@@ -1,0 +1,33 @@
+td = text_field_tag :tournaments_and_games_date, !tournament.nil? ? tournament.tournaments_and_games_date : nil,class:"tournament",id: 'tournaments_and_games_date_' + tournament.id.to_s
+td = text_field_tag :location, !tournament.nil? ? tournament.location : nil, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete', id: 'tourn_location_' + tournament.id.to_s
+td = text_field_tag :title,!tournament.nil? ? tournament.title : nil, placeholder: 'ex.No Limit Bounty', class: 'table_input_field', id: 'tourn_title_'  + tournament.id.to_s
+td = text_field_tag :buy_in, !tournament.nil? ? tournament.buy_in : nil, placeholder: 'ex.$60', class: 'table_input_field', id: 'tourn_buy_' + tournament.id.to_s
+td = text_field_tag :players, !tournament.nil? ? tournament.players : nil, placeholder: 'ex.45', class: 'table_input_field', id: 'tourn_players_' + tournament.id.to_s
+td = text_field_tag :duration, !tournament.nil? ? tournament.duration : nil, placeholder: 'ex.3:47', class: 'table_input_field', id: 'tourn_duration_' + tournament.id.to_s
+td = text_field_tag :rank, !tournament.nil? ? tournament.rank : nil, placeholder: '2nd', class: 'table_input_field', id: 'tourn_rank_' + tournament.id.to_s
+
+
+td.text-center
+  = link_to "Best Hand", "#", data: { toggle: "modal", target: "#card_select_modal_tournament_edit" }
+
+
+td = text_field_tag :win_loss, !tournament.nil? ? tournament.win_loss : nil, placeholder: '100', class: 'table_input_field', id: 'tourn_win_loss_' + tournament.id.to_s
+= render "tournament_update",tourn: tournament
+
+javascript:
+  $(".tournament").datepicker({
+    buttonImage: '/assets/calendar_icon_smaller.png',
+    buttonImageOnly: true,
+    changeMonth: true,
+    changeYear: true,
+    showOn: 'both',
+  });
+  $(".tournament").hide();
+  var pokerRooms = #{raw @poker_rooms}
+  $('.select_room_autocomplete').autocomplete({
+    source: pokerRooms
+  });
+ 
+
+
+

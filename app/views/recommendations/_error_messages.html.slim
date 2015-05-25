@@ -1,0 +1,7 @@
+- if @recommendation.errors.any?
+
+  div#error_explanation
+    div.alert.alert-warning
+      ul
+        - @recommendation.errors.each do |attribute, message|
+          li = "* " + message

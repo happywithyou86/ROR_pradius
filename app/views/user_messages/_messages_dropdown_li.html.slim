@@ -1,0 +1,15 @@
+a href="/users/inbox/#{conversation.id}"
+
+  div.message_container
+    p.time_ago = time_ago_in_words(conversation.last_message.created_at) + ' ago'
+
+    div.profile_picture
+      = create_profile_pic(conversing_user, 80)
+
+    div.message_name
+      = conversing_user.name if !conversing_user.nil?
+    div.message_snippit
+      = truncate(conversation.last_message.body, :length => 250)
+      
+    br style="clear: left;"
+

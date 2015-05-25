@@ -1,0 +1,50 @@
+div.modal.hidden#premium tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+        button.close.premium_button type="button "data-dismiss="modal" aria-hidden="true" &times;
+        div.premiumplanbox
+          = image_tag("premium_banner.jpg")
+          div.premiumplancontent Oops! Only premium members can access this section. Click on Go Premium! to learn more about the premium plan features and access this section today.
+
+          div.width220
+            span = link_to "No Thanks", "#", class: 'btn btn-default pull-left no_subscription'
+            span.pull-right = link_to "Go Premium!", user_plans_upgrade_path, class: 'btn btn-success premeium_button'
+
+header
+  div#main-content
+    div#top-container-content
+      div#logo_container
+        .navbar role="navigation" 
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+                span.sr-only Toggle navigation
+                a class="btn btn-primary btn-lg sign-in-btn" Login
+              = link_to '/' do
+                = image_tag 'poker-radius-online-social-poker-community.png', :class  => "poker radius logo"
+            .navbar-collapse.collapse
+              div.nav.navbar-nav.navbar-right
+                = render "application/landing_login_nav"
+
+javascript:
+	$(".check_subscription").click(function(){
+		var id = $(this).attr("id")
+  	$.ajax({
+  		type: "get",
+  		url: "/is_subscibed",
+	    success: function(data){
+      	if (data["subs"]){
+      		$('#premium').removeClass('hidden');
+  	  		$('#premium').modal('show');
+      	}
+      	else{
+      		window.location.href = $("#"+id).find("a").attr("href")
+      	}
+	    }
+  	})
+  	return false;
+	})
+	$(".no_subscription").click(function(){
+      $(".close").trigger("click")
+    })

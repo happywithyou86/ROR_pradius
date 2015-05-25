@@ -1,0 +1,18 @@
+h1  New Message
+
+= form_tag user_messages_send_path, method: 'post' do
+  = label_tag :to, "To: "
+  = text_field_tag :to, nil, :placeholder => "Message your friend", :id => "search_friends_field"
+  br
+  = label_tag :body, "Body: "
+  = text_area_tag :body
+  br
+  = submit_tag "Send Message"
+
+
+
+javascript:
+  var friends = "#{@friends.map(&:name)}".replace(/&quot;|\[|\]/g, '').split(',');
+  $('#search_friends_field').autocomplete({
+    source: friends
+  });

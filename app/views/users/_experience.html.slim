@@ -1,0 +1,17 @@
+div.position_year
+  h4
+    | #{experience.position}
+   
+    - if experience.present
+
+      span.date.pull-right #{experience.start_date.strftime("%B %d, %Y")} - Present
+    - else
+      span.date.pull-right #{experience.start_date.strftime("%B %d, %Y")} - #{experience.end_date.strftime("%B %d, %Y")}
+
+- if experience.poker_room.present?
+  div.green
+    =  experience.poker_room.name
+p Nickname: #{experience.nickname}
+p = experience.description
+- if current_user and current_user.id == experience.user.id
+    = link_to 'Edit', '#', class: 'edit_experience btn btn-success', data: {exp_id: experience.id}

@@ -1,0 +1,164 @@
+jQuery ->
+  public_key = $("#stripe_public_key").val()
+  Stripe.setPublishableKey(public_key)
+
+  if document.getElementById("payment_annual_plan")?
+    setUpBillingDefaultType()
+    subscription.setupForm()
+    
+    #Please Wait Image
+    createPleaseWait()
+    centerPleaseWait()
+    $(window).resize ->
+      centerPleaseWait()
+
+  if document.getElementById("billing_information_update")?
+    $("#billing_information_update").click ->
+      if formValidated()
+        updateBillingCardToken()
+
+setUpBillingDefaultType = ->
+  $("#payment_annual_plan").click ->
+    checkAnnualPlan()
+  $("#payment_monthly_plan").click ->
+    checkMonthlyPlan()
+  $("#payment_back_button").click ->
+    window.history.back()
+
+  #Overwrite default plan by url suffix (#annually)
+  currentUrlSplit = document.URL.split('#')
+  index = currentUrlSplit.length - 1
+  if currentUrlSplit[index] == "annually"
+    checkAnnualPlan()
+  else
+    checkMonthlyPlan()
+
+checkAnnualPlan = ->
+  $(card_plan_hidden_variable).val("Annually")
+  $("#payment_annual_plan").attr('checked', true)
+  $("#payment_annually_container").css('opacity', '1')
+  $("#payment_monthly_plan").attr('checked', false)
+  $("#payment_monthly_container").css('opacity', '0.5')
+checkMonthlyPlan = ->
+  $(card_plan_hidden_variable).val("Monthly")
+  $("#payment_annual_plan").attr('checked', false)
+  $("#payment_annually_container").css('opacity', '0.5')
+  $("#payment_monthly_plan").attr('checked', true)
+  $("#payment_monthly_container").css('opacity', '1')
+
+updateBillingCardToken = ->
+  card =
+    number: $('#card_number').val()
+    cvc: $('#card_code').val()
+    expMonth: $('#card_month').val()
+    expYear: $('#card_year').val()
+    name: $('#card_first_name').val() + $('#card_last_name').val()
+    address_line1: $('#card_address1').val()
+    address_line2: $('#card_address2').val()
+    address_city: $('#card_city').val()
+    address_state: $('#card_state').val()
+    address_zip: $('#card_zip').val()
+    address_country: $('#card_country').val()
+
+  return Stripe.createToken(card, updateBillingCardCallback)
+
+updateBillingCardCallback = (status, response) ->
+  if status == 200
+    window.location.href = "/user_plans/update?card_token=#{response.id}"
+  else
+    alert("Error with your credit card.")
+
+subscription =
+  setupForm: ->
+    $('#new_user_subscription').submit ->
+      $('input[type=submit]').attr('disabled', true)
+      if formValidated()
+        subscription.processCard()
+        false
+      else
+        $('input[type=submit]').attr('disabled', false)
+        false
+
+  processCard: ->
+    card =
+      number: $('#card_number').val()
+      cvc: $('#card_code').val()
+      expMonth: $('#card_month').val()
+      expYear: $('#card_year').val()
+      name: $('#card_first_name').val() + $('#card_last_name').val()
+      address_line1: $('#card_address1').val()
+      address_line2: $('#card_address2').val()
+      address_city: $('#card_city').val()
+      address_state: $('#card_state').val()
+      address_zip: $('#card_zip').val()
+      address_country: $('#card_country').val()
+
+    popWaitingScreen()
+    Stripe.createToken(card, subscription.handleStripeResponse)
+
+  handleStripeResponse: (status, response) ->
+    if status == 200
+      $('#user_subscription_stripe_card_token').val(response.id)
+      $('#new_user_subscription')[0].submit()
+    else
+      clearWaitingScreen()
+      $('#main-stripe-error-javascript').text(response.error.message)
+      $('input[type=submit]').attr('disabled', false)
+
+formValidated = ->
+  validated = true;
+  if not validatedField("#card_first_name")
+    validated = false
+  if not validatedField("#card_last_name")
+    validated = false
+  if not validatedField("#card_address1")
+    validated = false
+  if not validatedField("#card_city")
+    validated = false
+  if not validatedField("#card_state")
+    validated = false
+  if not validatedField("#card_zip")
+    validated = false
+  if not validatedField("#card_code")
+    validated = false
+  if not validatedField("#card_country")
+    validated = false
+  if not validatedField("#email")
+    validated = false
+  if not validatedField("#card_number")
+    validated = false
+  if not validatedField("#card_number")
+    validated = false
+  if not validatedField("#card_code")
+    validated = false
+  if not validatedField("#card_code")
+    validated = false
+  if not validatedField("#card_month")
+    validated = false
+  if not validatedField("#card_year")
+    validated = false
+  return validated
+
+validatedField = (elementID) ->
+  if $(elementID).val() == ""
+    $(elementID).addClass("subscription-field-required")
+    false
+  else
+    $(elementID).removeClass("subscription-field-required")
+    true
+
+popWaitingScreen = () ->
+  document.getElementById('main_section').style.opacity = 0.5;
+  $("#payment-please-wait").show()
+
+clearWaitingScreen = () =>
+  document.getElementById('main_section').style.opacity = 1;
+  $("#payment-please-wait").hide()
+
+createPleaseWait = () =>
+  $('body').append("<img id=\"payment-please-wait\" src=\"<%= asset_path 'wait.gif' %>\">")
+
+centerPleaseWait = () =>
+  left = ($(window).width() / 3) - (489 / 3)
+  top = ($(window).height() / 2) - (222 / 2)
+  $("#payment-please-wait").css({top: top, left: left});

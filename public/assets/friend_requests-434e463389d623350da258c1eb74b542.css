@@ -1,0 +1,91 @@
+/***************************************/
+/* Friend Requests */
+/***************************************/
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container {
+  margin-top: 10px;
+}
+/* line 9, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container {
+  border-top: 1px solid #C6C6C6;
+  padding: 10px;
+  cursor: pointer;
+}
+/* line 14, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container:hover {
+  background-color: #D8EAC5;
+}
+/* line 19, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .check_box,
+.requests_list_container .request_container .picture_box,
+.requests_list_container .request_container .right_section {
+  display: inline-block;
+}
+/* line 23, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .check_box {
+  position: relative;
+  bottom: 40px;
+}
+/* line 28, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .picture_box {
+  margin-left: 15px;
+}
+/* line 32, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .right_section {
+  margin-left: 15px;
+  position: relative;
+  bottom: 20px;
+  display: inline-block;
+  width: 70%;
+}
+/* line 40, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .right_section span {
+  margin: 0;
+}
+/* line 44, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .right_section .name {
+  font-weight: normal;
+  margin-bottom: 5px;
+  position: relative;
+  top: -6px;
+}
+/* line 51, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .right_section .request_buttons {
+  margin-left: 10px;
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+}
+/* line 57, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .request_container .right_section .request_buttons .friend_action {
+  margin-right: 5px;
+}
+/* line 65, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #FFFFFF;
+  border: 2px solid #cacece;
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+}
+/* line 75, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .regular-checkbox:active, .requests_list_container .regular-checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* line 79, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .regular-checkbox:checked {
+  background-color: #FFF;
+  border: 2px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
+}
+/* line 85, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friend_requests.css.scss */
+.requests_list_container .regular-checkbox:checked:after {
+  content: '\2714';
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: #5DA21D;
+}

@@ -1,0 +1,405 @@
+
+// Header
+
+header { margin-bottom: 20px; }
+
+#top-container {
+  background-color: #000;
+  min-width:1190px;
+
+
+  #top-container-content {
+    width:1190px;
+    margin:0px auto;
+  }
+
+  #logo_container {
+    display: inline-block;
+
+    .logo {
+     height: 120px;
+     padding-top:15px;
+     padding-bottom:15px;
+     margin-left:10px;
+    }
+  }
+
+
+
+  #search_form_container {
+    display: inline-block;
+    width: 777px;
+    margin-left: 20px;
+    padding: 0;
+
+    .nav_form {
+      padding: 0;
+      .form-control {
+        border-radius: 0;
+        width: 87%;
+
+        display: inline;
+      }
+
+      .search_button {
+        width: 10%;
+        min-height:34px;
+
+      }
+    }
+
+  }
+
+  #nav_icons {
+    position: relative;
+    display: inline-block;
+    margin-left: 7%;
+    top: 12px;
+
+    .dropdown {
+      float: left;
+
+      .fa {
+        font-size: 25px;
+        color: #969590;
+        padding: 5px;
+
+        &:hover {
+          color: #FFF;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Not singed in user
+  #login_form_container {
+    width: 50.5%;
+    position: relative;
+    top: 3em;
+
+    .login_nav {
+      width: 250px;
+      display: inline;
+      border-radius: 0;
+      margin-right: 10px;
+    }
+  }
+
+
+} // end top_container
+
+#bottom_nav {
+  background-color: #3C3C3C;
+  min-width: 1190px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  #bottom_nav-content {
+    width:1190px;
+    margin:0px auto;
+  }
+
+  .general_nav_list {
+    margin: 0;
+
+    li {
+      display: inline;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      a {
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #upgrade_container {
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+
+    a, p {
+      color: #FFF;
+      text-decoration: none;
+    }
+  }
+
+} // end bottom_nav
+
+
+
+/***************************************/
+/* Drop Down Stylings */
+/***************************************/
+
+// Mixins
+
+@mixin time_ago_style {
+  position: absolute;
+  right: 0;
+  top: -8px;
+  font-style: italic;
+}
+
+@mixin profile_picture_style {
+  width: 80px;
+  float: left;
+}
+
+@mixin name_style {
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  width: 120px;
+  font-weight: bold;
+}
+
+@mixin right_block {
+  margin-left: 10px;
+  margin-top: 20px;
+  float: left;
+  width: 140px;
+}
+
+
+// General Dropdown Style
+
+.dropdown-menu {
+  background: #4E4E4E !important;
+  padding: 7px 7px 15px 7px;
+  width: 400px !important;
+
+
+
+  #dropdown-title {
+    margin-top: 5px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+
+  .unread {
+    &:hover {
+      background-color: #74A230 !important;
+    }
+  }
+
+
+  // Friend Request Drop down style
+
+  .no_requests_container {
+    padding: 20px;
+    background-color: #FCFCFC;
+    text-align: center;
+    margin-bottom: 4px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+
+  .request_container {
+    .time_ago {
+      @include time_ago_style;
+    }
+
+    .profile_picture {
+      @include profile_picture_style;
+
+    }
+
+    .requester_name {
+      margin-top: 28px;
+      margin-left: 10px;
+      float: left;
+      width: 100px;
+
+      a{
+        color: #000 !important;
+        text-decoration:none;
+      }
+    }
+
+    .action_buttons {
+      @include right_block;
+      width: 155px !important;
+      margin-top: 14px;
+
+      a {
+        border: 0;
+      }
+
+      .connect_button {
+        margin-right: 5px;
+      }
+    }
+  }
+
+
+  // Messages Drop Down style
+
+  .new_message_icon {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    color: #A6E22D !important;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+
+
+
+  .message_container {
+    position: relative;
+    color: #000;
+
+    .time_ago {
+      @include time_ago_style;
+    }
+
+    .profile_picture {
+      @include profile_picture_style;
+    }
+
+    .message_name {
+      margin-top: 20px;
+      margin-left: 10px;
+      float: left;
+      width: 120px;
+      font-weight: normal;
+    }
+
+    .message_snippit {
+      @include right_block;
+    }
+
+  }
+
+  // See all Styling
+
+  .see_all {
+    text-align: center;
+    padding: 0 !important;
+    margin: 0 !important;
+
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a.see_all_link {
+      width: 100%;
+      display: inline-block;
+      background-color: #FCFCFC;
+      height: 30px;
+      padding-top: 5px;
+      color: #000 !important;
+
+
+      &:hover {
+        color: #FFF !important;
+        text-decoration: none;
+        background-color: #3C3C3C;
+      }
+    }
+  }
+}
+
+#messages_drop {
+  li {
+    background: white;
+    color: black !important;
+    padding: 10px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    background-color: #FCFCFC;
+
+    &:hover {
+      background-color: #c3c3c3 !important;
+    }
+  }
+}
+
+
+#friend_drop {
+  li {
+    background-color: #FCFCFC;
+    color: black !important;
+    padding: 10px;
+    margin-bottom: 4px;
+
+
+    .btn-default {
+      background-color: #D3D3D3;
+    }
+
+
+  }
+}
+
+
+
+
+
+
+/***************************************/
+/* Notification Icon Styling */
+/***************************************/
+
+#nav_messages,
+#nav_friends {
+  position: relative;
+}
+
+.notification_badge {
+  position: absolute;
+  top: -12px;
+  right: 2px;
+  background-color: rgba(212,19,13,1);
+  color: #fff;
+  border-radius: 3px;
+  padding: 0px 3px;
+}
+
+
+
+
+/***************************************/
+/* Settings Drop Down Stylings */
+/***************************************/
+
+
+.settings_drop {
+  width: 100px !important;
+
+  #settings_dropdown {
+
+    li{
+
+    }
+
+    a {
+      background-color: #FCFCFC;
+      color: #3C3C3C;
+      display: block;
+      margin: 5px 0;
+      padding: 5px;
+      text-align: center;
+
+      &:hover {
+        background-color: #C3C3C3;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+

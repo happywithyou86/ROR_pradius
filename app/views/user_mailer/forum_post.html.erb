@@ -1,0 +1,27 @@
+<body>
+<body style="font-family:arial;font-size:14px;line-height:20px;padding:0px 10px 0px 15px;">
+
+<font color="#333333">Hi <%= @receiver.name.split(" ")[0]%>, </font>
+
+<div style="margin:15px 0px;">
+<%= @sender.name%>  has posted a comment within the <%=  @thread_name%> message forum.
+</div>
+<div style="margin:15px 0px;">
+<b> <%= @message.gsub(/\n/, '<br/>').html_safe %></b>
+</div>
+
+
+<div style="margin:15px 0px;">
+  Login to  <b><%= link_to "PokerRadius.com","https://www.pokerradius.com" %></b> and click on the GROUPS menu to jump back into the conversation!
+</div>
+
+<div style="margin:15px 0px;">
+You are receiving emails from PokerRadius.com. Unsubscribe by clicking on the Opt In/Opt out email 
+
+communication option within the settings page. This email was intended for <%= @receiver.name%>. If you are not 
+
+the intended recipient, please delete this message.
+</div>
+
+  </body>
+</html>

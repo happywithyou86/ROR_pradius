@@ -1,0 +1,27 @@
+div.row
+  div#main_section.box
+	div.row
+		div.col-xs-12
+			h3 Payment History
+			br
+		div.col-xs-4
+			| Date
+		div.col-xs-4
+			| Description
+		div.col-xs-4
+			| Charge
+	div.row
+	  - if !@charge.nil?
+	    - for charge in @charge do
+		  div.col-xs-4
+			  = Time.at(charge[:created]).strftime("%B %e, %Y")
+		  div.col-xs-4
+			  | Premium Plan
+		  div.col-xs-4
+			  = (charge[:amount]).to_f/100
+
+  div#sidebar.box.sidebar
+    - if current_user and  current_user == @data[:user]
+      = render "sidebars/profile_side_bar", user: current_user
+    - elsif current_user and  current_user != @data[:user]
+      = render "sidebars/visitor_side_bar", user: current_user

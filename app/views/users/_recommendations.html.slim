@@ -1,0 +1,13 @@
+div#online_recommenations
+
+  / = link_to r.poker_room.name, '#', class: 'poker_room_link'
+  - online_recommendations.each do |r|
+    div.each_recommendation
+      = render "recommendations/recommendation", recommendation: r
+
+div#casino_recommendations
+  - casino_recommendations.each do |r|
+    div.each_recommendation
+      = render "recommendations/recommendation", recommendation: r
+
+

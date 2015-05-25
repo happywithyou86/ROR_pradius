@@ -1,0 +1,311 @@
+/***************************************/
+/* General Dashboard Styling */
+/***************************************/
+/* line 12, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container {
+  padding: 20px !important;
+}
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_banner img {
+  width: 100%;
+}
+/* line 23, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav {
+  text-align: center;
+  margin-top: 20px;
+}
+/* line 27, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav .dash_nav_list {
+  margin: 0 auto;
+  padding: 0;
+}
+/* line 31, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav .dash_nav_list li {
+  width: 25%;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  border-right: 1px solid #FFF;
+}
+/* line 39, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav .dash_nav_list li a {
+  height: 35px;
+  background-color: #999999;
+  color: #FFF;
+  display: block;
+  padding-top: 8px;
+  text-decoration: none;
+}
+/* line 47, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav .dash_nav_list li a:hover {
+  background-color: #333333;
+}
+/* line 53, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.dashboard_container #dashboard_nav .dash_nav_list .dash_active {
+  background-color: #333333;
+}
+
+/* line 64, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.profit_green {
+  color: #5ba304;
+}
+
+/* line 68, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.loss_red {
+  color: #C03733;
+}
+
+/***************************************/
+/* HighLight Styling */
+/***************************************/
+/* line 78, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight {
+  background-color: #cccccd;
+  position: relative;
+}
+/* line 84, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table {
+  width: 100%;
+}
+/* line 87, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table th {
+  background-color: #4d4d4d;
+  color: #FFF;
+  text-align: center;
+  font-weight: 400;
+  border-left: 5px solid #4d4d4d;
+}
+/* line 95, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table .last_header {
+  border-right: 10px solid #4d4d4d;
+}
+/* line 99, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table .cell_title {
+  font-weight: bold;
+}
+/* line 103, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table td {
+  background-color: #f3f3f3;
+  border-left: 5px solid #cccccd;
+  border-bottom: 2px solid #cccccd;
+  padding: 5px;
+}
+/* line 109, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight #highlight_table td p {
+  margin: 0;
+}
+/* line 116, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight .edit_btton_div {
+  text-align: center;
+  margin-top: 5px;
+}
+/* line 129, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.edit_save_button {
+  width: 170px !important;
+  margin-bottom: 5px;
+}
+
+/***************************************/
+/* Tournament && Cash Log Style */
+/***************************************/
+/* line 146, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables {
+  margin-top: 10px;
+}
+/* line 149, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables p {
+  text-align: center;
+  background-color: #4d4d4d;
+  color: #FFF;
+  margin: 0;
+}
+/* line 156, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling {
+  margin-top: 5px;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 11px;
+}
+/* line 162, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling th {
+  background-color: #333333;
+  color: #FFF;
+  font-weight: 300;
+  padding-left: 2px;
+}
+/* line 170, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling tr td {
+  padding-left: 2px;
+}
+/* line 171, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling tr:nth-child(odd) {
+  background-color: #E7E7E7;
+}
+/* line 172, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling tr:nth-child(even) {
+  background-color: #FFF;
+}
+/* line 175, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.log_tables .log_styling td {
+  overflow: hidden;
+}
+
+/* line 185, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.table_input_field {
+  width: 100%;
+}
+
+/* line 189, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.new_log_button {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  margin-top: 5px;
+}
+/* line 195, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.new_log_button .new_save_btn {
+  width: 70px;
+  height: 20px;
+  padding-top: 2px;
+  font-size: 12px;
+}
+
+/* line 204, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#tourn_save_btn {
+  display: none;
+}
+
+/* line 209, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#tourn_form_row,
+#cash_form_row {
+  display: none;
+}
+
+/***************************************/
+/* Highlight Edit Styling*/
+/***************************************/
+/* line 218, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.date_amount_field {
+  width: 45px;
+}
+
+/* line 223, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.text_fields {
+  width: 100%;
+  margin-top: 2px;
+}
+
+/* line 230, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#best_hand_edit a {
+  margin-left: 9px;
+}
+
+/***************************************/
+/* Life Time Styling */
+/***************************************/
+/* line 241, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#life_table th {
+  background-color: #999999;
+  font-size: 14px;
+}
+/* line 246, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#life_table td {
+  font-size: 12px;
+  font-weight: 500;
+}
+/* line 251, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#life_table .month_profit {
+  background-color: #BFDA9B;
+  color: #5ba304;
+  font-weight: 500;
+}
+/* line 257, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#life_table .month_loss {
+  background-color: #E1A7A6;
+  color: #C03733;
+  font-weight: 500;
+}
+/* line 263, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#life_table .break_even {
+  background-color: #c6c6c6;
+  font-weight: 500;
+  color: #333333;
+}
+
+/***************************************/
+/* Best Hand Select Image Styling */
+/***************************************/
+/* line 277, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.card1 {
+  width: 60px;
+}
+
+/***************************************/
+/* Chart Styling */
+/***************************************/
+/* line 289, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_charts {
+  background-color: #cccccd;
+}
+/* line 292, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_charts #charts_table {
+  margin: 0 auto;
+  width: 100%;
+}
+/* line 295, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_charts #charts_table th {
+  background-color: #333333;
+  color: #FFF;
+  text-align: center;
+  border-left: 3px solid #cccccd;
+  border-top: 3px solid #cccccd;
+  border-right: 3px solid #cccccd;
+  font-weight: 400;
+}
+/* line 305, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_charts #charts_table .table_break {
+  background-color: #808080 !important;
+  color: #FFF;
+  text-align: center;
+  border-right: 4px solid #808080;
+}
+/* line 312, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_charts #charts_table .chart_td {
+  padding-left: 3px;
+}
+
+/* line 320, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.pie_charts_container {
+  position: relative;
+}
+
+/* line 325, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.chart_div {
+  width: 180px;
+  height: 200px;
+  margin: 0;
+  display: inline-block;
+}
+
+/* line 331, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#dashboard_highlight .to_years {
+  padding: 17px;
+}
+
+/* line 334, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#tourn_location {
+  width: 108px;
+}
+
+/* line 337, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+.tournament_hidden, .cash_hidden {
+  display: none;
+}
+
+/* line 340, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dashboards.css.scss */
+#forgot_password {
+  left: 203px;
+  position: relative;
+  top: 6em;
+}

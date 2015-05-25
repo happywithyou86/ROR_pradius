@@ -1,0 +1,18 @@
+
+.dropdown
+  = link_to "#", :id => "nav_friends", :class => "dropdown-toggle notify_icon", 'data-toggle' => "dropdown", data: {:not_type => 'friend'}  do
+    i.icon-2x.icon-user.fa.fa-user
+
+    - if !@unread_friend_notifications.blank? 
+      span.notification_badge#request_badge
+        = @unread_friend_notifications.count
+    - else
+      span.notification_badge#request_badge style="display:none;"
+
+
+  ul.dropdown-menu#friend_drop.pull-right.col-md-5 role="menu"
+    div#dropdown-title CONNECTION REQUESTS
+    div.requests data-need-update="false"
+      = render "/pending_friends/friend_requests_container", :pending_friends => @pending_friends
+
+

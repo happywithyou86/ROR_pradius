@@ -1,0 +1,10 @@
+if ("<%= @user.request_confirm_code %>" >= 3 && "<%= @user.request_confirm_code %>" < 4)
+{
+  $('#create-user-modal .btn-success').attr('disabled','disabled');
+  $('#create-user-modal .btn-success').parent("a").removeAttr('href');
+  $('#create-user-modal .btn-success').after($("<div class='email_attemp' style='color:red;text-decoration:none;!important;'>You Have Already Made 3 Attempts.  Please Contact Support For Assistance</div>"));
+  $('#create-user-modal .btn-success').parent("a").css("text-decoration","none");
+}
+else{
+  $(".modal-header > h4").html("We sent you another email!");
+}

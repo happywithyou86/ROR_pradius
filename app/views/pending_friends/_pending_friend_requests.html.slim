@@ -1,0 +1,22 @@
+- if !requests.empty?
+  - requests.each do |request|
+    div.request_container
+      div.check_box
+        = check_box_tag :marked, nil, nil, class: "regular-checkbox", data: {request_id: request.id}
+
+      div.picture_box
+        = create_profile_pic(request.requester, 80)
+
+
+      div.right_section
+        - if !request.requester.blank? && !request.requester.name.blank?
+          span.name = request.requester.name
+        span.request_buttons
+          = link_to 'Accept', '#', :class => 'btn btn-success friend_action', :data => { request_id: request.id, type: 'accept'}
+          
+
+      br style="clear: left;"
+  = will_paginate requests
+- else
+  div.request_container
+    p style="text-align:center;" No Requests

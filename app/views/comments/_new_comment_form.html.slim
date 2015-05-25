@@ -1,0 +1,7 @@
+= form_for :comment, html: {class: 'new_comment_form'} do |f|
+  = f.hidden_field :commentable_id, value: commentable.id
+  = f.hidden_field :commentable_type, value: type
+  = f.hidden_field :user_id, value: user_id
+
+  = f.text_area :text, class: 'comment_textarea', placeholder: 'Add a comment'
+  = f.submit "Comment", class: 'btn btn-success comment-button-margin-bug-fix'

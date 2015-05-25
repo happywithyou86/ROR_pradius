@@ -1,0 +1,60 @@
+div.row
+  div#main_section.box
+
+    form#search-forum-form action="/searches/results" method="GET"
+      ul
+        div class="form-group"
+          li class="col-md-11 col-sm-11"
+            input class="form-control" name="search_text" placeholder="Search" type="text"
+          li class="col-md-1 col-sm-1"
+            button class="btn btn-default" type="submit" Find
+
+    br
+
+    - if @data.nil? || @data[:users].blank? || @data[:users].nil?
+      / h1.text-center No Results Found
+      div.no_results
+        h2 No results were found based on your search.
+        p Looking for someone not yet on Poker Radius? Invite them to connect!
+
+        / = render "friends/invite_friends"
+        div.invite_friends_form_container
+
+          = form_tag('/users/friends/invite', id: 'invite_friends_form', remote: true) do
+
+            = text_field_tag :first_name, nil, :placeholder => 'First Name', class: 'form_fields'
+            br
+            = text_field_tag :email, nil, :placeholder => 'Email', class: 'form_fields'
+            br
+            = submit_tag 'SEND INVITE', class: 'btn btn-success'
+
+
+        div.sent_container
+          div.invitation_sent style='display: none;'
+            p INVITATION SENT!
+
+
+
+    - elsif  !@data.blank? && !@data[:users].blank?
+      - @data[:users].each_with_index do |user, num|
+        div.col-md-5.mini-profile-card class="#{num.odd? ? "pull-right" : ""}"
+
+          div.pull-left
+            = create_profile_pic(user, "100")
+          div.user-details
+            div.bold
+              - if !user.nil? && !user.name.nil?
+                a href="#{my_profile_path(user)}" = user.name
+                div.prid = "PR ID" + " " + user.prid
+            - if !user.blank? && !user.user_location.nil? && !user.user_location.country.nil? 
+              - if !user.blank? && !user.user_location.country.country_code.nil?
+                - if !user.user_location.state_and_city.nil?
+                  div = (user.user_location.state_and_city if !user.user_location.state_and_city.nil? ) + "," + " " +  check_usa(user.user_location.country.country_code)
+                - else
+                  div = check_usa(user.user_location.country.country_code)
+
+              - else
+                div = user.user_location.state_and_city + "," + " " +  user.user_location.country.name
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

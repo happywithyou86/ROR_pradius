@@ -1,0 +1,11 @@
+div#recent-activity-section
+  h3 Recent Activity
+
+  - if @data[:user_recent_activity].present?
+    ul
+      - @data[:user_recent_activity].each do |activity|
+        div
+          = content_tag :li, activity.message.html_safe, class: "activity-sentence" if !activity.message.nil?
+        div.clearfix
+  - else
+    p No Recent Activity

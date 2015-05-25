@@ -1,0 +1,26 @@
+footer.footer
+  div.footer-container
+  	div.footer-container-sidebar
+  		ul
+  			li.pull-right © 2015 PokerRadius.com All Rights Reserved
+  	div.footer-container-main
+		  ul
+			  li
+			  	= link_to 'About Us', "/about_us"
+			  li &nbsp;&nbsp;|&nbsp;&nbsp;
+			  li
+			  	= link_to 'Contact Us',  "/contact"
+			  li &nbsp;&nbsp;|&nbsp;&nbsp;
+			  li 
+			  	= link_to 'Privacy Policy', "/privacy_policy"
+			  li &nbsp;&nbsp;|&nbsp;&nbsp;
+			  li 
+			  	= link_to 'Terms of Use', "/user_agreement"
+			  li &nbsp;&nbsp;|&nbsp;&nbsp;
+			  li Find Us:
+			  li
+			  	= link_to image_tag( 'poker-radius-facebook-icon.png', height: '16', width: '16',alt: "Poker Radius Facebook page" ), 'http://goo.gl/FLrleb', :target => "_blank"
+
+			  	= link_to image_tag( 'poker-radius-twitter-icon.png', height: '16', width: '16',alt: "Poker Radius Twitter icon"), 'http://goo.gl/sFLKDj', :target => "_blank"		  
+			  	
+= hidden_field_tag :stripe_public_key, "#{stripe_keys("public_key")}"

@@ -1,0 +1,201 @@
+/* line 2, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.hr_dicussion_groups {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 7, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.advertisement {
+  width: 300px;
+  height: 200px;
+}
+
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel {
+  right: 3px;
+  min-height: 120px;
+}
+/* line 15, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel .suggested_user {
+  font-size: 12px;
+  margin-top: 1em;
+}
+
+/* line 21, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.recommend_carousel {
+  width: 291px;
+  margin-left: 17px;
+}
+
+/* line 26, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-inner > .item > img {
+  display: inline;
+}
+
+/* line 30, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-control {
+  font-size: 14px;
+  width: 7.5%;
+}
+
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-control.left {
+  background-image: none;
+  left: -6%;
+  background-color: #3C3C3C;
+  opacity: 1;
+}
+/* line 41, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-control.left .glyphicon {
+  top: 65px;
+  left: 21%;
+}
+
+/* line 48, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-control.right {
+  background-image: none;
+  right: -8%;
+  background-color: #3C3C3C;
+  opacity: 1;
+}
+/* line 54, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel-control.right .glyphicon {
+  top: 65px;
+  left: 20%;
+}
+
+/* line 60, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section {
+  min-height: 100px;
+  margin-bottom: 33px;
+}
+/* line 64, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .section-title {
+  font-size: 18px;
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+/* line 70, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .section-title-Discussion-Groups {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+/* line 76, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .section-title_Total_Members {
+  margin: 0px auto;
+  font-size: 18px;
+  margin: 7px;
+  font-weight: 500;
+  text-align: center;
+}
+/* line 84, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .section-green-centered-number {
+  padding: 4px 12px;
+  background-color: #5BA304;
+  color: white;
+  font-size: 14px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  /* future proofing */
+  -khtml-border-radius: 3px;
+  /* for old Konqueror browsers */
+}
+/* line 96, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .plus-sign {
+  background-color: #5BA304;
+  color: white;
+  font-size: 15px;
+  border: none;
+}
+/* line 103, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .thread a {
+  color: #5BA304;
+}
+/* line 105, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .thread a:hover {
+  text-decoration: none;
+  color: #5BA304;
+}
+/* line 113, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list {
+  margin: 0;
+}
+/* line 117, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list p {
+  height: 35px;
+}
+/* line 120, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list p.name_block a {
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  text-decoration: none;
+}
+/* line 126, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list p.name_block {
+  color: #000;
+}
+/* line 130, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list p.side_bar_user_fix {
+  text-align: center;
+  width: 80px;
+  position: absolute;
+  height: 48px;
+}
+/* line 137, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list .name_user {
+  font-weight: normal !important;
+}
+/* line 141, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list li {
+  display: inline-block;
+  max-width: 80px;
+  text-align: center;
+  margin-left: 10px;
+  height: 150px;
+}
+/* line 148, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list li a {
+  display: block;
+}
+/* line 151, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list li a #unknown-location-id {
+  font-style: italic !important;
+  color: #B3B3B3 !important;
+  font-weight: 300 !important;
+  margin: 0;
+  font-size: 10px;
+}
+/* line 160, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.section .carousel_list li a .name_block {
+  font-size: 10px;
+  color: #000;
+  margin: 0;
+}
+
+/* line 172, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.carousel_list li a #unknown-location-id {
+  font-size: 10px;
+  color: #B3B3B3 !important;
+  margin: 0;
+  font-style: italic !important;
+  font-weight: 300 !important;
+}
+
+/* line 180, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+.see_all {
+  padding: 0px 2px;
+  margin-top: 5px;
+}
+
+/* line 185, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+#see_all_shrunk {
+  font-size: 14px;
+}
+
+/* line 189, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/sidebar.css.scss */
+#see_all_shrunk_arrow {
+  font-size: 12px;
+}

@@ -1,0 +1,67 @@
+div#new_status_container
+  div#image_box
+    = create_profile_pic(current_user, '55')
+
+  div#new_status_box
+    = form_for :post, url: { action: "create", controller: "posts" }, html: { id: 'new_post_form', multipart: true} do |f|
+
+      = f.text_area :status, class: 'text_area', rows: "2", placeholder: "Share an update"
+      div.file_field
+	      = f.file_field :image, :onchange=>"showimagepreview(this)"
+	      =  image_tag 'profile_pic_upload_icon.jpg'
+      p.share_button_container
+        = f.submit 'SHARE', class: 'btn btn-success', id: 'post_share_button'
+ 
+div#image_preview
+  div#image_close
+  	= link_to "x", "#", :class=> "close_preview"
+  div#image_show
+    img#imgprvw
+
+
+
+javascript:
+  function showimagepreview(input) {
+    if (input.files && input.files[0]) {
+      var filerdr = new FileReader();
+      filerdr.onload = function(e) {
+        $('#imgprvw').attr('src', e.target.result);
+      }
+      filerdr.readAsDataURL(input.files[0]);
+      $("#image_preview").show()
+    }
+  }
+
+  $(".close_preview").click(function(){
+		$(".file_field").show()
+    $("#image_preview").hide()
+  })
+
+
+css:
+	#image_preview{
+		display:none;
+	}
+
+	.file_field {
+    float: right;
+    margin-top: -80px;
+    position: relative;
+	}
+
+	.file_field img{
+		cursor: pointer;
+    margin-top: -45px;
+    width: 20px;
+	}
+
+	.file_field #post_image{
+			opacity: 0;
+			width: 22px;
+			margin-top: 1px;
+	}
+	@-moz-document url-prefix() { 
+			.file_field #post_image {
+					margin-top: -3px;
+			}
+	}

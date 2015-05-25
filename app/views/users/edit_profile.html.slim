@@ -1,0 +1,30 @@
+div.row
+  div#main_section.box
+    div#profile-card
+      div.pull-left
+        = image_tag 'profile_pic_upload_icon.jpg', :class=>"profile_edit_icon", :id=>"profile_edit_icon"
+        div#profile-picture
+          = create_profile_pic(@user, "175")
+      div.row
+        = render 'users/edit_profile_card', user: @data[:user]
+
+    br
+    div.clearfix
+
+    = render partial: "recent_activity"
+
+    br
+    div.clearfix
+
+    = render partial: "profile_tab"
+
+
+  div#sidebar.box.sidebar
+    - if current_user and  current_user == @data[:user]
+      = render "sidebars/profile_side_bar", user: current_user
+    - elsif current_user and  current_user != @data[:user]
+      = render "sidebars/visitor_side_bar", user: current_user
+
+br
+
+= render partial: "edit_profile_modals"

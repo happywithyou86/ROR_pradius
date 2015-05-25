@@ -1,0 +1,369 @@
+
+// Profile Page
+// =================
+#post_status {
+  border-color: #eeeeee;
+  min-height: 80px;
+}
+
+#profile-card {
+  position:relative;
+  background: #eeeeee;
+  overflow: hidden;
+
+  .profile-picture-present {
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .img-responsive{
+    height: 211px !important;
+  }  
+
+  .profile-res-pic .img-responsive{
+    height: 187px !important;
+  }
+
+
+  #info_section {
+    padding: 0;
+    margin-left: 10px;
+    width: 340px;
+    float: left;
+  }
+  
+  .info_box{
+    .icons,#location_prid_box,p{
+      margin-top:2px;
+    }
+    .icons{
+      margin-bottom:7px;
+    }
+  }
+
+  // Username And social icon
+  #username_box {
+    position: relative;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 0px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      line-height: 32px;
+    }
+
+    .profile-icons{ margin-top:2px;}
+
+    span {
+      margin-left: 2%;
+      position: relative;
+      bottom:3px;
+
+      img {
+        height: 20px;
+        width: 20px;
+        
+      }
+    }
+
+    // Edit Social
+
+    .edit_social {
+      color: white;
+      font: bold 24px/45px Helvetica, Sans-Serif;
+      letter-spacing: -1px;
+      background: rgb(0, 0, 0); /* fallback color */
+      background: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      padding-bottom: 3px;
+      width: 20px;
+      height: 20px;
+      top: -1px;
+      left: 0px;
+
+      span {
+        font-size: 0.7em;
+        top: -10px;
+        cursor:pointer;
+      }
+    }
+
+  } // end user_name_box
+
+
+// Locations and PR ID
+  #location_prid_box {
+    font-size: 1em;
+    #location {
+      margin-right: 15%;
+    }
+
+
+    // Edit
+    span#prid {
+      margin-left: 5%;
+    }
+
+    #location_text_field {
+      width: 45%;
+      height: 1.5em;
+    }
+
+  }
+  .player_type_label {
+    margin-left: 1%;
+  }
+
+  .right_checkbox {
+    margin-left: 4%;
+  }
+
+  #blog_text_field {
+    //font-size: 0.8em;
+    height: 1.5em;
+    margin-left:5px;
+  }
+
+  #prid_text_field {
+    width: 30%;
+    height: 1.5em;
+  }
+
+
+  // Experiend Playing Poker
+  p {
+    margin: 0;
+  }
+
+  // links
+
+  .green_links {
+    color: #5BA304;
+  }
+
+  #edit_profile_card {
+    width:70px;
+  }
+
+
+  // Flag Styling
+
+  #flag_box {
+    padding: 0 18px 0 0;
+    min-width: 126px;
+
+    margin-right:5px;
+    float: right;
+
+    #profile-flag {
+      margin-top: 6px;
+      height: 45px;
+      width: 70px;
+    }
+
+  }
+
+  img {
+    // margin-right: 20px;
+  }
+
+  #default-float-image {
+    max-width: 200px;
+    height: 200px;
+    display: block;
+  }
+
+  #edit-image-text {
+    color: white;
+    font: bold 18px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 65px;
+    height: 45px;
+    width: 79px;
+    cursor: pointer;
+    text-align: center;
+    top: 6px;
+    right: 8px;
+  }
+
+  .edit-icon-box {
+    margin-top: 8px;
+    .glyphicon {
+      font-size: 20px;
+      top: -6px;
+      margin-left: 5px;
+    }
+  }
+
+
+  .edit_user {
+    h2 {padding-left: 0px;}
+  }
+}
+
+#recent-activity-section {
+  max-height: 600px;
+  overflow: auto;
+  margin:16px 0px 0px;
+
+  h3 {
+    margin-top: 0px;
+  }
+
+  .activity-sentence {
+    margin-bottom: 10px;
+    color: #191919;
+  }
+
+  .add-comment-form {
+    .btn {
+
+
+    }
+  }
+
+}
+
+
+/***************************************/
+/* Profile Tabs */
+/***************************************/
+
+
+#profile-tab {
+  .active {
+    a {
+      background: #3C3C3C;
+    }
+  }
+
+  li:nth-child(1) {
+    width: 26%;
+  }
+
+  li:nth-child(2) {
+    width: 25%;
+  }
+
+  li:nth-child(3) {
+    width: 25%;
+  }
+
+  li:nth-child(4) {
+    width: 23.2%;
+  }
+
+  li {
+
+    text-align: center;
+    a {
+      color: white;
+      background: #747474;
+      border-radius: 0px;
+    }
+  }
+}
+
+//////////////////
+// TAB CONTENT //
+/////////////////
+
+.tab-content {
+  background: none repeat scroll 0 0 #D3D3D3;
+  padding: 20px;
+  overflow:auto !important;
+  border:1px solid #d3d3d3;
+
+  .poker_chip_title {
+    position: relative;
+    // margin-top: 20px;
+    margin-bottom: 10px;
+
+    img,h3 {display: inline-block;}
+
+    h3 { margin-left: 10px;}
+  }
+
+  .poker_room_link {
+    color: #59A400;
+
+    &:hover {
+      color: #59A400;
+    }
+  }
+
+} // end .tab-content
+
+.profile_friend_message_button_container {
+  position: absolute;
+  bottom:8px;
+  right:8px;
+}
+
+.friend_request_button {
+  margin-left: 28%;
+}
+
+
+
+// Modals
+// ======
+.flags {
+  background-attachment: scroll;
+  overflow: scroll;
+  max-height: 350px;
+  overflow-x: hidden;
+  .flag {
+    cursor: pointer;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+#edit-twitter-url-modal, #edit-facebook-url-modal, #edit-youtube-url-modal, #edit-instagram-url-modal {
+  .control-label {
+    margin-top: 6px;
+  }
+}
+
+#postal_error{
+  color:red;
+}
+#create-user-form select{
+  padding: 6px 4px 6px 12px;
+}
+
+#user_opt_in{
+  margin-left: 9px;
+  margin-top: -13px;  
+ -moz-appearance: none;  
+ appearance: none;  
+ top: .5em;  
+ display: inline-block;  
+ background: #fafafa;  
+ background: -webkit-linear-gradient(top,  #fafafa 0%,#dcdcdc 100%);  
+ position: relative;  
+ width: 15px;  
+ height: 15px;
+ border-radius: 15px;  
+ border: 1px solid #aaa;  
+ box-shadow: inset 0 1px 2px #fff,   
+        0 1px 2px #bbb;  
+ -webkit-transition: .1s linear;
+}
+
+.edit_user_link{
+  a { 
+    cursor: pointer !important;
+    cursor: hand !important; 
+  }
+  label{
+    cursor:pointer;
+  }
+}
+

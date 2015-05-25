@@ -1,0 +1,77 @@
+div#info_section  
+  div#username_box
+    h2 = user.name
+    div.profile-icons
+      - if user.user_facebook  && !user.user_facebook.url.blank?
+        span.margin0px
+          = link_to image_tag( 'facebook-icon.gif', height: '30', width: '30'), "#{add_url_protocol(user.user_facebook.url)}", :target => "_blank"
+      - if user.user_twitter && !user.user_twitter.url.blank?
+        span
+            = link_to image_tag( 'twitter-icon.png', height: '30', width: '30'), "#{add_url_protocol(user.user_twitter.url)}", :target => "_blank"
+
+      - if user.user_youtube  && !user.user_youtube.url.blank?
+        span
+          = link_to image_tag( 'youtube-icon.png', height: '30', width: '30'), "#{add_url_protocol(user.user_youtube.url)}", :target => "_blank"
+
+      - if user.user_instagram  && !user.user_instagram.url.blank?
+        span
+          = link_to image_tag( 'pokerradius+pokersocialnetwork+instagramicon.png', height: '30', width: '30'), "#{add_url_protocol(user.user_instagram.url)}", :target => "_blank"
+
+
+  - if user.user_location.present?
+    div#location_prid_box
+      - if user.user_location.state_and_city.present?
+        span#location
+          = user.user_location.state_and_city
+
+      span PR ID ##{user.prid}
+  - else
+    div#location_prid_box
+      span PR ID ##{user.prid}
+
+
+  - if user.online_player && user.casino_player
+    span Online Poker Player, Casino Poker Player
+
+  - elsif user.online_player
+    span Online Poker Player
+
+  - elsif user.casino_player
+    span Casino Poker Player
+
+
+
+  - if user.year_started_playing_poker.present?
+
+    p Experience Playing Poker: #{date_time_ago_in_words(user.year_started_playing_poker, Date.today)}
+
+
+  - if user.user_blog.present? && !user.user_blog.url.blank? 
+    p
+      | Blog: 
+      = link_to user.user_blog.url, add_url_protocol(user.user_blog.url), class: 'green_links', :target => "_blank"
+
+
+  p
+    | Profile: 
+    - if user.custom_url.blank? || user.plan_type == "basic"
+      = link_to "www.PokerRadius.com/#{user.prid}", my_profile_path(user), class: 'green_links',:target=>"_blank"
+    -else
+      = link_to "www.PokerRadius.com/#{user.custom_url}", my_profile_path(user), class: 'green_links',:target=>"_blank"
+
+  p
+    = link_to pluralize(User.friends_of_user(user).count, 'Connection') , friends_path(user.prid,user.name), class: 'green_links'
+
+div#flag_box
+  = image_tag user.user_location.country.photo_name , class: "pull-right", id: "profile-flag", width: "100px", height: "80px" if !user.user_location.country.nil?
+
+  - if current_user and current_user.id == user.id
+    div.profile_friend_message_button_container
+      center
+
+        = link_to 'Edit', edit_profile_path(current_user.prid), class: 'btn btn-success', id: 'edit_profile_card'
+
+
+  = render "friends/friend_connection", current_user_profile: current_users_profile?(user),
+                                        users_are_friends: users_are_friends?(user),
+                                        user: user

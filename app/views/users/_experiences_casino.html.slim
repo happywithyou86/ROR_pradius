@@ -1,0 +1,7 @@
+- unless casino_experiences.empty?
+  - casino_experiences.each do |c|
+    div.experience_container
+       = render "users/experience", experience: c
+- else
+  - if current_user.id !=  @data[:user].id
+    p.no_experience No Experience Posted

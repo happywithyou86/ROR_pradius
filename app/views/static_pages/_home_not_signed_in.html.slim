@@ -1,0 +1,22 @@
+span.background-color-indicator
+div.home-image-wrapper
+  div.home-image
+    = image_tag 'pokerradius+pokersocialnetwork+pokerlife.png'
+  div.text-center
+    a data-toggle="modal" href="#create-user-modal" class="btn btn-primary btn-lg sign-up-btn register_button" Register Now
+
+
+div class="modal fade" id="create-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true" &times;
+        div style="margin-bottom:35px"
+          h1.text-center Get Started - It's Free
+          h4.text-center Registration Takes Less than 2 Minutes
+
+        div.modal_body
+          = render "users/form"
+
+
+h2.login-footer <b>Poker Radius</b> is the fastest growing online <b>poker social network</b>, providing a unique and distinguished <b>social networking platform</b> for <b>poker players</b> at all levels. Our goal is to build a strong <b>poker community</b> that will enable players to stay connected, share experiences and contribute to helping improve the game and inspiring generations to come.  Join our <b>poker community</b> today!

@@ -1,0 +1,85 @@
+/!
+  javascript:
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '529329183877173',
+        xfbml      : true,
+        version    : 'v2.1'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+  javascript:
+    function fb_post_share(href,title){
+      FB.ui(
+        {
+          method: 'feed',
+          link: href,
+          name: title, 
+          picture: href,
+          caption: 'https://pokerradius.com'
+        },
+        function(response) {
+          if (response && !response.error_code) {
+           // alert('Posting completed.');
+          } else {
+           // alert('Error while posting.');
+          }
+        }
+      );
+    }
+
+li
+  div.row.post_container
+    div.image_box
+      = create_profile_pic(post.user, '80')
+
+    div.right_section
+      - if !post.user.blank?
+        p.username style="color:#5BA304;" = link_to post.user.name, profile_path(post.user.prid), style:"color:#5BA304;"
+        p.status = auto_link(proper_word(post.status) , :html => { :target => '_blank' })
+        - if !post.image.blank?
+          = image_tag post.image.url(:large) 
+          br
+          br
+      - if post.is_liked_by_user?(current_user)
+        div
+          = link_to "Unlike (#{post.likes.count})", '#', class: 'like_status', style:"color:#5BA304;", data: {post_id: post.id, likes: post.likes.count, liked: true}
+          .like_users_data{id="user_list_#{post.id}"}
+
+          span.left_margin = link_to "Comments (#{post.comments.count})", '#', class: 'comment_status', style:"color:#5BA304;", data: {post_id: post.id, comments: post.comments.count}
+          span.left_margin.time_in_ago #{time_ago_in_words(post.created_at)} ago
+
+      - else
+        div
+          = link_to "Like (#{post.likes.count})", '#', class: 'like_status', style:"color:#5BA304;", data: {post_id: post.id, likes: post.likes.count,liked: false}
+          .like_users_data{id="user_list_#{post.id}"}
+
+          span.left_margin = link_to "Comments (#{post.comments.count})", '#', class: 'comment_status', style:"color:#5BA304;", data: {post_id: post.id, comments: post.comments.count}
+
+          span.left_margin.time_in_ago #{time_ago_in_words(post.created_at)} ago
+      /!
+        div.social_share
+          p.text Share
+          - if !post.image.blank?
+            = social_share_button_tag(post.status, :rel => "twipsy",:image => "#{post.image.url(:large)}", :'data-type' => 'photo')
+            = link_to "", "#", :class=>"social-share-button-facebook fb-social-share", :onclick=>"fb_post_share('"+"#{post.image.url(:large)}"+"','"+"#{post.try(:status).try(:squish)}"+"');return false;"
+          - else
+            = social_share_button_tag(post.status, :rel => "twipsy")
+            = link_to "", "#", :class=>"social-share-button-facebook fb-social-share",:onclick=>"fb_post_share('"+"#{'https://pokerradius.com/assets/poker-radius-online-social-poker-community-fa870f8a84626af7c45a9b43f3f518dc.png'}"+"','"+"#{post.try(:status).try(:squish)}"+"');return false;"
+
+      div.comments_container style='display: none;'
+        ul.comment_list
+          - post.comments.each do |comment|
+            = render 'comments/comment', comment: comment
+
+        div.new_comment_container
+          = render 'comments/new_comment_form', commentable: post, type: post.class.to_s, user_id: current_user.id
+

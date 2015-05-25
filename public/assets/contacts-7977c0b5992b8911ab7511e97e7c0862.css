@@ -1,0 +1,107 @@
+/***************************************/
+/* Contacts Page Stylings */
+/***************************************/
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+#search_parameters {
+  background-color: #eeeeee;
+}
+
+/* line 10, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.search_form {
+  text-align: center;
+}
+/* line 13, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.search_form #search_friends_field {
+  margin-left: -22px;
+  width: 86%;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #eeeeee;
+  height: 2.4em;
+}
+/* line 21, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.search_form .search_button {
+  margin-left: 15px;
+  margin-top: -2px;
+  min-height: 33px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* line 30, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+#back_button {
+  margin-top: 1em;
+}
+
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container {
+  margin-top: 20px;
+}
+/* line 41, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .results {
+  position: relative;
+}
+/* line 45, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .link_to_friend {
+  display: inline-block;
+  color: black;
+  width: 96%;
+}
+/* line 52, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .remove_friendship_link {
+  margin-right: 1%;
+  color: #B6BABF;
+  font-weight: 500;
+}
+/* line 59, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container {
+  background-color: #E6E6E6;
+  min-height: 70px;
+  width: 380px;
+  height: 75px;
+  float: left;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 68, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container:nth-child(even) {
+  margin-left: 20px;
+}
+/* line 72, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .profile_picture {
+  float: left;
+}
+/* line 76, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .name_block {
+  margin-top: 10px;
+  margin-left: 20px;
+  float: left;
+}
+/* line 83, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .name_block .name {
+  font-weight: bold;
+}
+/* line 86, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .name_block .prid {
+  font-weight: normal;
+  font-size: 12px;
+}
+/* line 90, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .name_block a {
+  font-weight: normal;
+  text-decoration: none !important;
+}
+/* line 96, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+.friends_list_container .friend_box_container .name_block p {
+  margin: 0;
+}
+
+/* line 104, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+#contact_previous_button {
+  display: none;
+}
+
+/* line 107, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contacts.css.scss */
+#contact_next_button {
+  display: none;
+}

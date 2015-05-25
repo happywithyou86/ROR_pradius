@@ -1,0 +1,45 @@
+div.row
+  div#main_section.box
+
+
+    form#search-forum-form action="/forums/search_threads" method="GET"
+      = hidden_field_tag "forum_section_id", params[:forum_section_id]
+      ul
+        div class="form-group"
+          li class="col-md-11 col-sm-11"
+            input class="form-control" name="search_term" placeholder="Search" type="text"
+          li class="col-md-1 col-sm-1"
+            button class="btn btn-default" type="submit" Find
+
+    div.clearfix
+    br
+    div.thread-title
+      = link_to "Back to Section", "/forums/section/#{@data[:section].id}"
+
+      div.pull-right
+        span = will_paginate @data[:threads], :previous_label => '<', :next_label => '>'
+
+    div.clearfix
+
+    - if @data[:threads].blank?
+      h1.text-center Sorry, no results have been found.
+    - @data[:threads].each do |thread|
+      div.forum-thread.col-md-6
+        div
+          a href="/forums/thread/#{thread.id}" = thread.name
+        div = "Started by " + thread.user.name + ", " + time_ago(thread.created_at)
+      div.forum-thread.col-md-3
+        div = "Replies: " + thread.num_of_replies
+        div = "Views: " + thread.views.to_s
+      div.forum-thread.col-md-3
+        div
+          a href="/forums/thread/#{@data[:last_post].forum_thread.id}" = @data[:last_post].forum_thread.name
+        div
+          span = "by "
+          a href="/users/#{@data[:last_post].user.prid}" = @data[:last_post].user.name
+        div = time_ago(@data[:last_post].created_at)
+
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

@@ -1,0 +1,14 @@
+- unless online_experiences.empty?
+  - online_experiences.each do |o|
+    div.experience_container
+      = render "users/experience", experience: o
+- else
+  p.no_experience No Experience Posted
+
+- unless casino_experiences.empty?
+  - casino_experiences.each do |c|
+    div.experience_container
+       = render "users/experience", experience: c
+
+- else
+  p.no_experience No Experience Posted

@@ -1,0 +1,67 @@
+/***************************************/
+/* Endorsements Tab */
+/***************************************/
+/* line 5, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements {
+  padding-bottom: 0px;
+}
+/* line 8, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements #new_endorsement {
+  float: right;
+  margin-right: 20px;
+  margin-top: -14px;
+  overflow: auto;
+  position: relative;
+}
+/* line 15, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements #endorsement_form_container {
+  margin: 20px;
+  margin-right: 45px;
+  margin-top: 5px;
+}
+/* line 20, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements .endorsement_submit_button {
+  text-align: right;
+  margin-top: 10px;
+}
+/* line 26, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements .each_endorsement_container {
+  padding-left: 15px;
+}
+/* line 30, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements .each_endorsement_container .picture_box,
+#endorsements .each_endorsement_container .right_section {
+  display: inline-block;
+}
+/* line 34, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements .each_endorsement_container .right_section {
+  position: relative;
+  bottom: -15px;
+  margin-left: 20px;
+}
+/* line 40, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+#endorsements .each_endorsement_container .right_section h4 {
+  margin: 0;
+}
+
+/* line 46, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+.endorsement_post {
+  background-color: #FFFFFF;
+  display: inline-block;
+  height: 77px;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 688px;
+}
+
+/* line 55, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+.endorse_title {
+  margin-left: 55px;
+  margin-top: 0px;
+}
+
+/* line 63, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/endorsements.css.scss */
+.right_section p {
+  word-wrap: break-word;
+  width: 600px;
+}

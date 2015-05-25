@@ -1,0 +1,40 @@
+table.log_styling#life_table
+
+  tr
+    th Date
+    th Game Type
+    th Poker Room Location
+    th Win/Loss
+
+  - life_time.each do |month, logs|
+    /  Print Out Logs
+    - logs.each do |log|
+      tr
+        - if !log.tournaments_and_games_date.nil?
+          td = log.tournaments_and_games_date.strftime("%B %d, %Y")
+        - else
+          td = log.created_at.strftime("%B %d, %Y")
+        td = log.cash_tourn_type
+        td.profit_green = log.location
+        - if log.win_loss.to_i > 0
+          td.profit_green $#{log.win_loss}
+        - elsif log.win_loss.to_i < 0
+          td.loss_red $#{log.win_loss}
+
+        - elsif log.win_loss.include?('(')
+          td.loss_red #{add_dollar_sign(log.win_loss)}
+
+        - else
+          td $#{log.win_loss}
+
+    / Month Summery
+    tr
+      th colspan='3' #{month.strftime("%B %Y")} Rollup
+      - month_win_loss = calc_month_amount(logs)
+      - if month_win_loss > 0
+        th.month_profit $#{month_win_loss}
+
+      - elsif month_win_loss == 0
+        th.break_even $#{month_win_loss}
+      - else
+        th.month_loss #{month_loss_format(month_win_loss)}

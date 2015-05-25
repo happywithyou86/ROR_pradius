@@ -1,0 +1,11 @@
+
+ <% if params[:id].present? %>
+<%  @user =  User.find(params[:id]) %>
+<div>Current Plan :<%=@user.plan_type.capitalize if !@user.plan_type.nil? %><br/></div>
+  <% if !@user.user_subscription.blank? %>
+     <%= form.send :select, field.name ,options_for_select([["Basic","basic"],["Premium Plan Monthly","premium_plan_monthly"],["Premium Plan - Annual","premium_plan_annual"],["Free Premium Access","free_access"]],:selected=>@user.plan_type)%>
+   <% else %>
+     <%= form.send :select, field.name ,options_for_select([["Basic","basic"],["Free Premium Access","free_access"]])%>
+
+   <% end %>
+<% end %>

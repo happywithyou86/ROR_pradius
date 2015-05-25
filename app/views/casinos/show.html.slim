@@ -1,0 +1,21 @@
+div.row
+  div.col-md-12
+    div.col-md-4
+      h1 = @casino.name
+      = render "recommendations/error_messages"
+
+      = form_for @recommendation, url: { action: "recommend", controller: "casinos" } do |recommend_form|
+        = recommend_form.hidden_field :rating
+        = recommend_form.hidden_field :poker_room_type, value: "Casino"
+        = recommend_form.hidden_field :poker_room_id, value: @casino.id
+
+        div#recommendation_stars
+
+        = recommend_form.fields_for :recommendation_comment do |comment_form|
+          = comment_form.text_area :comment, placeholder: "Let everyone know your opinion of this poker room.
+        = recommend_form.submit "Submit", class: "btn btn-default"
+
+
+      br
+      br
+      = render "recommendations/index", recommendation: @casino_recommendations

@@ -1,0 +1,42 @@
+/***************************************/
+/* Messages Show */
+/***************************************/
+
+
+
+#message_show_container {
+  border-top: 1px solid #343434;
+
+  // Header
+  #message_header {
+    margin-top: 20px;
+
+    .profile_pic {
+      // float: left;
+      // width: 20%
+      margin: 0;
+      width: 20%;
+      display: inline-block;
+    }
+
+    .right_section {
+      // float: left;
+      // width: 75%
+      width: 60%;
+      display: inline-block;
+      margin: 0;
+      position: relative;
+      bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  // Body
+
+  #message_body {
+    margin-top: 20px;
+  }
+}

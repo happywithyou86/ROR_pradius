@@ -1,0 +1,20 @@
+/***************************************/
+/* Buttons */
+/***************************************/
+$green_button_color: #5BA304;
+
+.btn-success,
+.btn-danger,
+.btn-default,
+.btn-gray {
+  border-radius: 0 !important;
+}
+
+.btn-success {
+  background-color: $green_button_color;
+  color: white;
+
+  &:hover {
+    background-color: #599218;
+  }
+}

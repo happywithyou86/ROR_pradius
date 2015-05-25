@@ -1,0 +1,54 @@
+div.row
+  div#main_section.box.messages_page_container
+    div.row#message_nav_and_all_container
+      div#message_nav_container
+        div.search_field_container
+          = text_field_tag :message_search, nil, placeholder: "Search", id: 'message_search_field'
+          a#search_messages.search_inbox_icon href="#" data-type="inbox"
+            span.glyphicon.glyphicon-search
+
+        div.compose_message_container
+          = link_to "COMPOSE MESSAGE", "#", class: 'new_message_icon message_modal_autocomplete', id: 'new_message_link', data: { toggle: "modal", target: "#new_message_modal" }
+
+        div#message_nav_ul_container
+          ul.message_nav_ul
+            li.message_nav_li
+              = link_to "Inbox", user_messages_path, class: 'active'
+            li.message_nav_li
+              =link_to "Sent", user_messages_sent_path
+
+            li.message_nav_li
+              = link_to "Trash", user_messages_trash_path
+
+
+
+      div#messages_container
+        div.messages_invitation_container
+          ul.messages_invitation
+            li = link_to "MESSAGES", user_messages_path, class: 'active'
+
+            / TODO change link to request_path
+            li = link_to "REQUESTS", '#'
+
+        div.message_actions_container
+          ul.message_actions_list
+            li = link_to 'DELETE', '#', class: 'message_action_listener', data: {action: 'trash'}
+            li = link_to 'MARK READ', '#', class: 'message_action_listener', data: {action: 'read'}
+            li = link_to 'MARK UNREAD', '#', class: 'message_action_listener', data: {action: 'unread'}
+
+          ul.message_sort_list
+            li.select
+              span
+                | Select:
+                = link_to ' All ', '#', id: "select_all"
+                span |
+                = link_to " None", "#", id: 'deselect_all'
+
+            
+
+        div.messages_list_container
+          = render "user_messages/message_show", conversation: @conversation, type: 'inbox'
+          / For show message appended div
+
+  div#sidebar.box.sidebar
+    = render "sidebars/profile_side_bar", user: current_user

@@ -1,0 +1,103 @@
+
+/***************************************/
+/* Experiences Tab */
+/***************************************/
+.experience_form_styles {
+  // general text_field styling
+  .experience_text_field {
+    width: 225px;
+    height: 25px;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding:3px;
+    border: 1px solid #ccc;
+    border-radius:0px;
+  }
+#experience_description{
+  border: 1px solid #ccc;
+  padding:3px; 
+   border-radius:0px;
+}
+
+  select {
+    border: 1px solid #ccc;
+    padding:3px;
+
+    cursor: pointer;
+    font-size: 10px;
+    overflow: hidden;
+    background-color: #FCFCFC;
+    box-shadow: none;
+    background-image: none;
+    border-radius: 0;
+    // -webkit-appearance: none;
+  }
+
+  label {
+    margin-left: 5px
+  }
+
+
+  &:focus {
+    outline: none;
+  }
+
+  .online_casino_select {
+    margin-left: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+#experience {
+
+  .no_experience {
+    font-weight: bold;
+    padding-left: 64px;
+  }
+
+  .experience_container {
+    margin-bottom: 5px;
+
+    h4 {
+      margin: 0;
+
+      .edit_experience {
+        height: 21px;
+        width: 50px;
+        padding: 0;
+        margin:0px!important;
+        position:absolute;
+        bottom:8px;
+        left:0px;
+      }
+    }
+    .date {
+      font-weight: 400;
+      font-size: 16px;
+    }
+    p {
+      margin: 0;
+    }
+
+    .poker_room_link {
+      color: #5BA304;
+      font-size: 18px;
+    }
+  }
+
+  .delete_experience {
+    margin:9px 5px!important;
+    height:30px!important;
+    line-height:17px!important;
+  }
+} // end experience_container
+
+

@@ -1,0 +1,11 @@
+- @advertisement_2  = advertisement_section_2(request.fullpath)
+- if !@advertisement_2.nil? 
+  - if @advertisement_2 == @advertisement_1
+    - different_add = same_home_add(@advertisement_1,@advertisement_2)
+    - if !different_add.nil?
+      =link_to image_tag(different_add.image.url, width:  '100px', height:  '100px', style: "min-height: 100px;", class:  "img-responsive advertisement_image" ), "#{different_add.url.include?("http") ? different_add.url : 'http://'+ different_add.url }",target:"_blank"
+  - else
+    - if @advertisement_2.image.url.include?("missing.png")
+      =link_to image_tag('blank-profile.png', width:  '100px', height:  '100px', style: "min-height: 100px;", class:  "img-responsive advertisement_image" ), "#{@advertisement_2.url.include?("http") ? @advertisement_2.url : 'http://'+ @advertisement_2.url }",target:"_blank"
+    - else
+      =link_to image_tag(@advertisement_2.image.url, width:  '100px', height:  '100px', style: "min-height: 100px;", class:  "img-responsive advertisement_image" ), "#{ @advertisement_2.url.include?("http") ? @advertisement_2.url : 'http://'+ @advertisement_2.url }",target:"_blank"

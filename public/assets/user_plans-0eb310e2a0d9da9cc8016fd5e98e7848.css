@@ -1,0 +1,94 @@
+/* line 5, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.upgrade-button-container {
+  width: 155px;
+}
+
+/* line 9, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.upgrade-button {
+  width: 80%;
+}
+
+/* line 13, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-title-main {
+  font-size: 200%;
+}
+
+/* line 17, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-section {
+  margin-bottom: 10px;
+}
+
+/* line 21, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-title-sub {
+  margin-top: 15px;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+/* line 27, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+#payment_monthly_plan {
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* line 33, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+#payment_annual_plan {
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* line 39, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.subscription-field-required {
+  border-color: #851e1e;
+}
+
+/* line 43, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-error_messages {
+  color: #B32E2E;
+}
+
+/* line 47, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.subscription-label {
+  padding-top: 7px;
+}
+
+/* line 51, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.soft-social-icon {
+  border-radius: 3px;
+}
+
+/* line 55, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-back {
+  background-color: #7f7f7f;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 8px 14px;
+}
+
+/* line 63, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-back:hover {
+  background-color: #7f7f7f;
+}
+
+/* line 67, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.payment-submit {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 8px 14px;
+  width: 88px;
+}
+
+/* line 75, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+#payment-please-wait {
+  position: fixed;
+  display: none;
+}
+
+/* line 79, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/user_plans.css.scss */
+.comment_list {
+  margin-top: 15px;
+}

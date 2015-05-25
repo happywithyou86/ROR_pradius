@@ -1,0 +1,29 @@
+// Place all the styles related to the Searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search-forum-form {
+  margin-bottom: 40px;
+}
+
+.mini-profile-card {
+  background-color: #d3d3d3;
+  padding-left: 0px;
+  margin-bottom: 20px;
+  height:75px;
+  width:380px!important;
+  padding-left:0px!important;
+  overflow:hidden;
+  img {
+    margin-right: 15px;
+    min-width:75px;
+    width:75px!important;
+    min-height:75px!important;
+  }
+  .user-details {
+    padding: 8px 17px;
+  .prid{
+    font-weight:normal !important;
+   }
+  }
+}

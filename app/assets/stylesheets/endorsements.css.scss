@@ -1,0 +1,65 @@
+
+/***************************************/
+/* Endorsements Tab */
+/***************************************/
+#endorsements {
+  padding-bottom: 0px;
+
+  #new_endorsement{
+    float: right;
+    margin-right: 20px;
+    margin-top: -14px;
+    overflow: auto;
+    position: relative;
+  }
+  #endorsement_form_container{
+    margin: 20px;
+    margin-right: 45px;
+    margin-top: 5px;
+  }
+  .endorsement_submit_button {
+    text-align: right;
+    margin-top:10px;
+
+  }
+ 
+  .each_endorsement_container  {
+    padding-left: 15px;
+
+    .picture_box,
+    .right_section {
+      display:inline-block;
+    }
+
+    .right_section {
+      position: relative;
+      margin-left: 20px;
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+}
+.endorsement_post{
+  background-color:none!important;
+  display: inline-block;
+  height: 77px;
+  margin-left: 0px;
+  margin-top:0px;
+
+  width: 688px;
+}
+.endorse_title{
+  margin-left: 55px;
+  margin-top: 0px;
+}
+.achivement_delete{
+
+  }
+ 
+.right_section p{
+  word-wrap:break-word;
+  width:600px;
+}
+

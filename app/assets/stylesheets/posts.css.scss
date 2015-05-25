@@ -1,0 +1,146 @@
+
+/***************************************/
+/* User Posts */
+/***************************************/
+
+.like-activity:hover {
+  text-decoration:none;
+}
+
+.comment-activity:hover {
+  text-decoration:none;
+}
+
+#new_status_container {
+  width: 100%;
+
+  #image_box {
+    width: 80px;
+    margin: 0 0 0 2px;
+    display: inline-block;
+    .img-responsive{
+      height: 80px !important;
+      width: 80px !important;
+
+
+    }
+  }
+
+
+  #new_status_box {
+    float: right;
+    width: 87.75%;
+
+    .text_area {
+      border-color:#eeeeee;
+      width: 85%;
+      width: 100%;
+      overflow: hidden;
+      padding-right: 20px;
+    }
+
+    .share_button_container {
+      text-align: right;
+      margin-top: 0.5em;
+    }
+
+    #post_share_button {
+      width: 100px;
+      height: 25px;
+      padding: 0;
+    }
+  }
+}
+
+
+.posts_container {
+
+  .post_container {
+    margin: 0;
+    margin-bottom: 1.5em;
+
+    .image_box{
+      float: left;
+      max-width: 13%;
+    }
+
+    .right_section {
+      float: left;
+      margin-left: 2%;
+      width: 85%;
+
+      p{
+        color:black;
+      }
+
+      .username {
+      font-weight: bold;
+      }
+
+      .status {
+        overflow-wrap: break-word;
+      }
+      .social_share{
+        position: absolute;
+        margin-top: -20px;
+        margin-left: 255px;          
+      }
+    }
+
+    .left_margin {
+      margin-left: 1%;
+    }
+  }
+}
+.like_users_data{
+  background-color: #4C4C4C;
+  border-radius: 3px;
+  height: auto;
+  width: auto;
+  color:white;
+  position:absolute;
+}
+#user_list{padding:8px;}
+span.time_in_ago{
+  color:black;
+}
+
+#image_preview {
+    border: 1px solid #EEEEEE;
+    margin: 0 auto 0 95px;
+    overflow-y: auto;
+    padding: 10px;
+    width: 88%;
+}
+
+#image_show {
+    float: left;
+    width: 250px;
+}
+#image_show img {
+    width: 100%;
+}
+#image_close {
+    float: right;
+    height: 30px;
+    width: 30px;
+}
+.social_share p{
+    float: left;
+    width: 50px;
+    color: #5BA304 !important;
+     margin-left: 40px;
+
+}
+.social-share-button{
+    float: left;
+    margin-left: 11px;
+    margin-top: 3px;
+}
+
+.fb-social-share{    
+  left: 68px;
+  margin-left: 12px;
+  margin-top: 3px;
+  position: absolute;
+}

@@ -1,0 +1,363 @@
+
+/***************************************/
+/* Messages Index Styling */
+/***************************************/
+
+.unread {
+  background-color: #D8EAC5 !important;
+}
+
+
+.messages_page_container {
+  position: relative;
+  background-color: #FFFFFF;
+
+  // Message navigation
+
+  #message_nav_and_all_container{
+    margin: 0;
+  }
+
+  #message_nav_container {
+    background-color: #CCCCCD;
+    padding: 5px;
+    width: 30%;
+    float: left;
+
+    // Search Field
+    .search_field_container {
+      position: relative;
+      height: 30px;
+
+      #message_search_field {
+        width: 85%;
+        height: 30px;
+        font-size: 11px;
+        border-top: 8px solid #FFF;
+        border-right: 2px solid #FFF;
+        border-left: 2px solid #FFF;
+        border-bottom: 4px solid #FFF;
+
+      }
+
+      .search_inbox_icon {
+        // text-align: center;
+        background-color: #5DA21D;
+        color: #FFF;
+        width: 15%;
+        height: 31px;
+        display: inline-block;
+
+        &:hover {
+          background-color: #D8EAC5;
+          color: #5DA21D;
+        }
+
+        span {
+          padding: 6px;
+
+        }
+      }
+
+    }
+
+
+    // Compose Message
+    .compose_message_container {
+      margin-top: 15px;
+      text-align: center;
+
+      #new_message_link {
+        color: #FFF;
+        background-color: #5DA21D;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+          background-color: #D8EAC5;
+          color: #5DA21D;
+        }
+      }
+    }
+
+
+
+    // Message Nav
+    #message_nav_ul_container {
+      margin-top: 10px;
+
+      .message_nav_ul {
+        margin: 0;
+
+        li {
+          text-align: left;
+
+          a {
+            background-color: #FCFCFC;
+            width: 100%;
+            display: block;
+            color: #5DA21D;
+            padding: 10px;
+
+            &:hover {
+              text-decoration: none;
+              background-color: #D8EAC5;
+            }
+
+          }
+
+          a.active {
+            background-color: #D8EAC5 !important;
+          }
+
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+/***************************************/
+/* MESSAGES LIST BODY */
+/***************************************/
+
+
+
+  // Messages Body
+  #messages_container {
+    padding-left: 20px;
+    padding-right: 0;
+    width: 70%;
+    float: left;
+
+
+
+    // Messages / invitations buttons
+    .messages_invitation_container {
+
+      .messages_invitation {
+        margin: 0;
+
+        li {
+          display: inline-block;
+          text-align: center;
+          overflow: hidden;
+          border-right: 1px solid #FFF;
+
+
+          a {
+            display: inline-block;
+            width: 170px;
+            height: 35px;
+            background-color: #9A9A9A;
+            padding-top: 7px;
+            text-decoration: none;
+            color: #FFF;
+
+            &:hover {
+              text-decoration: none;
+              background-color: #343434;
+            }
+          }
+
+          a.active {
+            background-color: #343434;
+          }
+        }
+      }
+    }
+
+    // Message Action Buttons
+    .message_actions_container {
+
+      .message_actions_list {
+
+        li {
+          display: inline;
+          text-align: center;
+          overflow: hidden;
+
+
+          a {
+            display: inline-block;
+            width: 100px;
+            height: 25px;
+            font-size: 12px;
+            background-color: #CBCBCB;
+            text-decoration: none;
+            color: #FFF;
+            padding-top: 4px;
+
+            border-right: 3px solid #FFF;
+
+            &:hover{
+              background-color: #9A9A9A;
+            }
+          }
+        }
+      }
+
+      // select and sorting messages
+      .message_sort_list {
+        margin: 0;
+
+        li {
+          display: inline;
+
+          a {
+            color: #5FA21D;
+          }
+          span.action{
+            float: right;
+            margin-right: 130px;
+          }
+        }
+
+
+        .select {
+
+        }
+
+        .all_messages {
+          margin-left: 150px;
+
+        }
+
+        .newest {
+          margin-left: 100px;
+        }
+
+        .arrow_down {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid #5DA01C;
+          margin-top: 7px;
+          margin-left: 5px;
+        }
+
+        .arrow_up {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid #5DA01C;
+          margin-top: 7px;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    // Message list styling
+    .messages_list_container {
+      margin-top: 10px;
+
+      .message_container {
+        border-top: 1px solid #C6C6C6;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {background-color: #D8EAC5;}
+
+        // message div styling
+        .check_box,
+        .picture_box,
+        .right_section {
+          display: inline-block;
+          float:left;
+        }
+
+        .check_box {
+          position: relative;
+          //bottom: 40px;
+        }
+
+        .picture_box {
+          margin-left: 15px;
+        }
+
+
+        .right_section {
+          margin-left: 15px;
+          position: relative;
+          bottom: 20px;
+          display: inline-block;
+          width: 70%;
+
+
+          p {
+            margin: 0;
+          }
+
+          p.name {
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+        }
+
+        // Bottom Message Actions
+        .bottom_actions_list {
+          margin-bottom: 0;
+          padding-left: 30px;
+
+          li {
+            display: inline;
+            margin-left: 5px;
+
+            a {
+              color: #343434;
+            }
+          }
+        }
+
+
+
+        // checkbox styling
+        .regular-checkbox {
+          -webkit-appearance: none;
+          background-color: #FFFFFF;
+          border: 2px solid #cacece;
+          // box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+          padding: 7px;
+          display: inline-block;
+          position: relative;
+        }
+
+        .regular-checkbox:active, .regular-checkbox:checked:active {
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .regular-checkbox:checked {
+          background-color: #FFF;
+          border: 2px solid #adb8c0;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+          color: #99a1a7;
+
+          &:after {
+            content: '\2714';
+            font-size: 14px;
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            color: #5DA21D;
+          }
+        }
+
+      }
+
+      // Unread
+
+      // No messages
+      .no_messages {
+        border-top: 1px solid #C6C6C6;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+- if request.fullpath == "/forum/index"
+  ol.breadcrumb
+    li.active  Discussions
+- elsif  !request.fullpath.match("/forums/section/").nil?
+  ol.breadcrumb
+    li
+      a href="/forum/index"  Discussions
+    li.active  Title/Thread
+- elsif  !request.fullpath.match("/forums/thread/").nil?
+  ol.breadcrumb
+    li
+      a href="/forum/index"  Discussions
+    li  
+      a href="/forums/section/#{@data[:thread].forum_section_id}" Title/Thread 
+    li.active  "#{@data[:thread].name}"

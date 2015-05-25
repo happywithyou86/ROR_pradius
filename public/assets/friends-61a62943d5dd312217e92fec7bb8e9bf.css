@@ -1,0 +1,28 @@
+/***************************************/
+/* Users Friends Page */
+/***************************************/
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friends.css.scss */
+.friends_container {
+  margin-top: 1.5em;
+}
+/* line 9, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friends.css.scss */
+.friends_container .each_friend {
+  padding: 0;
+  position: relative;
+}
+/* line 14, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friends.css.scss */
+.friends_container .each_friend .profile_picture,
+.friends_container .each_friend .name_block {
+  float: left;
+}
+/* line 16, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friends.css.scss */
+.friends_container .each_friend .name_block {
+  margin-left: 2%;
+  padding-top: 1.5em;
+}
+/* line 20, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/friends.css.scss */
+.friends_container .each_friend .name_block a {
+  color: #5BA304;
+  font-weight: 600;
+  font-size: 18px;
+}

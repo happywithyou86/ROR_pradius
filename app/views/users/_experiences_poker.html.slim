@@ -1,0 +1,7 @@
+- unless online_experiences.empty?
+  - online_experiences.each do |o|
+    div.experience_container
+      = render "users/experience", experience: o
+- else
+  - if current_user.id !=  @data[:user].id
+    p.no_experience No Experience Posted

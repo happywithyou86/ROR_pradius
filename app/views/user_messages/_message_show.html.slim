@@ -1,0 +1,21 @@
+- conversing_user = conversation.participants.select { |p| p != current_user }.first
+div#message_show_container data-message-id="#{conversation.id}"
+  div#message_header
+    div.profile_pic
+      = create_profile_pic(conversing_user, 80)
+    div.right_section
+      p = link_to conversing_user.name, profile_path(conversing_user.prid)
+      p = conversation.created_at.strftime('%B %d, %Y %l:%M %p')
+
+  div#message_body
+    p = conversation.last_message.body.html_safe
+
+    - if type == 'inbox'
+      p = link_to "Reply", '#', class: 'btn btn-success send_message_to_user', data: { toggle: "modal", target: "#new_message_modal", user_name: conversing_user.name, user_id: conversing_user.id }
+
+    - elsif type == 'trash'
+      p
+        = link_to 'Restore', '#', class: 'btn btn-default message_trash_untrash_delete', data: {convo_id: conversation.id, action: 'untrash', type: 'trash'}
+        = link_to 'Delete', '#', class: 'btn btn-danger message_trash_untrash_delete', data: {convo_id: conversation.id, action: 'delete', type: 'trash'}
+
+

@@ -1,0 +1,75 @@
+/ ONLINE POKER ROOM DASHBOARD
+
+div.modal.fade.message_sent_modal tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog.dashboarddialog
+    div.modal-content
+      div.modal-body
+
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+
+        p.text-center.bold  Getting Started with Your Dashboard!
+        p.text-center Tracking your own poker activity is critical for  personal  improvement and effective analysis on your game.
+        p.text-center A few things to help you begin - 
+        ul.bulletdot
+          li Clicking on EDIT DASHBOARD will enable you to keep information accurater at all times
+          li The tournament and online logs will populate both the Life time Profit/Loss and charts tabs automatically for you
+          li Your dashboard is 100% private and can not be seen by others
+
+          li If you have question anytime, please contact our support team and will be more than happy to help
+        div.text-center
+          = link_to "Ok", '#', class: 'btn btn-success ' ,:data => {dismiss: 'modal'}
+div.row
+  div#main_section.box.dashboard_container
+    = render "dashboards/header_image"
+
+
+    div#dashboard_nav
+      ul.dash_nav_list
+        li = link_to "ONLINE POKER ROOM", dash_online_poker_path, class: 'dash_active'
+
+        li = link_to "CASINO POKER ROOM", dash_casino_poker_path
+
+        li = link_to "LIFE TIME PROFIT / LOSS", dash_life_time_path
+
+        li = link_to "CHARTS", dash_charts_path
+
+    div#dashboard_highlight
+      = render "dashboards/highlights_table", highlight: @highlight
+
+      div.edit_btton_div
+        = link_to "Edit Dashboard", dash_online_poker_edit_path, class: 'edit_save_button btn btn-success', id: 'edit_dashboard'
+
+    div.log_tables
+      p ONLINE TOURNAMENT LOG
+
+      = render "dashboards/tournament_log_table", edit: false
+
+    div.log_tables
+      p ONLINE CASH GAME LOG
+      = render "dashboards/cash_log_table", edit: false
+
+
+
+
+
+  div#sidebar.box.sidebar
+    = render "sidebars/profile_side_bar", user: current_user
+
+
+css:
+  .modal-dialog{
+    margin: 20px auto -181px 174px;
+    position: absolute;
+  }
+
+javascript:
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+  { (i[r].q=i[r].q||[]).push(arguments)}
+  
+  ,i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-42438812-1', 'www.PokerRadius.com');
+  ga('set', 'page', '/dashboards/online_poker_room');
+  ga('send', 'pageview');

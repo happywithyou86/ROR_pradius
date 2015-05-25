@@ -1,0 +1,34 @@
+= form_for :experience, html: { id: 'new_experience_form_poker', class: 'experience_form_styles'} do |f|
+  = f.text_field :position, placeholder: "Title (ie. Professional Poker Player)", class: 'experience_text_field'
+
+
+  span.select_style
+    = f.label :start_date, 'From: '
+    = f.date_select :start_date, :use_short_month => true,:start_year => 1930,:end_year=>2049, :order => [:month, :day, :year]
+
+    = f.label :end_date, 'To: '
+    = f.date_select :end_date, :use_short_month => true, :start_year => 1930,:end_year=>2049, :order => [:month, :day, :year]
+
+  span.present
+    = f.check_box :present
+    = f.label :present, "Present?"
+
+  br
+  = f.text_field :location, placeholder: "Business or Website Name", class: 'experience_text_field exp_room_autocomplete'
+
+
+  span#exp_room_url_poker style='display:none;'
+    = label_tag :url, 'Url:   '
+    = text_field_tag :url, nil, placeholder: "ex. http://www.pokerroom.com", class: 'experience_text_field', id: 'exp_url_field_poker'
+
+  = f.hidden_field :poker_room_type,value: "OnlineSite"
+
+
+  br
+  = f.text_field :nickname, placeholder: 'Nickname or Preferred Name', class: 'experience_text_field'
+  br
+
+  = f.text_area :description, placeholder: "Tell everyone who views your profile what experience you have within the Poker community (ie. Podcast Host, Dealer, Training, Blogger, Journalist, Business Owner, etc)",class: 'experience_description_field',class: 'experience_description_field'
+
+  br
+  = f.submit "Submit", class: 'btn btn-success'

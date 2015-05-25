@@ -1,0 +1,27 @@
+div.friend_box_container
+  - if profile_view == false
+    = link_to "X", root_path, class: 'pull-right remove_friendship_link', data: {friend_id: friend.id}
+  .profile_picture
+    = create_profile_pic(friend, 100)
+  .name_block
+    - if friend.present? && friend.name.present?
+      p.name = link_to friend.name, my_profile_path(friend)
+      p.prid = "PR ID" + " " + friend.prid
+    - if !friend.nil? && !friend.user_location.nil? && !friend.user_location.country.nil?
+      - if !friend.user_location.country.country_code.nil?
+        - if !friend.user_location.state_and_city.blank?
+          p #{friend.user_location.state_and_city}, #{check_usa(friend.user_location.country.country_code)}
+      - else
+        - if !friend.user_location.state_and_city.blank?
+          p #{friend.user_location.state_and_city}, #{friend.user_location.country.name}
+        
+
+    - elsif !friend.user_location.blank? && !friend.user_location.location.blank? && !friend.user_location.hide_city && !friend.user_location.country.nil?
+      p #{friend.user_location.location}, #{friend.user_location.country.name}
+      
+    - elsif !friend.user_location.blank? &&  !friend.user_location.location.blank? && !friend.user_location.state_and_city.nil?
+
+        p #{friend.user_location.state_and_city}
+
+
+

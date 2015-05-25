@@ -1,0 +1,16 @@
+.request_container
+  / # p.time_ago = time_ago_in_words(conversation.last_message.created_at) + ' ago'
+  .profile_picture
+    = create_profile_pic(pending_friend.requester, 80)
+
+  .requester_name
+      - if !pending_friend.requester.blank? && !pending_friend.requester.name.blank?
+        = link_to pending_friend.requester.name, profile_path(pending_friend.requester.prid)
+
+  .action_buttons
+    = link_to 'Connect', '#', :class => 'btn btn-success friend_action connect_button', :data => { request_id: pending_friend.id, type: 'accept'}
+    = link_to 'Ignore', '#', :class => 'btn btn-gray friend_action', :data => { request_id: pending_friend.id, type: 'ignore'}
+
+  br style="clear: left;"
+
+

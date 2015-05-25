@@ -1,0 +1,23 @@
+/***************************************/
+/* Post Comments */
+/***************************************/
+/* line 13, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/comments.css.scss */
+.comments_container .new_comment_container .comment_textarea {
+  border-color: #eeeeee;
+  width: 100%;
+}
+/* line 23, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/comments.css.scss */
+.comments_container .comment_list .comment_container {
+  margin: 0;
+  margin-bottom: 1em;
+  border-color: #eeeeee;
+}
+/* line 28, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/comments.css.scss */
+.comments_container .comment_list .comment_container p {
+  margin: 0;
+}
+
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/comments.css.scss */
+.comment-button-margin-bug-fix {
+  margin-top: 8px;
+}

@@ -1,0 +1,109 @@
+body {
+  background: #747474;
+}
+
+.container-fixed {
+  width: 1160px;
+  margin: 0 auto;
+
+  #main_section {
+    width: 820px;
+    float: left;
+  }
+
+  #main_section-no-sidebar {
+    width: 820px;
+    margin:0px auto;
+  }
+
+  #sidebar {
+    margin-left: 20px;
+    float: left;
+    width: 350px;
+    min-height: 1200px;
+  }
+}
+
+.box {
+  background: white;
+  padding: 20px 20px 10px 20px;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, .2);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+
+ul {
+  padding-left: 0px;
+  li {
+    list-style-type: none;
+    color:#333333;
+
+  }
+}
+
+.alert {
+  max-width: 1190px;
+  margin:0px auto;
+  margin-bottom: 20px;  
+}
+
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+}
+
+#main-navbar {
+  margin-bottom: 0px;
+}
+
+.btn-gray {
+  color: white;
+  background-color: #747474;
+  border-color: #3C3C3C;
+
+  &:hover {
+    color: white;
+    background-color: #676767;
+  }
+}
+
+.light-gray {
+  color: #747474
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.white-backgrd {
+  background-color: white;
+  padding-right: 0px !important;
+}
+
+.btn-black {
+  border-radius: 0px;
+  background-color: #3C3C3C;
+  color: white;
+
+  &:hover {
+    color: white;
+    background-color: #232323;
+  }
+
+  &:focus {
+    color:white;
+  }
+}
+
+// modal
+// =====
+.modal-content {
+  border-radius: 1px;
+  background: #CCC !important;
+  -webkit-box-shadow: 0px px px px rgba(0, 0, 0, .3);
+  box-shadow: 0px px px px rgba(0, 0, 0, .3);
+}
+
+// CSS for scroll
+// ==============

@@ -1,0 +1,12 @@
+div.modal#premium tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+        button.close.premium_button type="button " data-dismiss="modal" aria-hidden="true" &times;
+        div.premiumplanbox
+          = image_tag("premium_banner.jpg")
+          div.premiumplancontent Oops! Only premium members can access this section. Click on Go Premium! to learn more about the premium plan features and access this section today.
+
+          div.width220
+            span = link_to "No Thanks", root_path, class: 'btn btn-default pull-left'
+            span.pull-right = link_to "Go Premium!", user_plans_upgrade_path, class: 'btn btn-success premeium_button'

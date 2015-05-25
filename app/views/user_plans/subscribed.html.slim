@@ -1,0 +1,52 @@
+div.row
+	div#main_section.box
+		div.row
+			div.col-xs-12
+				center
+					h1
+						| Order Complete - Premium Plan
+		div.row.borbottom.paddbott12px
+			div.col-xs-12
+				center style="font-size:20px;"
+						| Order confirmation sent to 
+						= @email
+		div.row
+			div.col-xs-12
+				center
+					br
+					b style="font-size:115%;"
+						| As a Premium Plan Member you can now access and enjoy these benefits!
+		div.row
+			div.col-xs-6
+				h3 Ability to Update Your Profile Web Address
+				p Personalize your PokerRadius.com/1234 profile web address for unlimited networking potential!
+				b
+					p
+						| To personalize at anytime, click on the  
+						= link_to 'PROFILE', profile_path(@user_id)
+						|  menu then 
+						= link_to 'EDIT PROFILE', edit_profile_path(@user_id)
+						|  button.
+			div.col-xs-6
+				h3
+					| Auto Entry into ALL Facebook and Twitter Promotions!
+					| &nbsp;
+
+					= link_to image_tag( 'facebook-icon.gif', height: '24', width: '24'), 'http://goo.gl/FLrleb', :target => "_blank"
+					| &nbsp;
+					= link_to image_tag( 'twitter-icon.png', height: '24', width: '24'), 'http://goo.gl/sFLKDj', :target => "_blank"
+				p You will now be entered automatically into any Facebook or Twitter promotions we post. You can sit back and relax knowing that you are automatically entered. It's that simple.
+		div.row
+			div.col-xs-2
+			div.col-xs-8 
+				= image_tag( 'Dashboard.png', width: '100%')
+				h3 Private Activity Dashboard
+				p Enjoy tracking all your life time playing activity in a private and vibrant dashboard!
+				b
+					p
+						| Click on the  
+						= link_to 'DASHBOARD', dash_online_poker_path
+						|  menu at anytime to access.
+			div.col-xs-2
+    div#sidebar.box.sidebar
+      = render "sidebars/profile_side_bar", user: current_user

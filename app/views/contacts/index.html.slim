@@ -1,0 +1,41 @@
+div.row
+  div#main_section.box style="min-height: 1100px;"
+    div.search_form
+      = render 'friends/search_form', user_id: @user.id
+
+    div id="suggestion-carousel" class="carousel slide" data-ride="carousel" data-interval="false"
+      br/
+      a.pull-left href="#suggestion-carousel" data-slide="prev"
+        button.btn.btn-black.pull-left id="contact_previous_button" 
+          span class="glyphicon glyphicon-chevron-left"
+          span Previous
+
+      a.pull-right href="#suggestion-carousel" data-slide="next"
+        button.btn.btn-black.pull-right id="contact_next_button" 
+          span Next
+          span class="glyphicon glyphicon-chevron-right"
+
+      div class="carousel-inner"
+        div.friends_list_container
+          div.results
+        - @friends.each_with_index do |friends, n|
+          div.friends_list_container.item class="#{n == 0 ? "active" : ""}"
+            = render "friends/no_friend_search_results"
+
+            div.results.search_results
+              = render "contacts/contacts_results", friends: friends,profile_view: false
+          
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user
+
+
+
+
+
+javascript:
+  var friends = "#{@friends.flatten.map(&:name)}".replace(/&quot;|\[|\]/g, '').split(', ');
+  $('.search_friends_autocomplete').autocomplete({
+    source: friends
+  });
+

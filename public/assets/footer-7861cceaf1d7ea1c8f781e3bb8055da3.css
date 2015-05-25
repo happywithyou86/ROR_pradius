@@ -1,0 +1,72 @@
+/* line 1, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 4, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.wrapper {
+  min-width: 1190px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0px auto;
+  margin-bottom: -4em;
+}
+
+/* line 13, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer, .push {
+  height: 4em !important;
+}
+
+/* line 17, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer-container {
+  width: 1190px;
+  margin: 0px auto;
+}
+
+/* line 22, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer-container-main {
+  width: 830px;
+}
+
+/* line 26, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer-container-sidebar {
+  float: right;
+  width: 340px;
+}
+
+/* line 32, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer-container-left {
+  float: left;
+  width: "820px";
+}
+
+/* line 37, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer {
+  background: #4E4E4E;
+  margin-top: 1.5em;
+  min-width: 1190px;
+}
+/* line 42, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer ul {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+/* line 45, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer ul li {
+  padding-top: 1.5em;
+  font-weight: lighter;
+  display: inline-block;
+  color: white;
+}
+/* line 51, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+/* line 58, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/footer.css.scss */
+.footer img {
+  position: relative;
+  bottom: 3px;
+  margin-left: 10px;
+}

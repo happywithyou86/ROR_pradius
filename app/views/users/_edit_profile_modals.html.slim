@@ -1,0 +1,127 @@
+- if @data.present?   
+  div.modal.fade#edit-home-country-modal tabindex="-1" role="dialog" aria-hidden="true"
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          div.row
+            div.col-md-12
+              button.close type="button" aria-hidden="true" data-dismiss="modal" &times;
+
+              h2.text-center Select Your Country
+
+              div.flags.box.scroll
+                - @data[:countries].each do |country|
+                  div.col-md-3
+                    = link_to(image_tag(country.photo_name, class: "img-responsive flag"), {controller: "user_locations", action: "update", user_location: {user_id: @data[:user].id, country_id: country.id}}, {remote: true, "data-dismiss" => "modal", 'data-country-id' => country.id, method: :post})
+
+
+  div.modal.fade#edit-twitter-url-modal tabindex="-1" role="dialog" aria-hidden="true"
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          div.row
+            div.col-md-12
+              button.close type="button" aria-hidden="true" data-dismiss="modal" &times;
+
+              = image_tag 'twitter-icon.png', width: "30px", height: "30px", class: "pull-left"
+
+              br
+              br
+            div.col-md-12
+              = form_for @data[:user].find_or_create(:user_twitter), url: {action: "create_or_update", controller: "user_twitters"}, remote:true do |f|
+                div class="form-group"
+                  label class="col-sm-2 control-label nopadd" Twitter URL:
+                  div class="col-sm-10"
+                    = f.text_field :url, class:"form-control", placeholder: "www."
+
+                div.clearfix
+                br
+                div.col-md-12
+                  div.pull-right
+                    = f.submit "Submit", class: "btn btn-default"
+                    = " "
+                    button.btn.btn-default aria-hidden="true" data-dismiss="modal" type="button" Close
+
+  div.modal.fade#edit-facebook-url-modal tabindex="-1" role="dialog" aria-hidden="true"
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          div.row
+            div.col-md-12
+              button.close type="button" aria-hidden="true" data-dismiss="modal" &times;
+
+              = image_tag 'facebook-icon.gif', width: "30px", height: "30px", class: "pull-left"
+
+              br
+              br
+            div.col-md-12
+              = form_for @data[:user].find_or_create(:user_facebook), url: {action: "create_or_update", controller: "user_facebooks"}, remote:true do |f|
+                div class="form-group"
+                  label class="col-sm-3 control-label nopadd" Facebook URL:
+                  div class="col-sm-9"
+                    = f.text_field :url, class:"form-control", placeholder: "www."
+
+                div.clearfix
+                br
+                div.col-md-12
+                  div.pull-right
+                    = f.submit "Submit", class: "btn btn-default"
+                    = " "
+                    button.btn.btn-default  aria-hidden="true" data-dismiss="modal" type="button" Close
+
+
+  div.modal.fade#edit-youtube-url-modal tabindex="-1" role="dialog" aria-hidden="true"
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          div.row
+            div.col-md-12
+              button.close type="button" aria-hidden="true" data-dismiss="modal" &times;
+
+              = image_tag 'youtube-icon.png', width: "30px", height: "30px", class: "pull-left"
+
+              br
+              br
+            div.col-md-12
+              = form_for @data[:user].find_or_create(:user_youtube), url: {action: "create_or_update", controller: "user_youtubes"}, remote:true do |f|
+                div class="form-group"
+                  label class="col-sm-3 control-label nopadd" Youtube URL:
+                  div class="col-sm-9"
+                    = f.text_field :url, class:"form-control", placeholder: "www."
+
+                div.clearfix
+                br
+                div.col-md-12
+                  div.pull-right
+                    = f.submit "Submit", class: "btn btn-default"
+                    = " "
+                    button.btn.btn-default aria-hidden="true" data-dismiss="modal" type="button" Close
+
+
+  div.modal.fade#edit-instagram-url-modal tabindex="-1" role="dialog" aria-hidden="true"
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          div.row
+            div.col-md-12
+              button.close type="button" aria-hidden="true" data-dismiss="modal" &times;
+
+              = image_tag 'pokerradius+pokersocialnetwork+instagramicon.png', width: "30px", height: "30px", class: "pull-left"
+
+              br
+              br
+            div.col-md-12
+              = form_for @data[:user].find_or_create(:user_instagram), url: {action: "create_or_update", controller: "user_instagrams"}, remote:true do |f|
+                div class="form-group"
+                  label class="col-sm-3 control-label nopadd" Instagram URL:
+                  div class="col-sm-9"
+                    = f.text_field :url, class:"form-control", placeholder: "www."
+
+                div.clearfix
+                br
+                div.col-md-12
+                  div.pull-right
+                    = f.submit "Submit", class: "btn btn-default"
+                    = " "
+                    button.btn.btn-default aria-hidden="true" data-dismiss="modal" type="button" Close
+

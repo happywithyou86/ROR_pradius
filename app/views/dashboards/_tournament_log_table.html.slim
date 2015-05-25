@@ -1,0 +1,56 @@
+table#tournament_table.log_styling
+
+  col width="60px"
+  col width="120px"
+  col width="120px"
+  col width="55px"
+  col width="55px"
+  col width="55px"
+  col width="40px"
+  col width="115px"
+  tr
+    th Date
+    th Location
+    th Tournament
+    th Buy In
+    th Players
+    th Duration
+    th Rank
+    th.text-center Best Hand
+    th Win/Loss
+    th Action
+
+  - @tournaments.each do |tourn|
+    = render "dashboards/tournament_log_row", tourn: tourn,edit: edit
+
+  tr#tourn_form_row
+    td =  text_field_tag :tournaments_and_games_date, nil,class:"tournament_form"
+    td = text_field_tag :location, nil, placeholder: 'Select Poker Room', class: 'table_input_field select_room_autocomplete', id: 'tourn_location'
+    td = text_field_tag :title, nil, placeholder: 'ex.No Limit Bounty', class: 'table_input_field', id: 'tourn_title'
+    td = text_field_tag :buy_in, nil, placeholder: 'ex.$60', class: 'table_input_field', id: 'tourn_buy'
+    td = text_field_tag :players, nil, placeholder: 'ex.45', class: 'table_input_field', id: 'tourn_players'
+    td = text_field_tag :duration, nil, placeholder: 'ex.3:47', class: 'table_input_field', id: 'tourn_duration'
+    td = text_field_tag :rank, nil, placeholder: '2nd', class: 'table_input_field', id: 'tourn_rank'
+
+
+    td.text-center
+      = link_to "Best Hand", "#", data: { toggle: "modal", target: "#card_select_modal_tournament" }
+
+    td = text_field_tag :win_loss, nil, placeholder: '$50 or -$50', class: 'table_input_field', id: 'tourn_win_loss'
+    td
+-     if edit
+      div.new_log_button
+       = link_to 'New', '#', id: 'tourn_new_save_btn', class: 'btn btn-success new_save_btn'
+
+javascript:
+  $(".tournament_form").datepicker({
+    buttonImage: '/assets/calendar_icon_smaller.png',
+    buttonImageOnly: true,
+    changeMonth: true,
+    changeYear: true,
+    showOn: 'both',
+  });
+  $("#tournaments_and_games_date").hide();
+  
+
+

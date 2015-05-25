@@ -1,0 +1,110 @@
+/***************************************/
+/* Contact Us Page */
+/***************************************/
+/* line 6, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_us_container {
+  width: 820px;
+}
+
+/* line 9, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+#contact_previous_button {
+  padding: 2px 6px;
+}
+
+/* line 13, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+#contact_next_button {
+  padding: 2px 6px;
+}
+
+/* line 18, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container {
+  background-color: #ffffff;
+  padding: 20px 20px 20px 0px;
+  width: 550px;
+}
+/* line 26, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .form_element {
+  margin-bottom: 15px;
+}
+/* line 29, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form label[for=email], .contact_form_container #contact_us_form label[for=message] {
+  padding-right: 60px;
+}
+/* line 32, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form label[for=name] {
+  padding-right: 58px;
+}
+/* line 35, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form label[for=subject] {
+  padding-right: 45px;
+}
+/* line 39, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form label[for=issue_type] {
+  position: relative;
+  top: 9px;
+}
+/* line 44, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .contact_form_field {
+  width: 398px;
+  height: 40px;
+}
+/* line 50, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form input contact_form_text_area {
+  color: #000000;
+}
+/* line 53, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form #issue_type {
+  color: #a4a4a4;
+  text-align: left;
+}
+/* line 58, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .gray {
+  color: #A1A1A1;
+}
+/* line 62, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .contact_form_text_area {
+  width: 398px;
+  height: 150px;
+  margin-left: 97px;
+  margin-top: -28px;
+}
+/* line 70, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .simple_captcha {
+  margin-left: 91px;
+}
+/* line 73, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .select_box {
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat scroll 366px 10px white;
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  height: 39px;
+  margin-left: 96px;
+  margin-top: -24px;
+  overflow: hidden !important;
+  padding-right: 100px;
+  width: 398px;
+}
+/* line 84, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .select_box select {
+  background: transparent;
+  width: 410px;
+  height: 34px;
+  color: #A9A9A9;
+  cursor: pointer;
+  margin: 0;
+  padding-left: 2px;
+  border: 0;
+  margin-top: 9px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* line 102, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form .select_box text {
+  padding-top: 2px;
+}
+/* line 107, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/contact_us.css.scss */
+.contact_form_container #contact_us_form #contact_submit {
+  width: 120px;
+  height: 45px;
+}

@@ -1,0 +1,41 @@
+= form_for Experience.find(experience_id), html: { class: 'edit_experience_form experience_form_styles'} do |f|
+  = f.hidden_field :expId, value: experience_id
+
+  = f.text_field :position, placeholder: "Position", class: 'experience_text_field'
+
+  span.select_style
+    = f.label :start_date, 'From: '
+    = f.date_select :start_date, :use_short_month => true, :start_year => 1930,:end_year=>2049, :order => [:month, :day, :year]
+
+    = f.label :end_date, 'To: '
+    = f.date_select :end_date, :use_short_month => true,:start_year => 1930,:end_year=>2049, :order => [:month, :day, :year]
+
+  span.present
+    = f.check_box :present
+    = f.label :present, "Present?"
+
+  br
+
+  = f.text_field :location, placeholder: "Poker Room", class: 'experience_text_field exp_room_autocomplete'
+
+
+  br
+  = f.text_field :nickname, placeholder: 'Nickname', class: 'experience_text_field'
+  br
+
+  = f.text_area :description, placeholder: "What did you do here?",class: 'experience_description_field'
+  br
+  = f.submit "Submit", class: 'btn btn-success'
+
+  = link_to 'Delete', '#', class: 'btn btn-danger delete_experience', data: {exp_id: experience_id}
+
+javascript:
+  expirienceLimit = 1000;
+  $(document).ready( function(){
+    $("input").each( function(index) {
+      $(".experience_description_field").each( function(index) {
+        $(this).attr('maxlength',expirienceLimit);
+      });
+    });
+  });
+

@@ -1,0 +1,7 @@
+td.message_sender
+  = create_profile_pic(conversing_user, 40)
+  strong = link_to conversing_user.name, profile_path(conversing_user)
+td.message_body
+ = link_to truncate(c.last_message.body, :length => 45), user_messages_show_path(c)
+td
+  p = time_ago_in_words(c.last_message.created_at)

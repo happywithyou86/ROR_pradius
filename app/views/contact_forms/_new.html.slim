@@ -1,0 +1,43 @@
+= form_for ContactForm.new ,remote: true do |f|
+  /= f.text_field :name, :required => true, :placeholder => "Your Full Name"
+  /br
+  /br
+  /= f.text_field :email, :required => true, :placeholder => "Your Email"
+  /br
+  /br
+ 
+  = f.text_area :message, :required => true, :rows => "10", :class => "form-control threadbox", :placeholder => "Please name and describe the new forum topic or thread you would like to see implemented..."
+  br
+  = show_simple_captcha
+  = f.submit "Send Request", :class => "btn btn-success send_request_forum"
+
+
+div.modal.fade#forum_message_sent_modal tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+
+        p Thanks for your suggestion!
+        p One of our support team members will let you know when your suggested discussion topic is added to our community. 
+      
+
+        = link_to "Ok", '#', class: 'btn btn-success',id: 'send_forum_enquiry' ,:data => {dismiss: 'modal'}
+
+javascript:
+    $(document).ready(function() {
+      if ("#{session[:name].present?}")
+      {
+        $('#contact_form_name').val("#{session[:name]}")
+      }
+      if ("#{!session[:email].present?}")
+      {
+        $('#contact_form_email').val("#{session[:email]}")
+      }
+      if ("#{!session[:message].present?}")
+      {
+        $('#contact_form_message').val("#{session[:message]}")
+      }
+    });
+  

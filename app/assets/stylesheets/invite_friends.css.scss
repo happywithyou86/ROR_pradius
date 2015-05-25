@@ -1,0 +1,71 @@
+/***************************************/
+/* Invite Friends */
+/***************************************/
+
+.no_results {
+  text-align: center;
+
+
+  // form container
+  .invite_friends_form_container {
+    position: relative;
+    margin: 0 auto;
+    width: 290px;
+    padding: 10px;
+    background-color: #CCC;
+
+    h3 {
+      font-size: 1.3em;
+      margin: 0;
+    }
+
+
+    // form
+    #invite_friends_form {
+
+      input[type="text"] {
+        width: 96%;
+        height: 3em;
+      }
+
+      input[type='submit'] {
+        width: 60%;
+        height: 3em;
+      }
+
+
+
+      // fields
+      .form_fields {
+        margin-bottom: 10px;
+      }
+
+    }
+  }
+
+
+  //invitation sent
+  .invitation_sent {
+    width: 290px;
+    background-color: #BDDA9A;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 2.5em;
+
+    p {
+      margin: 0;
+      padding: 8px 0;
+      font-weight: 500;
+      color: #393939;
+    }
+  }
+
+} // end .no_results
+
+#pending_friends_form {
+  margin-bottom: 0px;
+}
+
+#pending_friend_greyFont {
+  color: #666666;
+}

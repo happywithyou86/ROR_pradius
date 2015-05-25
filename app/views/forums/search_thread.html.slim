@@ -1,0 +1,48 @@
+div.row
+  div#main_section.box
+
+    form#search-forum-form action="/forums/search_thread" method="GET"
+      = hidden_field_tag "forum_thread_id", @data[:thread].id
+      ul
+        div class="form-group"
+          li class="col-md-11 col-sm-11"
+
+            input class="form-control" name="search_term" placeholder="Search" type="text"
+          li class="col-md-1 col-sm-1"
+            button class="btn btn-default" type="submit" Find
+
+    div.clearfix
+    br
+    div.thread-title
+      = link_to "Back to Thread", "/forums/thread/#{@data[:thread].id}"
+
+      div.pull-right
+        span = will_paginate @data[:posts], :previous_label => '<', :next_label => '>'
+
+    div.clearfix
+
+    - if @data[:posts].blank?
+      h1.text-center Sorry, no results have been found.
+
+    - @data[:posts].each do |post|
+      div.post
+        div.forum-post-title = time_ago(post.created_at)
+        div.poster-info.col-md-3
+          br
+          = create_profile_pic(post.user, '100')
+          div = post.user.name
+          div = post.user.user_location.get_address
+        div.col-md-9.white-backgrd
+          div.post-message
+            div = post.message
+            hr.martopbot0px
+            div = post.user.quote
+        div.clearfix
+        div.reply.col-md-offset-3
+          a href="/forums/thread/#{params[:id]}/post/new"
+            button.btn-reply.pull-right  Reply
+      div.clearfix
+
+  div#sidebar.box.sidebar
+    - if current_user
+      = render "sidebars/profile_side_bar", user: current_user

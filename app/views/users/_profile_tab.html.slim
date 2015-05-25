@@ -1,0 +1,142 @@
+ul.nav.nav-pills#profile-tab
+  li.active
+    a href="#experience" data-toggle="tab" Experience
+  li
+    a href="#recommendations" data-toggle="tab" Recommendations
+  li
+    a href="#endorsements" data-toggle="tab" Endorsements
+  li
+    a href="#achievements" data-toggle="tab" Achievements
+
+
+div.tab-content style='overflow:scroll;'
+  div.tab-pane.fade.active.in#experience
+
+    / Poker Experiences
+    div#experience_form_container
+      div#online_experience
+        div.poker_chip_title
+          = image_tag("poker_chip.png", size: '50')
+          h3 Online Poker Experience
+
+      - if current_user and current_user.id == @data[:user].id
+        = link_to 'New', '#', class: 'btn btn-success', id: 'new_experience_poker'
+
+        div#experience_form_hidden_poker style="display:none;"
+          = render "users/experiences_form_poker"
+
+    div#experiences_container_poker
+
+      = render "users/experiences_poker", online_experiences: @data[:online_experiences]
+
+    / Casino Experiences
+    div#casino_experience
+      div.poker_chip_title
+        = image_tag("poker_chip.png", size: '50')
+        h3 Casino Poker Experience
+
+      - if current_user and current_user.id == @data[:user].id
+        = link_to 'New', '#', class: 'btn btn-success', id: 'new_experience_casino'
+
+        div#experience_form_hidden_casino style="display:none;"
+          = render "users/experiences_form_casino"
+    div#experiences_container_casino
+      = render "users/experiences_casino", casino_experiences: @data[:casino_experiences]
+
+
+
+  / Poker Recommendations
+  div.tab-pane.fade#recommendations
+    div#online_recommenations
+      div.poker_chip_title
+        = image_tag("poker_chip.png", size: '50')
+        h3  Poker Room Recommendations
+    - if current_user and current_user.id == @data[:user].id
+      = link_to 'New', '#', class: 'btn btn-success', id: 'new_recommendation_online'
+
+      div#recommenation_form_hidden_online style="display:none;"
+        = render "users/recommendation_form_online"
+    - elsif @data[:user].recommendations.blank?
+      p.no_recommendation  No Recommendations  Posted
+
+  
+    div#recommendations_container_online
+      = render "users/recommendations_online", online_recommendations: @data[:online_recommendations]
+  / Casino Recommendations
+
+    div#online_recommenations
+      div.poker_chip_title
+         = image_tag("poker_chip.png", size: '50')
+         h3  Casino Poker Recommendations
+    - if current_user and current_user.id == @data[:user].id
+      = link_to 'New', '#', class: 'btn btn-success', id: 'new_recommendation_casino'
+    - elsif @data[:user].recommendations.blank?
+      p.no_recommendation  No Recommendations  Posted
+
+
+      div#recommenation_form_hidden_casino style="display:none;"
+        = render "users/recommendation_form_casino"
+
+
+    div#recommendations_container_casino
+      = render "users/recommendations_casino", casino_recommendations: @data[:casino_recommendations]
+
+
+
+
+
+  / Endorsements
+  div.tab-pane.fade#endorsements
+    
+    div.endorsement_post
+      div.poker_chip_title
+        = image_tag("poker_chip.png", size: '50')
+        h3  Endorsements
+
+    - if current_user.id !=  @data[:user].id
+
+      div#endorsement_form_container
+        = render "endorsements/endorsement_form"
+
+    div#endorsements_container
+      = render "endorsements/endorsements", endorsements: @data[:endorsements]
+
+
+
+  / Achievements
+  div.tab-pane.fade#achievements
+    div.poker_chip_title
+      = image_tag("poker_chip.png", size: '50')
+      h3 Online Poker Achievements
+    - if current_user and current_user.id == @data[:user].id
+      #poker_new_achievement
+        = link_to 'New', '#', class: 'btn btn-success', id: 'new_achievement_poker'
+        div#achievement_form_container_online style="display:none;"
+          = render 'users/achievement_form'
+    div#achievements_container_poker
+      = render "users/achievements_poker", online_achievements: @data[:online_achievements]
+
+
+    div.poker_chip_title
+      = image_tag("poker_chip.png", size: '50')
+      h3 Casino Poker Achievements
+      - if current_user and current_user.id == @data[:user].id
+        #casino_new_achievement
+          = link_to 'New', '#', class: 'btn btn-success', id: 'new_achievement_casino'
+          div#achievement_form_container_casino style="display:none;"
+            = render 'users/achievement_form'
+      div#achievements_container_casino
+        = render "users/achievements_casino", casino_achievements: @data[:casino_achievements]
+     
+
+    
+
+
+
+
+
+
+
+
+
+

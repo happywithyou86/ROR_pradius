@@ -1,0 +1,71 @@
+/***************************************/
+/* Achievements Tab */
+/***************************************/
+/* line 7, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#achievements .achievement_field {
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+  width: 620px;
+}
+/* line 18, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#achievements #achievement_field {
+  width: 712px;
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  height: 30px;
+}
+/* line 27, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#achievements #achievements_container li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+/* line 32, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#achievements #achievements_container .edit_achievement {
+  height: 21px;
+  width: 50px;
+  padding: 0;
+  margin-left: 16px;
+}
+
+/* line 40, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#casino_new_achievement {
+  margin-top: 20px;
+}
+
+/* line 43, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+#achievements .no_experience {
+  font-weight: bold;
+  padding-left: 64px;
+}
+
+/* line 47, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+span.achivement_save {
+  margin-right: 10px;
+}
+
+/* line 50, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+li.achievement_desc {
+  list-style-type: inherit;
+  margin-left: 30px;
+  padding: 0px;
+}
+
+/* line 55, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+.achivement_action {
+  padding: 10px 0px;
+}
+
+/* line 58, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+span.achievement_edit_show {
+  margin-left: 10px;
+}
+
+/* line 59, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/achievements.css.scss */
+.achivement_perform_action {
+  margin-top: 5px;
+}

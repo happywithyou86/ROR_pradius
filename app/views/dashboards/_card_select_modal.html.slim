@@ -1,0 +1,30 @@
+div.modal.fade#card_select_modal tabindex="-1" role="dialog" aria-hidden="true"
+  div.modal-dialog
+    div.modal-content
+      div.modal-body
+
+        button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
+
+        .message_form_box
+          h1  Choose Hand
+
+
+          = form_tag '#', id: 'best_hand_form' do
+            select#card_select1.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+
+            select#card_select2.card_select name="card_select"class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select3.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select4.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+            select#card_select5.card_select name="card_select" class="card_dropdown"
+              - Card.all.each do |card|
+                option value="#{card.id}" data-suit="/assets/#{card.suit}" data-description="#{card.number}" #{card.number}
+
+          = link_to 'Close', '#', class: 'btn btn-success margintop20px', data: {dismiss: 'modal'}

@@ -1,0 +1,20 @@
+div.achivement_action
+	= form_for Achievement.find(achievement.id), html: { class: 'edit_achievement_form'} do |f|
+	  = f.hidden_field :ach_id, value: achievement.id
+	  = f.text_area :description, placeholder: 'Let everyone know about tournament wins, recognition received or personal accomplishments.', id: 'achievement_field', maxlength: '115',class: 'acheivement_description'
+
+	  div.achivement_perform_action
+	  	span.achivement_save
+	  	  = f.submit "Save", class: 'btn btn-success'
+	  	span.achivement_delete
+	  	  = link_to "Delete", '#', class: 'btn btn-danger delete_achievement', data: {ach_id: achievement.id}
+
+javascript:
+  achievementLimit = 250;
+  $(document).ready( function(){
+    $("input").each( function(index) {
+      $(".acheivement_description").each( function(index) {
+        $(this).attr('maxlength',achievementLimit);
+      });
+    });
+  });

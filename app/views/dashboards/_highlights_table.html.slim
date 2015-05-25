@@ -1,0 +1,138 @@
+table#highlight_table
+
+  // Header
+  tr
+    th LIFE TIME HIGHLIGHTS
+
+    th TOURNAMENT PLAY
+
+    th.last_header CASH GAMES
+
+  / Row 1
+  tr
+    td
+      p.cell_title Total Career Profit/Loss
+      - if highlight.total_profit_loss
+        - if highlight.total_profit_loss.to_i > 0
+          p.profit_green
+           = dollar_match(highlight.total_profit_loss)
+        -elsif highlight.total_profit_loss.include?('(')
+          p.loss_red
+           = dollar_match(highlight.total_profit_loss)
+
+        -else
+          p
+           =  dollar_match(highlight.total_profit_loss)
+
+    td
+      p.cell_title Total Played
+      p = highlight.total_tournaments
+
+    td
+      p.cell_title Most Consecutive Hours Played
+      p = highlight.cash_consec_hours
+
+  / Row 2
+  tr
+    td
+      p.cell_title Most Profitable Poker Room
+      p.profit_green = highlight.most_prof_room
+
+    td
+      p.cell_title Most Consecutive Hours Played
+      p = highlight.tourn_most_consec_hours
+
+    td
+      p.cell_title Best Winning Hand
+      span#best_hand_span
+        = render "dashboards/best_hand_span", cards: highlight.cards
+
+  / Row 3
+  tr
+    td
+      p.cell_title Least Profitable Poker Room
+      p.profit_green = highlight.least_prof_room
+
+    td
+      p.cell_title Total Tournaments Cashed
+      p = highlight.tourn_total_cashed
+
+    td
+      p.cell_title Largest Win
+      - if highlight.cash_largest_win_date
+        p
+          | #{dollar_match(highlight.cash_largest_win_amount)} on #{date_conversion(highlight.cash_largest_win_date)} 
+          -if !highlight.cash_largest_win_room.blank? 
+            span.profit_green @ #{highlight.cash_largest_win_room}
+
+
+  / Row 4
+  tr
+    td
+      p.cell_title Most Profitable 24 hours
+      - if highlight.most_prof_24_date
+        p
+          span.profit_green #{dollar_match(highlight.most_prof_24_amount)} 
+          #{"on" + "  " + date_conversion(highlight.most_prof_24_date)} @
+          #{highlight.most_profitable_24_hours_room}
+
+
+    td
+      p.cell_title Total Tournaments Not Cashed
+      p = highlight.tourn_total_not_cashed
+
+    td
+      p.cell_title Worst Loss
+      - if highlight.cash_worst_loss_date
+        p
+          span.loss_red #{dollar_match(highlight.cash_worst_loss_amount)}
+          #{"On" + " " + date_conversion(highlight.cash_worst_loss_date)} @
+          span.profit_green #{highlight.cash_worst_loss_room}
+
+  / Row 5
+  tr
+    td
+      p.cell_title Largest Loss in 24 Hours
+
+      - if highlight.largest_loss_24_date
+        p
+          |
+          span.loss_red  #{dollar_match(highlight.largest_loss_24_amount)}
+          #{"On" + "  " + date_conversion(highlight.largest_loss_24_date)} @
+          span.profit_green #{highlight.largest_loss_in_24_hours}
+
+    td
+      p.cell_title Best Overall Placement
+      - if highlight.best_placement_rank
+        p.profit_green #{highlight.best_placement_room}
+
+        - if !highlight.best_placement_name.blank?
+          p Tournament name: #{highlight.best_placement_name}
+        p #{highlight.best_placement_rank}
+
+
+    td
+      p.cell_title Total Profit Days
+
+      p = highlight.cash_total_profit_days
+
+  / Row 6
+  tr
+    td
+      p.cell_title Years Playing
+      - if highlight.years_playing_start && highlight.years_playing_end
+        p #{date_time_ago_in_words(highlight.years_playing_start, highlight.years_playing_end)}
+
+    td
+      p.cell_title Most Expensive Buy In Played
+      - if highlight.most_exp_amount
+        p.profit_green #{highlight.most_exp_location}
+        -if !highlight.most_exp_name.blank?
+          p Tournament Name: #{highlight.most_exp_name}
+        p #{highlight.most_exp_amount}
+
+    td
+      p.cell_title Total Days of Loss
+      p = highlight.cash_total_loss_days
+
+

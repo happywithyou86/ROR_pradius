@@ -1,0 +1,632 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require twitter/bootstrap
+ *= require jquery-ui/autocomplete
+ *= require font-awesome
+ *= require jscrollpane
+ *= require select2
+ *= require social-share-button
+ *= require_tree .
+ *= require_self
+*/
+
+@import "twitter/bootstrap";
+
+body{
+  background-color: #6B6B6B !important ;
+}
+textarea {
+	resize: none;
+}
+
+/* green links goddamnit */
+a { color: #5ba304;}
+/*a:link {color: #5ba304;}      /* unvisited link */
+/*a:visited {color:#5ba304;}  /* visited link */
+a:hover {color:#5ba304;}  /* mouse over link */
+a:active {color:#5ba304;}  /* selected link */
+a:focus {color:#5ba304;}
+.modal-open{
+  overflow: visible;
+}
+.LV_validation_message{
+    font-size:14px;
+    margin:0 0 0 5px;
+}
+.LV_invalid{
+  color:red;
+  font-weight: bold;
+}
+.LV_valid{
+  color:green;
+  font-weight: bold;
+}
+.search_height{
+  height:100px;
+}
+
+.stick {
+    position:fixed;
+    top:0px;
+}
+div#floating_sidebar {
+    margin: 0px 0 24px -20px;
+    padding-top: 24px;
+    width: 350px;
+    background:#ffffff;
+    height: 480px;
+}
+#email_attemp{
+  color: #FF0000;
+  text-decoration: none;
+}
+.advertisement_image{
+  width:300px;
+  height:200px;
+  margin-left:25px;
+}
+.advertisement_image_other{
+  width:300px;
+  height:200px;
+  margin-left:5px;
+}
+.green {
+  color: #5BA304;
+}
+
+#pageless-loader{
+  display: none ;
+  margin-top: -24px !important;
+  position: absolute !important;
+  text-align: center !important;
+  width: 58% !important;
+}
+.simple_captcha .simple_captcha_field input{
+  border-radius: 5px !important;
+  width: 250px !important;
+  padding: 10px !important;
+}
+button{outline: none !important;}
+
+input[type="submit"],input[type="button"]{outline: none !important;}
+
+
+.close {
+    background: none repeat scroll 0 0 #FFFFFF!important;
+    border-radius: 50%!important;
+    line-height: 21px!important;
+    margin-top: 0!important;
+    padding: 2px 9px 5px!important;
+    position: absolute!important;
+    right: -16px !important;
+    top: -15px!important;
+    color: #5BA304!important;
+    opacity: 1!important;
+}
+#contact_us_form input[type="text"],#contact_us_form input[type="email"], #contact_us_form textarea{
+border:1px solid #ccc;
+text-indent: 5px;
+}
+.simple_captcha{
+  border: 0px solid #fff!important;
+  margin-bottom: 20px!important;
+}
+.simple_captcha_field input[type="text"]{
+  border: 0px solid #fff!important;
+}
+
+.simple_captcha .simple_captcha_field, .simple_captcha .simple_captcha_image{
+  float: right;
+}
+.simple_captcha_field input{
+  background: #fff !important;
+  height: 41px;
+}
+.simple_captcha_image{
+  border: 0px!important;
+}
+.btn-success{
+  opacity: 1!important;
+  background-color: #5BA304!important;
+  min-width: 78px;
+  border: none;
+}
+.padd10{
+  padding:10px;
+}
+.email_attemp{
+  margin-top: 30px;
+}
+.header_bar,.alert-success{
+  background: #F0F0F0!important;
+  color: #333333;
+}
+#new_status_container #new_status_box .text_area{
+  border: 1px solid #eeeeee;
+}
+#search_friends_field{
+  margin-left:0px!important;
+  text-indent:5px;
+}
+.modal-dialog{
+  width: 665px!important;
+}
+.mar10{margin-top: 10px !important}
+
+#profile-card #flag_box #profile-flag{
+  width: 78px!important;
+}
+#back_button{
+  padding-left: 5px;
+  float: right;
+  margin-right: 4px;
+  margin-top: 20px;
+  position: relative;
+  top:0px;
+  color:#fff!important;
+}
+.marbott15px{
+  margin-bottom: 15px;
+}
+.header_smallbar{
+  width: 780px!important;
+  background:#DFF0D8!important;
+}
+.header_smallbar .alert-success{
+   border-color:#DFF0D8 !important;
+  color: #333333 !important;
+}
+#experience .edit_experience{
+  height: 20px !important;
+  line-height: 10px !important;
+}
+#recent-activity-section p{
+  padding-left: 1px;
+}
+
+.present {
+  position: relative;
+  top: 2px!important;
+}
+.present #experience_present{
+  position: relative;
+  top: 2px!important;
+}
+#experience_form_hidden_casino{
+  padding-bottom: 10px;
+}
+#experience_form_hidden_casino .btn{
+  margin-top: 8px;
+}
+.select_style{
+  margin-left: 13px;
+}
+.experience_container{
+   border-bottom:1px solid #ccc;
+   padding: 5px 0px 5px 0px;
+   position: relative;
+}
+#experience_form_container{
+  border-bottom:1px solid #ccc;
+}
+.delete_recommendation{
+  height: 30px!important;
+  line-height: 17px!important;
+}
+#online_recommenations .rec_edditing_34{
+  padding-bottom: 10px!important;
+}
+.each_recommendation .green{
+  padding-right: 10px;
+ line-height:35px;
+}
+.delete_achievement{
+  height: 30px!important;
+  line-height: 17px!important;
+}
+.premiumplanbox{
+  width:620px;
+  border: 5px solid #e5e5e5;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.premiumplanbox img{
+  width:auto;
+}
+.premiumplancontent{
+  padding: 10px;
+  background: #fff;
+}
+.marleftcenter{
+  margin-left:30px;
+  display: inline-block;
+}
+.padtopbot{
+  padding: 8px 0px 5px 0px;
+}
+.paddright{
+  padding-right: 10px;
+}
+#profile-picture{
+  margin-bottom: 8px;
+}
+#profile-card #profile_edit_icon{
+  cursor: pointer;
+}
+#profile-card #profile-picture {
+  margin-bottom: 0px;
+}
+#profile-pic-aligned button{display:none;}
+#premium{
+  display:block;
+}
+.premeium_button{
+  margin-bottom: 25px;
+}
+.paddbott12px{
+  padding-bottom:12px!important;
+}
+.paddtop0px{
+  padding-top:0px!important;
+}
+.borbottom{
+  border-bottom:1px solid #e5e5e5;
+}
+.backgroundnone{
+  background:none!important;
+}
+.bold a:hover{
+text-decoration:none!important;
+}
+button{border:none !important;}
+
+.carousel-control.left{
+ left:1px!important;
+ background-color:#3c3c3c!important; 
+ background-image:none!important;
+ }
+.carousel-control.left:hover {
+    color: white;
+    background-color: #232323!important;
+  }
+  .carousel-control.right{
+ background-color:#3c3c3c!important; 
+ background-image:none!important;
+right:-3px;
+ }
+.carousel-control.right:hover {
+    color: white;
+    background-color: #232323!important;
+  }
+.carousel-inner{
+  width:95%!important;
+}
+#settings_dropdown{
+  width:90%;
+  margin:0px auto;
+}
+.requests,.messages{
+  width:95%;
+  margin:3px auto;
+}
+#friend_drop #dropdown-title, #messages_drop #dropdown-title,  #messages_drop .see_all{
+  width:95%;
+  margin:0px auto!important;
+}
+.marleft4per{
+  margin-left:4%;
+}
+#edit-home-country-modal .close{
+  margin-top:-15px!important;
+}
+#edit-home-country-modal h2{
+  margin-top:0px!important;
+  margin-bottom:15px!important;
+}
+.boldtext{
+font-weight:bold!important;
+}
+.width220{width: 220px;margin: 13px auto;}
+#premium .modal-dialog {margin: 145px auto !important;}
+.questionimg img{
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 50px !important;
+    cursor: pointer;
+}
+#dashboard_banner{position:relative;}
+
+#edit-youtube-url-modal .close,#edit-twitter-url-modal .close,#edit-facebook-url-modal .close,#edit-instagram-url-modal .close{
+  margin-top:-15px!important;
+}
+.nopadd{
+  padding:0px!important;
+}
+.height40{height:40px !important;}
+.biginput{width:400px !important;}
+.message_sent_success{background:none!important;}
+.grayinput{background:#CCCCCC!important;border:0px!important;border-radius:0px!important;}
+.marginleft5px{margin-left:30px!important;font-weight:bold;}
+.margintopless10px{margin-top:-10px!important;}
+.newest{float:right!important;}
+.bordernone{border:0px!important;}
+.message_snippit{word-wrap:break-word;width:250px!important;margin-top:5px!important;}
+.message_name{margin-top:10px!important;}
+.bulletdot{}
+.bulletdot li {
+    list-style: disc outside none !important;
+}
+.dashboarddialog{width:750px !important;
+    left: 0 !important;
+    margin: 0 auto !important;
+    position: absolute;
+    right: 0;
+    top: 20% !important;
+
+}
+.action{margin-right:95px!important;}
+#prid_text_field{width:120px!important;}
+.urlbox{width:450px!important;margin-left:5px;}
+.contact_form_container #contact_us_form .select_box select{
+  margin:0px!important;
+  padding-top:8px!important;
+  height:auto!important;
+  outline:none!important;
+}
+.marginleft10px{margin-left:95px!important;}
+.friend_box_container{width:378px!important;}
+.name_block .name a{font-weight:bold!important;}
+.carousel-inner .friends_list_container .friend_box_container:nth-child(2n){
+  margin-left:23px!important;
+}
+.friends_list_container .friend_box_container:nth-child(2n){
+  margin-left:19px!important;
+}
+.marleft5px{margin-left:5px!important;}
+.margintop5px{margin-top:5px!important;}
+.optionaltext{   
+left: 175px;
+position: absolute;
+top: 18px;
+}
+#recommendations .each_recommendation{
+  padding-bottom:5px!important;
+  word-wrap:break-word!important;
+}
+.btn:hover, .btn:focus{color:#ffffff!important;}
+
+.each_endorsement_container{
+  margin-top:15px!important;
+}
+  #endorsements .each_endorsement_container .picture_box, #endorsements .each_endorsement_container .right_section{
+  float:left;
+  }
+  .threadbox{
+  padding-left:2px!important;
+  height:150px!important;
+  }
+  #new_contact_form .simple_captcha{
+  margin-left:-4px!important;
+  }
+  .activity-sentence{
+  word-wrap:break-word!important;
+  }
+.invite_friends_form_container, .invitation_sent {width:450px!important;}
+.marbot5px{margin-bottom:5px!important;}
+.paddbott5px{padding-bottom:5px!important;}
+#recent-activity-section{
+max-height:200px!important;
+margin-bottom:20px;
+}
+.achievement_desc{
+  word-wrap:break-word;
+}
+.each_achievement{margin-bottom:15px;margin-top:5px;}
+.inputtext58px{width:58px!important;}
+
+.inputtext47px{width:47px!important;}
+.lifeinputtext{width:242px!important;}
+#dashboard_highlight #highlight_table td{
+  border-left:0px!important;
+  border-right:2px solid #cccccd!important
+}
+#dashboard_highlight #highlight_table td:last-child{
+  border-left:0px!important;
+  border-right:0px solid #cccccd!important
+}
+
+.cashinputtext{width:231px!important;}
+#dashboard_highlight #highlight_table td{
+  padding-left:10px!important;
+  padding-right:10px!important;
+}
+#dashboard_highlight .to_years{
+  padding:0px 18px!important;
+}
+.edit_btton_div{padding-bottom:7px!important;}
+.edit_tourn, .save_tourn, .delete_tourn, .edit_cash{
+    height: 20px !important;
+    padding: 0px 12px !important;
+    width: auto !important;
+    font-size:13px;
+}
+.edit_cash{
+  float:right;
+  line-height:20px!important;
+}
+#tourn_win_loss{width:76px!important;}
+#tournament_table td, #tournament_table th{
+  padding:0px 2px!important;
+}
+#tourn_location{width:115px!important;}
+.margintop20px{
+  margin-top:20px
+}
+#best_hand_span img{
+  margin-right:5px;
+  margin-left:2px;
+}
+.padding0px{
+  padding:0px!important;
+  min-width:inherit!important;
+}
+.btnpadd0px{
+  padding:0px 2px!important;
+  font-size:13px!important;
+  min-width:inherit!important;
+  height:20px!important;
+}
+#tournament_table .padding_lft_2px{padding:0px 0px 0px 2px !important; }
+.boxwidth60px{
+width:60px!important;
+}
+#tournament_table .padding_lft_0px{padding:0px 0px 0px 0px !important; }
+.boxwidth60px{
+width:60px!important;
+}
+.marrt3px{
+  margin-right:5px!important;
+}
+.savebtnfix{
+position:relative;
+top:-28px!important;
+}
+.actionhead{
+text-align:right;
+padding-right:47px;
+}
+#tournament_table tr{
+  height:22px!important;
+}
+#suggestion-carousel .carousel-inner{
+  width:100% !important;
+}
+.friend_box_container .profile_picture a img{
+  height:75px!important;
+  width:75px!important;
+}
+.autowrapcss a{
+word-wrap:break-word;
+}
+.name,.name .green_goddamnit_no_underline, .link_to_profile{
+ word-wrap:break-word; 
+}
+
+.forum-threadcontainer{
+background:#D3D3D3;
+border-bottom: 1px solid #3C3C3C;
+min-height: 87px;
+height:auto;
+padding: 15px;
+overflow:hidden;
+}
+.name .poker_chip{
+  display:inline-block;
+  margin-bottom:5px;
+}
+.requester_name a{word-wrap: break-word;}
+#friend_drop{
+width:445px!important;
+}
+#friend_drop .requester_name{
+width:142px!important;
+margin-top:20px!important;
+}
+#message_for_forward{
+  word-wrap:break-word;
+  width:auto!important;
+}
+#message_show_container{
+bottom:0px!important;
+}
+.message_container{
+  min-height:60px!important;
+}
+.bottom_actions_list{
+clear:both;
+margin-left:89px!important;
+padding-top:10px;
+}
+.bottom_actions_list li a{
+font-weight:bold!important;
+}
+.experience_container p{
+word-wrap:break-word;
+}
+#recommendation_comment{height:75px !important;}
+.no_subscription:hover{
+background:#fff!important;
+color:#000!important;
+}
+.achievement_desc .achievement_edit_show{
+float:right;
+display:inline-block!important;
+}
+#achievement_description{
+width:635px!important;
+}
+.achievement_field{height:46px !important;}
+.martop7{margin-top:7px !important;}
+#profile-card #info_section {
+width:475px!important;
+}
+#profile-card #username_box h2{
+  margin-right: 3px !important;
+  overflow:hidden;
+}
+#profile-card #username_box span:first-child{
+  margin-left: 0px!important;
+}
+.margin0px{
+margin-left:0px!important;
+}
+#username_box h2{
+  font-size:28px!important;
+}
+#username_box #username{
+}
+.form-group button:hover{
+color:#000000!important;
+}
+.profile_edit_icon{position:absolute;bottom:0px;width:30px;}
+.login-footer{font-size:14px;padding: 15px;height:auto !important;color:white;background: #4E4E4E;border-radius:20px;width:69%;margin:auto;}
+.inline_label{display:inline;width: 92%;
+float: right;}
+.share-color{
+  background-color: #B6BABF !important;
+    border: medium none;
+    min-width: 78px;
+    opacity: 1 !important;
+}
+.new_post
+{
+  background: none repeat scroll 0 0 #74a230;
+  border: medium none;
+  border-radius: 0;
+  color: white;
+  float: right;
+  height: 34px;
+  margin-top: -56px;
+  padding: 3px;
+  width: 66px;
+}
+
+.online_poker option {
+  height: 16px;
+}
+.casino_poker option {
+  height: 18px;
+}
+.maring-drop{margin-top:6px !important;}
+.maring-field{margin-top:5px !important;}
+
+.breadcrumb {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    list-style: outside none none;
+    margin-bottom: 22px;
+    padding: 7px 15px;
+}

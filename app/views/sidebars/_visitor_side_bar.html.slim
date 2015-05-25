@@ -1,0 +1,30 @@
+- unless current_user.is_friends_with?(@data[:user])
+  = render "recommendations/users", recommended_users: @data[:common_users],used_for: 'other_viewers', title: "Players You Have in Common With #{@data[:user].name}"
+
+
+= render "recommendations/users", recommended_users: @data[:other_viewers], used_for: 'other_viewers', title: "Players Who Also Viewed #{@data[:user].name}"
+
+div.section
+  = render "sidebars/advertisement"
+
+br
+- if request.fullpath != "/static_pages/contact" &&  request.fullpath.match("/user_plans/subscribed?").nil?
+  = render "recommendations/users", recommended_users: @data[:users_from_casino], used_for: 'casino_users', title: user.favorite_casino.present? ? "Players at Your Favorite Casino (#{user.favorite_casino.casino.name if !user.favorite_casino.casino.blank? && !user.favorite_casino.casino.name.blank? })" : "Players at Your Favorite Casino"
+
+  = render "recommendations/users", recommended_users: @data[:online_site_users], used_for: 'online_site_users', title:  user.favorite_online_site.present? ? "Players at Your Favorite Online Poker Room (#{user.favorite_online_site.online_site.name if !user.favorite_online_site.online_site.blank?})" : "Players at Your Favorite Online Poker Room"
+
+
+  - if !@data[:interested_groups].nil?
+    div.section
+      div.section-title-Discussion-Groups Discussion Groups That May <br>Interest You
+      - @data[:interested_groups].each do |thread|
+        div.thread
+          div.pull-left = thread.name
+          div.pull-right
+            a href="/forums/thread/#{thread.id}"
+              button.plus-sign style="background-color:#5BA304;" +
+              = " "
+              span style="color:#5BA304;" Join
+        br
+        hr.hr_dicussion_groups
+

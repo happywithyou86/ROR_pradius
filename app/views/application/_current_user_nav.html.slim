@@ -1,0 +1,11 @@
+div#search_form_container
+  form.nav_form  method="GET" action="/searches/results"
+    input.form-control id="header_search_bar" name="search_text" type="text" placeholder="Search for people by name, location, poker room, or PR ID #"
+    button.btn.btn-success.search_button type="submit" Find
+
+div#nav_icons.nav-icons
+  = render "pending_friends/friend_requests_dropdown"
+
+  = render "user_messages/messages_dropdown"
+
+  = render 'users/settings_dropdown'

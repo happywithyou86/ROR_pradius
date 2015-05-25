@@ -1,0 +1,61 @@
+/***************************************/
+/* New Message Modal */
+/***************************************/
+/* line 11, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+ul.ui-autocomplete.ui-menu {
+  z-index: 1500;
+}
+
+/* line 15, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+a#send_message_button {
+  color: #FFF !important;
+}
+
+/* line 24, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.modal-body .message_sent_success {
+  background-color: #47A447;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+}
+/* line 30, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.modal-body .message_sent_success p {
+  margin: 0;
+}
+
+/* line 36, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box {
+  background-color: #CCC;
+  text-align: center;
+}
+/* line 42, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box .form_element {
+  width: 230px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* line 48, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box #search_friends_field {
+  height: 40px;
+}
+/* line 52, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box #search_friends_body {
+  height: 110px;
+}
+/* line 58, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box .error {
+  margin: 0 auto;
+  width: 230px;
+  background-color: #EE6060;
+  padding: 5px;
+}
+/* line 64, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.message_form_box .error p {
+  margin: 0;
+}
+
+/* line 70, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/messages_new.css.scss */
+.header_bar {
+  width: 1190px;
+  margin: 0px auto;
+}

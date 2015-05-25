@@ -1,0 +1,6 @@
+li.achievement_desc
+  = achievement.description
+
+  - if current_user and current_user.id == achievement.user.id
+    span.achievement_edit_show  
+      = link_to 'Edit', '#', class: 'edit_achievement btn btn-success', data: {ach_id: achievement.id}

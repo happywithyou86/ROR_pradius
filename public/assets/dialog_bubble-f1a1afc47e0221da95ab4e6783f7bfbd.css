@@ -1,0 +1,40 @@
+/* line 2, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dialog_bubble.css.scss */
+.bubble {
+  position: relative;
+  width: 250px;
+  height: 120px;
+  padding: 0px;
+  background: #5ba304;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #5ba304 solid 5px;
+}
+
+/* line 15, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dialog_bubble.css.scss */
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 15px 15px;
+  border-color: #5ba304 transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -15px;
+  left: 110px;
+}
+
+/* line 29, /home/yuva/Desktop/project/richard/pokerradius/app/assets/stylesheets/dialog_bubble.css.scss */
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 19px 19px;
+  border-color: #5ba304 transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  top: -24px;
+  left: 106px;
+}

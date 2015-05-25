@@ -1,0 +1,46 @@
+div.row
+  div#main_section.box
+    -  if @data.present? && @data != false  && !@data[:user].blank?
+      = render partial: "profile_card", locals: { user: @data[:user] }
+    -  if  @data.present? &&  @data != false
+      - if @friends_id.include?(@data[:user].id) || current_user.id == @data[:user].id
+        = render partial: "recent_activity"
+
+    -  if  @data.present? &&  @data != false
+
+      - if @friends_id.include?(@data[:user].id) || current_user.id == @data[:user].id
+        = render partial: "profile_tab"
+      - elsif @friends.flatten.size > 0
+        h3 Connections
+        div id="suggestion-carousel" class="carousel slide" data-ride="carousel" data-interval="false"
+          div class="carousel-inner"
+            - @friends.each_with_index do |friends, n|
+              div.friends_list_container.mar10.item class="#{n == 0 ? "active" : ""}"
+
+
+                div.results
+                  = render "contacts/contacts_results", friends: friends,profile_view: true
+      - else
+        div#recent-activity-section
+          h3 No Connections
+
+
+  div#sidebar.sidebar.box
+    - if @data.present? &&  @data != false
+
+      - if current_user and  current_user == @data[:user]
+        = render "sidebars/profile_side_bar", user: current_user
+      - elsif current_user and  current_user != @data[:user]
+        = render "sidebars/visitor_side_bar", user: current_user
+
+br
+-  if @data != false
+  = render partial: "edit_profile_modals"
+css:
+  #sidebar
+  {
+    min-height: 1158px!important;
+  }
+  .footer, .push {
+    margin-top: 0em !important;
+  }
