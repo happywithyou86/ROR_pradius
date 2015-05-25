@@ -1,3 +1,3 @@
 POKER RADIUS
 
-Update : Shirong Huang
+url is https://pokerradius.com/
